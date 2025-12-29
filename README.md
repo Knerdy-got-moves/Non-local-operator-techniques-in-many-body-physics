@@ -291,7 +291,7 @@ We applied this workflow to the **free particle case** and verified all resultin
 
 The central object is the finite-temperature correlation function:
 
-$$G(\mathbf{k}, \mathbf{q}; \lambda) = \langle e^{-\lambda N_>} a^\dagger_{\mathbf{k}}(\mathbf{q}) a_{\mathbf{k}}(\mathbf{q}) \rangle \equiv \frac{\text{Tr}(e^{-\beta(H-\mu N)} e^{-\lambda N_>} a^\dagger_{\mathbf{k}}(\mathbf{q}) a_{\mathbf{k}}(\mathbf{q}))}{\text{Tr}(e^{-\beta(H-\mu N)})}$$
+$$G(\mathbf{k}, \lambda) = \langle e^{-\lambda N_>} c^\dagger_{\mathbf{k}} c_{\mathbf{k}}\rangle \equiv \frac{\text{Tr}(e^{-\beta(H-\mu N)} e^{-\lambda N_>} c^\dagger_{\mathbf{k}} c_{\mathbf{k}})}{\text{Tr}(e^{-\beta(H-\mu N)})}$$
 
 The auxiliary parameter λ serves as a generating function; physical observables are recovered at λ = 0.
 
