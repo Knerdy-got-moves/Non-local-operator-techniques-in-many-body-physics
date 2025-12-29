@@ -8,9 +8,10 @@ The core goal is expressing fermionic fields $c_{p+q}$ and bilinears via sea bos
 
 ## Key Derivations
 
-- **Fermi Bilinears**: $c_{p+q_2}^\dagger c_{p+q_2}, \sum_{q_1} \frac{1}{N} a_{p+q_2}(q_1)^\dagger a_{p q_1}(q_2)$ and off-diagonal terms.
+- **Fermi Bilinears**: $c_{p-q/2, <} c^\dagger_{p + q/2, <} = \sum_{q_1} a^\dagger_{p-q/2 + q_1/2}(q_1) \frac{1}{N_{>}+1} a_{p+q_1/2}(-q+q_1)$
+ and off-diagonal terms.
 - **Field Operators**: $c_{p+q_2}^\dagger = e^{i N_p q_2} c_{p+q_2}^\dagger (1 - n_{p+q_2}) + \cdots$, preserving free fermion time evolution $c_{p,t} \sim e^{i p t}$.
-- **Sea Bosons**: $b_{kq} b_{k}(q)^\dagger = n_F(k+q_2)(1 - n_F(k+q_2)) + n_{k+q_2}(1 - n_{k+q_2})$, with implicit equations for occupation numbers.
+- **Sea Bosons**: $b_{k}(q)^\dagger b_{k}(q) = n_F(k+q_2)(1 - n_F(k+q_2)) + n_{k+q_2}(1 - n_{k+q_2})$, with implicit equations for occupation numbers.
 - **Green's Functions**: Leads to RPA-like correlations $G_{d}(k,q)$ and 1D/3D density responses via integrals over $a_{k}(q)$.
 
 
