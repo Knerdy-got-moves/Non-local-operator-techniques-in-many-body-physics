@@ -1,0 +1,361 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{ Field operator in terms of Fermi Bilinears-5 }
+\date{}
+\author{Idea from Girish S. Setlur, revised and rewritten by Rishi Paresh Joshi}
+
+\maketitle
+\section{ $a_{ {\bf{k}} }({\bf{q}}) $ in terms of bosons }
+
+Imagine there are exact bosons. In this case, the average of the number of these bosons is likely to be this.
+\[
+<b^{\dagger}_{ {\bf{k}} }({\bf{q}})b_{ {\bf{k}} }({\bf{q}})> 
+ = \frac{n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))}{e^{ \beta \frac{ {\bf{k.q}} }{m} } -1 }
+\]
+This is obtainable from the correspondence,
+\[
+<n_k> = \frac{1}{e^{ \beta ( \epsilon_k - \mu) }  + 1}
+\]
+or,
+\[
+\frac{1}{<n_k>} - 1 = e^{ \beta ( \epsilon_k - \mu) }  
+\]
+or, 
+\[
+\frac{ \frac{1}{<n_{k+q/2}>} - 1 }{  \frac{1}{<n_{k-q/2}>} - 1 } = e^{ \beta \frac{ {\bf{k.q}} }{m} }  
+\]
+or,
+\[
+<b^{\dagger}_{ {\bf{k}} }({\bf{q}})b_{ {\bf{k}} }({\bf{q}})> 
+ = \frac{n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))}{\frac{ \frac{1}{<n_{k+q/2}>} - 1 }{  \frac{1}{<n_{k-q/2}>} - 1 } -1 }
+\]
+\[
+ = n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{         }  \frac{(1-<n_{k-q/2}>) <n_{k+q/2}>}{<n_{k-q/2}>-<n_{k+q/2}>}
+\]
+or,
+\[
+<b^{\dagger}_{ {\bf{k}} }({\bf{q}})b_{ {\bf{k}} }({\bf{q}})> 
+ = n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{  } \mbox{  }
+\frac{  <a^{\dagger}_{ {\bf{k}} }({\bf{q}})a_{ {\bf{k}} }({\bf{q}})> }{ <[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}} }({\bf{q}})]> }
+\]
+and
+\[
+ <a^{\dagger}_{ {\bf{k}} }({\bf{q}})a_{ {\bf{k}} }({\bf{q}})>  = 
+n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)) <n_{k+q/2}>(1-<n_{k-q/2}>)
+\]
+and
+\[
+ <a_{ {\bf{k}} }({\bf{q}})a^{\dagger}_{ {\bf{k}} }({\bf{q}})>  = 
+n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)) <n_{k-q/2}>(1-<n_{k+q/2}>)
+\]
+and
+\[
+ <[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}} }({\bf{q}})]>  = 
+n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))( <n_{k-q/2}> - <n_{k+q/2}> )
+\]
+or,
+\[
+<b^{\dagger}_{ {\bf{k}} }({\bf{q}})b_{ {\bf{k}} }({\bf{q}})> 
+ = n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{  } \mbox{  }
+\frac{ <n_{{\bf{k}}+{\bf{q}}/2}>(1-<n_{{\bf{k}}-{\bf{q}}/2}>) }{ <n_{{\bf{k}}-{\bf{q}}/2}> - <n_{{\bf{k}}+{\bf{q}}/2}>  }
+\]
+and
+\[
+<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> 
+ =\frac{ <n_{{\bf{k}}+{\bf{q}}, > }>( n_F({\bf{k}})-<n_{{\bf{k}}, < }>) }{ <n_{{\bf{k}}, < }> - <n_{{\bf{k}}+{\bf{q}}, > }>  }
+\] 
+and
+\[
+<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> 
+ = \frac{ <n_{ {\bf{k}},> }>( n_F({\bf{k}}-{\bf{q}}) -<n_{{\bf{k}}-{\bf{q}}, < }>) }{ <n_{{\bf{k}}-{\bf{q}}, < }> - <n_{ {\bf{k}}, > }>  }.
+\]
+We want to get  $n_{\bf{p}}$ in terms $b^{\dagger}_{\bf{k}}(\bf{q})b_{\bf{k}}(\bf{q})$ from these equations.
+
+\[
+<n_{ {\bf{k}}, < }> =  \frac{ <n_{ {\bf{k}}+{\bf{q}} }> (<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> 
++ n_F({\bf{k}}))}{<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> +<n_{{\bf{k}}+{\bf{q}} }>}
+\mbox{        } (1-n_F({\bf{k}}+{\bf{q}}))
+\]
+and
+\[
+<n_{ {\bf{k}}, > }> =  \frac{<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> 
+\mbox{   }<n_{{\bf{k}}-{\bf{q}}  }>}{<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> +1-<n_{{\bf{k}}-{\bf{q}} }>}\mbox{         } n_F({\bf{k}}-{\bf{q}})
+\]
+Adding the two equations, we get
+
+\[
+<n_{ {\bf{k}} }> =  \frac{ <n_{ {\bf{k}}+{\bf{q}} }> (<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> 
++ n_F({\bf{k}}))}{<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> +<n_{{\bf{k}}+{\bf{q}} }>}
+\mbox{        } (1-n_F({\bf{k}}+{\bf{q}}))
+\]
+\[
++ \frac{<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> 
+\mbox{   }<n_{{\bf{k}}-{\bf{q}}  }>}{<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> +1-<n_{{\bf{k}}-{\bf{q}} }>}\mbox{         } n_F({\bf{k}}-{\bf{q}})
+\]
+
+Hence,
+\[
+N^0 = \sum_{ {\bf{k}} } \frac{ <n_{ {\bf{k}} }> (<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> 
++ n_F({\bf{k}}-{\bf{q}}))}{<b^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}-{\bf{q}}/2 }({\bf{q}})> +<n_{{\bf{k}} }>}
+\mbox{        } (1-n_F({\bf{k}}))\]
+\[+ \sum_{ {\bf{k}} } \frac{<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> 
+\mbox{   }<n_{ {\bf{k}} }>}{<b^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})b_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}})> +1-<n_{ {\bf{k}} }>}\mbox{         } n_F({\bf{k}})
+\]
+This is an implicit equation for $ <n_{ {\bf{k}} }> $ in terms of $ <b^{\dagger}_{ {\bf{K}} }({\bf{Q}})b_{ {\bf{K}} }({\bf{Q}})> $.
+We will verify this relation by substituting the Fermi-Dirac and Bose-Einstein relations we started with.
+\[
+<b^{\dagger}_{ { {\bf{k}}-{\bf{q}}/2 } }({\bf{q}})b_{ { {\bf{k}}-{\bf{q}}/2 } }({\bf{q}})> 
+ = \frac{n_F({ {\bf{k}}-{\bf{q}}/2 }-{\bf{q}}/2)(1-n_F({ {\bf{k}}-{\bf{q}}/2 }+{\bf{q}}/2))}{e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 }
+\]
+\[=\frac{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))}{e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 }\]
+\[<b^{\dagger}_{ { {\bf{k}}+{\bf{q}}/2 } }({\bf{q}})b_{ { {\bf{k}}+{\bf{q}}/2 } }({\bf{q}})> 
+ = \frac{n_F({ {\bf{k}}+{\bf{q}}/2 }-{\bf{q}}/2)(1-n_F({ {\bf{k}}+{\bf{q}}/2 }+{\bf{q}}/2))}{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 }\]
+ \[=\frac{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))}{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 }\]
+ 
+\[ <n_{ {\bf{k}}+{\bf{q}} }>=\frac{1}{e^{ \beta ( \frac{({\bf{k}+\bf{q}})^2}{2m}- \mu) }  + 1 }\]
+\[ <n_{ {\bf{k}}-{\bf{q}} }>=\frac{1}{e^{ \beta ( \frac{({{\bf{k}}-{\bf{q}}})^2}{2m}- \mu) }  + 1 }\]
+Substituting this in the expression for $<n_{ {\bf{k}} }>$ and cross multiplying simplifies the denominator. We took $n_F({\bf{k}})(1-n_F( {\bf{k}}+{\bf{q}}))$ common in the numerator of the first term, canceling the -1 from the Bose-Einstein equation.
+\[
+<n_{ {\bf{k}} }> =  \frac{ {n_F({\bf{k}})(1-n_F( {\bf{k}}+{\bf{q}}))[ \{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}]}}{{n_F( {\bf{k}})(1-n_F({ {\bf{k}}+{\bf{q}}}))\{e^{ \beta ( \frac{({\bf{k}+\bf{q}})^2}{2m}- \mu) }  + 1 \}}+\left((1-n_F({\bf{k}}+{\bf{q}}))\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1\} \right)}
+\mbox{        }
+\]
+\[
++ \frac{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))
+\mbox{   }}{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))\{e^{ \beta ( \frac{({{\bf{k}}-{\bf{q}}})^2}{2m}- \mu) }  + 1 \}+n_F({ {\bf{k}}-{\bf{q}}})\{e^{ \beta ( \frac{({{\bf{k}}-{\bf{q}}})^2}{2m}- \mu) }  + 1 \}\{e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 \}-n_F({\bf{k}}-{\bf{q}})\{e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 \}}\mbox{         } 
+\]
+
+Simplifying the third term in the denominator of the second term,
+\[(e^{ \beta ( \frac{|{\bf{k}-\bf{q}}|^2}{2m}- \mu) }  + 1)(e^{ \beta \frac{ { ({ {\bf{k}}-{\bf{q}}/2 }).\bf{q}} }{m} } -1 )=(e^{ \beta ( \frac{|{\bf{k}-\bf{q}}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}-{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|{\bf{k}-\bf{q}}|^2}{2m}- \mu) })+e^{ \beta \frac{ { ({ {\bf{k}}-{\bf{q}}/2 }).\bf{q}} }{m} } -1 \]
+\[=(e^{ \beta ( \frac{|{\bf{k}}|^2}{2m}- \mu)})-(e^{ \beta ( \frac{|{\bf{k}-\bf{q}}|^2}{2m}- \mu) })+e^{ \beta \frac{ { ({ {\bf{k}}-{\bf{q}}/2 }).\bf{q}} }{m} } -1\]
+As we can see, the last term above will cancel with the last term in the denominator of the second term of $<n_{ {\bf{k}} }> $.\\
+
+Further, simplifying the first term and the second term in $<n_{ {\bf{k}} }> $ gives,
+\[
+<n_{ {\bf{k}} }> =  \frac{ {n_F({\bf{k}})(1-n_F( {\bf{k}}+{\bf{q}}))}}{n_F( {\bf{k}})(1-n_F({ {\bf{k}}+{\bf{q}}}))\frac{\{e^{ \beta ( \frac{({\bf{k}+\bf{q}})^2}{2m}- \mu) }  + 1 \}}{[ \{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}]}+\left((1-n_F({\bf{k}}+{\bf{q}}))\frac{\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1\}}{[ \{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}]} \right)}
+\mbox{        }
+\]
+\[
++ \frac{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))
+\mbox{   }}{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))\{e^{ \beta ( \frac{({{\bf{k}}-{\bf{q}}})^2}{2m}- \mu) }  + 1 \}+n_F({ {\bf{k}}-{\bf{q}}})\left((e^{ \beta ( \frac{|{\bf{k}}|^2}{2m}- \mu)})-(e^{ \beta ( \frac{|{\bf{k}-\bf{q}}|^2}{2m}- \mu) })\right)}\mbox{         } 
+\]
+
+We can simplify the denominator in the first term using:
+\[\frac{\{e^{ \beta ( \frac{({\bf{k}+\bf{q}})^2}{2m}- \mu) }  + 1 \}}{[ \{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}]}=[e^{ \beta ( \frac{({\bf{k}})^2}{2m}- \mu) }+\frac{1}{\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}}] \]
+
+\[\frac{\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1\}}{[ \{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}]} =1-\frac{1}{\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}}\]
+As we cancel the $\bf{q}$ dependent terms, we can also remove the $n_{F}$'s, which depend on q, by canceling from the numerator and denominator of the first and second term.
+
+\[
+<n_{ {\bf{k}} }> =  \frac{ {n_F({\bf{k}})}}{n_F( {\bf{k}})[e^{ \beta ( \frac{({\bf{k}})^2}{2m}- \mu) }+\frac{1}{\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}}]+1-\frac{1}{\{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} }\}}}
+\mbox{        }
+\]
+
+\[
++ \frac{(1-n_F({ {\bf{k}}}))
+\mbox{   }}{(1-n_F({ {\bf{k}}}))\{e^{ \beta ( \frac{({{\bf{k}}-{\bf{q}}})^2}{2m}- \mu) }  + 1 \}+\left((e^{ \beta ( \frac{|{\bf{k}}|^2}{2m}- \mu)})-(e^{ \beta ( \frac{|{\bf{k}-\bf{q}}|^2}{2m}- \mu) })\right)}\mbox{         } 
+\]
+This gives,
+
+\[ <n_{ {\bf{k}}}>=\frac{1}{e^{ \beta ( \frac{({\bf{k}})^2}{2m}- \mu) }  + 1 }\]
+
+
+
+
+\begin{comment}
+Substituting these equations, cross-multiplying the terms, and taking common terms,
+\[
+N^0 = \sum_{ {\bf{k}} } \frac{\frac{1}{e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 } (\frac{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))
++ n_F({\bf{k}}-{\bf{q}})(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1)}{e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 } )}{\frac{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )+ (1-n_F({\bf{k}}))(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )}{(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )}}
+\mbox{        } (1-n_F({\bf{k}}))\]
+\[+ \sum_{ {\bf{k}} } \frac{\frac{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))}{e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 }
+\mbox{   }\frac{1}{e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 }}{\frac{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )+(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1)(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 )-n_F({\bf{k}})(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1) }{(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1)(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 ) }}\mbox{         } n_F({\bf{k}})
+\]
+Cancelling the common terms,
+\[
+N^0 = \sum_{ |{\bf{k}}|>k_{F} } \frac{\left[n_F({ {\bf{k}}-{\bf{q}}}))\right][1
++ (e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1)]}{\{{n_F({ {\bf{k}}-{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )}}
+\mbox{        } \]
+\[+ \sum_{| {\bf{k}}|\leq k_{F} } \frac{{(1-n_F({ {\bf{k}}+{\bf{q}}}))}
+\mbox{   }}{\{(1-n_F({ {\bf{k}}+{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1)(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 )-(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 )}\mbox{         }
+\]
+
+
+When we cross multiply, the terms in $\{\}$ will be 0. Let the common denominator be $D$. We simplify the products in the other denominator to get,
+\[(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1)(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 )=(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) })+e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 \]
+Hence $D$ becomes,
+\[D=\left[\{{n_F({ {\bf{k}}-{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )}\right]\]
+\[\times\left[\{(1-n_F({ {\bf{k}}+{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1)(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 )-(e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} } -1 )\right]\]
+\[D=\left[\{{n_F({ {\bf{k}}-{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )}\right]\]
+\[\times\left[\{(1-n_F({ {\bf{k}}+{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) })\right]\]
+\[D=\{n_F({ {\bf{k}}-{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}\left((e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) })\right)\]
+\[+\left[(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )\right]\{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}\]
+\[+\left[(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )\right]\left((e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) })\right)\]
+The first term is non-zero, only for $|{\bf{k}}|>k_{F}$. The second term is non-zero only for $|{\bf{k}}|\leq k_{F}$. The third term is present in all cases.
+\[
+N^0 = \sum_{ {\bf{k}} } \frac{\left[n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))\right][1
++ (e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1)]\left((e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) })\right)}{D}
+\mbox{        } \]
+\[+ \sum_{ {\bf{k}} } \frac{{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))\left[e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 \right]}
+\mbox{   }}{D}\mbox{         }
+\]
+Now, we will substitute D depending on whether the sum is over $|{\bf{k}}|\leq k_{F}$ or $|{\bf{k}}|>k_{F}$. For $|{\bf{k}}|>k_{F}$, the term in $\left(\right)$ cancels. For $|{\bf{k}}|\leq k_{F}$, the term in $\left[~\right]$ cancels.
+\[
+N^0 = \sum_{ |{\bf{k}} |>k_{F}} \frac{\left[n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))\right][1
++ (e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1)]}{\{n_F({ {\bf{k}}-{\bf{q}}})(1-n_F({ {\bf{k}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+\left[(e^{ \beta \frac{ { ({\bf{k}}-{\bf{q}}/2 ).\bf{q}} }{m} } -1 )\right]}
+\mbox{        } \]
+\[+ \sum_{ |{\bf{k}}|\leq k_{F} } \frac{{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))}
+\mbox{   }}{\{n_F({ {\bf{k}}})(1-n_F({ {\bf{k}}+{\bf{q}}}))(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) }  + 1 )\}+\left((e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu)}e^{ \beta \frac{ { ({ {\bf{k}}+{\bf{q}}/2 }).\bf{q}} }{m} })-(e^{ \beta ( \frac{|\bf{k}|^2}{2m}- \mu) })\right)}\mbox{         }
+\]
+    
+\end{comment}
+
+Write $ O_{ {\hat{n}}_1, {\hat{n}}_2 }({\bf{p}}) 
+ = c^{\dagger}_{ {\hat{n}}_1 |{\bf{p}}| } c_{ {\hat{n}}_2 |{\bf{p}}| } $.
+ This all means we may write,
+\[
+b_{ {\bf{k}} }({\bf{q}})\mbox{            }  = \mbox{            }
+ \sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    }
+ c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\mbox{            }\mbox{    }\mbox{    }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  }\mbox{    }\mbox{    }  c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > } 
+\]
+
+\[
+b^{\dagger}_{ {\bf{k}} }({\bf{q}})\mbox{            }  = \mbox{            }
+ \sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    }
+ c^{\dagger}_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > } \mbox{    }\mbox{    }\mbox{            }F^{\dagger}_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  } \mbox{    }\mbox{    } c_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }
+\]
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+\[
+b_{ {\bf{k}} }({\bf{q}})\mbox{            }  = \mbox{            }
+ \sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    }
+ c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\mbox{            }\mbox{    }\mbox{    }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  }\mbox{    }\mbox{    }  c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }
+\]
+
+\[
+b^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})\mbox{            }  = \mbox{            }
+ \sum_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 } \mbox{    }
+ c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }\mbox{    }\mbox{            }F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }
+ ([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  } \mbox{    }\mbox{    } c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }
+\]
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+\[
+<b^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})b_{ {\bf{k}} }({\bf{q}})>\mbox{            }  = \mbox{            }
+\sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    } \sum_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 } \mbox{    }
+< c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }\mbox{    }\mbox{            }F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  } \mbox{    }\mbox{    } c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }
+ \mbox{  }
+ c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\mbox{            }\mbox{    }\mbox{    }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  }\mbox{    }\mbox{    }  c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }>
+\]
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+\[
+<b_{ {\bf{k}} }({\bf{q}})b^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})>\mbox{            }  = \mbox{            }
+\sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    } \sum_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 } \mbox{    }
+< c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\mbox{            }\mbox{    }\mbox{    }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  }\mbox{    }\mbox{    }  c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > } \mbox{  }
+ c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }\mbox{    }\mbox{            }F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  } \mbox{    }\mbox{    } c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }
+>
+\]
+
+Let us first satisfy the bosonic commutation rules:
+\subsection{The non zero commutation rule}
+\[[b_{ {\bf{k}} }({\bf{q}})\mbox{            },b^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})\mbox{            }]\]
+\[=\mbox{            }
+\sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    } \sum_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 } \mbox{    }
+[ c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\mbox{            }\mbox{    }\mbox{    }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  }\mbox{    }\mbox{    }  c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > } \mbox{  },
+ c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }\mbox{    }\mbox{            }F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  } \mbox{    }\mbox{    } c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }]
+ \]
+ \[=\delta_{\bf{k},\bf{k}^{'}}\mbox{  }\delta_{\bf{q},\bf{q}^{'}}\mbox{  }n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\]
+Effectively we need to find the commutator,
+\[[A\mbox{}BC\mbox{}, DE\mbox{}F\mbox{}]\]
+Also, we can write,
+\[ABC=\frac{1}{2}(\{AB,C\}-[AB,C])\]
+
+ Using the formula,
+\[[AB,C]=A\{B,C\}-\{A,C\}B\]
+This gives,
+
+\[ABC= \frac{1}{2}\{AB,C\}+\frac{1}{2}(\{A,C\}B)-\frac{1}{2}(A\{B,C\})\]
+From our setup, the middle term must be 0. That is,
+\[\frac{1}{2}(\{A,C\}B)=\frac{1}{2}\{c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < },c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }\}F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  }\mbox{    }\mbox{    } =0 \]
+
+Therefore we get,
+\[ABC= \frac{1}{2}\{AB,C\}- \frac{1}{2}(A\{B,C\})\]
+\[DEF= \frac{1}{2}\{DE,F\}-\frac{1}{2}(D\{E,F\})\]
+\subsubsection{Four terms}
+This gives us 4 commutator terms. The first term is,
+\[\frac{1}{4}[\{AB,C\},\{DE,F\}]\]
+\[=\frac{1}{4}\left[\{c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  },c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }\},\{c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  }, c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }\}\right]\]
+ The second term is,
+ \[\frac{1}{4}[\{AB,C\},D\{E,F\}]\]
+ \[=\frac{1}{4}\left[\{c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  },c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }\},
+ c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }\{F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  }, c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }\}\right]\]
+ The third term is,
+ \[\frac{1}{4}[A\{B,C\},\{DE,F\}]\]
+\[=\frac{1}{4}\left[c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\{F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  },c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }\},\{c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  }, c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }\}\right]\]
+ The fourth term is,
+  \[\frac{1}{4}[A\{B,C\},D\{E,F\}]\]
+  \[=\frac{1}{4}\left[c^{\dagger}_{ {\hat{n}}_1 |{\bf{k}}-{\bf{q}}/2|, < }\{F_{ {\hat{n}}_1, {\hat{n}}_2 }
+ ([O];{\bf{k}}, {\bf{q}})\mbox{  },c_{ {\hat{n}}_2 |{\bf{k}}+{\bf{q}}/2|, > }\}, c^{\dagger}_{ {\hat{n}}^{'}_2 |{\bf{k}}^{'}+{\bf{q}}^{'}/2|, > } \mbox{    }\{F^{\dagger}_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 }([O];{\bf{k}}^{'}, {\bf{q}}^{'})\mbox{  }, c_{ {\hat{n}}^{'}_1 |{\bf{k}}^{'}-{\bf{q}}^{'}/2|, < }\}\right]\]
+ Let the sum of these four terms be $S:= S(({\hat{n}}^{'}_1, {\hat{n}}^{'}_2),{\bf{k}},{\bf{k}}^{'},{\bf{q}},{\bf{q}}^{'}) $. This means that,
+ \[\sum_{ {\hat{n}}_1, {\hat{n}}_2 } \mbox{    } \sum_{ {\hat{n}}^{'}_1, {\hat{n}}^{'}_2 } \mbox{    }S=\delta_{\bf{k},\bf{k}^{'}}\mbox{  }\delta_{\bf{q},\bf{q}^{'}}\mbox{  }n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\]
+ \subsubsection{Commutation rules of O}
+ To evaluate terms of the form of $\{F,c\}$, we could see what happens to 
+ \[\{ O_{ {\hat{n}}_1, {\hat{n}}_2 }({\bf{p}}) ,c_{ {\hat{n}}^{'}_1  |{\bf{p}^{'}|}, < }\}
+ \]
+ \[=\{ c^{\dagger}_{ {\hat{n}}_1 |{\bf{p}}| } c_{ {\hat{n}}_2 |{\bf{p}}| },c_{ {\hat{n}}^{'}_1 |{\bf{p}^{'}|, < }}\}\]
+    Using the formula,
+    \[\{AB,C\}=A\{B,C\}-[A,C]B\]
+Since the first term is 0, we are only left with the second term.
+\[\{ c^{\dagger}_{ {\hat{n}}_1 |{\bf{p}}| } c_{ {\hat{n}}_2 |{\bf{p}}| },c_{ {\hat{n}}^{'}_1 |{\bf{p}^{'}|, < }}\}= -n_{F}({\hat{n}}^{'}_1 |{\bf{p}^{'}|})\left(2c^{\dagger}_{ {\hat{n}}_1 |{\bf{p}}| }c_{ {\hat{n}}^{'}_1 |{\bf{p}^{'}|, < }}-\delta_{{\hat{n}}_1 |{\bf{p}}|,{ {\hat{n}}^{'}_1 |{\bf{p}^{'}|}}}\right)\]
+
+ 
+ 
+\end{document} 

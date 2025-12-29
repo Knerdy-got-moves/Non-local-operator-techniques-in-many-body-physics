@@ -1,0 +1,553 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+\newcommand{\addRPJ}[1]{{\color{blue}{#1}}}
+\begin{document}
+
+\title{Calculating expectation value of  Green's function using trace for verification}
+\date{}
+\author{Rishi Paresh Joshi}
+
+\maketitle
+\section{ Green's functions}
+  Working in the free theory tells us that $
+c_{ {\bf{k}},s }(t) \mbox{         } = \mbox{            }
+c_{ {\bf{k}},s} \mbox{            } e^{ - i \epsilon_{{\bf{k}}} \mbox{  } t }$ by using this, we can write $$N_{>}=\sum_{ {\bf{p}} }c_{ {\bf{p}}, < }c^{\dagger}_{ {\bf{p}}, < }=\sum_{\bf{p}}\theta(k_F-|p|)(1-n_{{\bf{p}}} )$$  and, $N^{'}_{>}=\sum_{ {\bf{p}} }c^{\dagger}_{ {\bf{p}}, > }c_{ {\bf{p}}, > }=\sum_{ {\bf{p}} }\theta(|p|-k_F)n_{ {\bf{p}}}$. In addition, the $e^{ \pm i \epsilon_{{\bf{p}}} \mbox{  } t} $ functions cancel as $n_{{\bf{p}}}(t)=c_{{\bf{p}}}^{\dagger}(t)c_{{\bf{p}}}(t)$.
+
+=============================================================================================================
+The greater than part of the  ` Green's' function can be written as,
+\[
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},> }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >    \]
+\[=\theta(t - t')e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t-t') } < e^{-\lambda N_>} e^{-\lambda' N'_>} c^\dagger_{{\bf{k}},>} c_{{\bf{k}},>} >\]
+\[- \theta(t' - t)e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t'-t) }  < e^{-\lambda N_>} e^{-\lambda' N'_>} c_{{\bf{k}},>} c^\dagger_{{\bf{k}},>} >\]
+=============================================================================================================
+The lesser than part of the  ` Green's' function can be written as,
+\[
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},< }(t) c^{\dagger}_{ {\bf{k}},< }(t^{'}) >    \]
+\[=\theta(t - t')e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t-t') } < e^{-\lambda N_>} e^{-\lambda' N'_>} c^\dagger_{{\bf{k}},<} c_{{\bf{k}},<} >\]
+\[- \theta(t' - t)e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t'-t) }  < e^{-\lambda N_>} e^{-\lambda' N'_>} c_{{\bf{k}},<} c^\dagger_{{\bf{k}},<} >\]
+=============================================================================================================
+\newpage
+\subsection{Derivation of $<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}> \mbox{     }$}
+For an operator $\hat{O}$, its trace is given by:
+\[
+\langle \hat{O} \rangle = \frac{\mathrm{Tr} \left( e^{-\beta (\hat{H} - \mu \sum_{{\bf{p}}}n_{{\bf{p}}})} \hat{O} \right)}{\mathrm{Tr} \left( e^{-\beta (\hat{H} - \mu \sum_{{\bf{p}}}n_{{\bf{p}}})} \right)},
+\]
+Hence, in our case, $\hat{H}=\sum_{{\bf{p}}}\epsilon_{{\bf{p}}} n_{{\bf{p}}}$, where $< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{p}},>}>$ we need to substitute $N_{>}=\sum_{\bf{p}}\theta(k_F-|p|)(1-n_{ p  } )$ and $N^{'}_{>}=\sum_{ {\bf{p}} }c^{\dagger}_{ {\bf{p}}, > }c_{ {\bf{p}}, > }=\sum_{ {\bf{p}} }\theta(|p|-k_F)n_{ {\bf{p}}}$ in the Grand canonical ensemble,
+
+\[ 
+\mbox{           }<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}>\mbox{     }  = 
+\frac{Tr(e^{ - \sum_p (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)\mbox{     } +\lambda'\mbox{  }\theta(|p|-k_F)])})}
+{Tr(e^{ - \beta \sum_{p} n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+Since Trace means summing over the diagonal eigenvalue of operators, here $n_{{\bf{k}}}\to \{0,1\}$. 
+\[ 
+\mbox{           }<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}>\mbox{     }  = \]
+\[
+=\prod_{{\bf{p}}}
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+\]
+=============================================================================================================
+\[
+\mbox{           }<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}> \mbox{     }  =
+\prod_{{\bf{p}}}
+\left(
+\frac{
+e^{-n_F(p)\lambda  \mbox{  }} + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu)+(1-n_F(p))\lambda'  \mbox{  }]  } }
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)=\xi(\lambda,\lambda')
+\]
+=============================================================================================================
+
+\newpage
+\subsection{Derivation of $< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{k}},>}>$}
+For an operator $\hat{O}$, its trace is given by:
+\[
+\langle \hat{O} \rangle = \frac{\mathrm{Tr} \left( e^{-\beta (\hat{H} - \mu \sum_{{\bf{p}}}n_{{\bf{p}}})} \hat{O} \right)}{\mathrm{Tr} \left( e^{-\beta (\hat{H} - \mu \sum_{{\bf{p}}}n_{{\bf{p}}})} \right)},
+\]
+Hence, in our case, $\hat{H}=\sum_{{\bf{p}}}\epsilon_{{\bf{p}}} n_{{\bf{p}}}$, where $< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{p}},>}>$ we need to substitute $N_{>}=\sum_{\bf{p}}\theta(k_F-|p|)(1-n_{ p  } )$ and $N^{'}_{>}=\sum_{ {\bf{p}} }c^{\dagger}_{ {\bf{p}}, > }c_{ {\bf{p}}, > }=\sum_{ {\bf{p}} }\theta(|p|-k_F)n_{ {\bf{p}}}$ in the Grand canonical ensemble,
+
+\[
+< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{k}},>} >\mbox{     }  = \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{Tr(e^{ - \sum_p (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)\mbox{     } +\lambda'\mbox{  }\theta(|p|-k_F)])}n_{{\bf{k}}}) }{Tr(e^{ - \beta \sum_p n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+We separate the terms in the sum  ${\bf{p}}={\bf{k}}$ , ${\bf{p}}\neq{\bf{k}}$ so that we can easily put terms where ${\bf{p}}\neq {\bf{k}}$ to zero when $n_{{\bf{p}}}=0$ while taking the trace.
+
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{ k, > }> \mbox{     }  = \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{Tr(e^{- (\lambda  \mbox{  }\theta(k_F-|k|) 
++ n_{{\bf{k}}}  
+[ \beta  (\epsilon_{{\bf{k}}}-\mu) 
+- \lambda \mbox{  }(k_F-|k|)+\lambda'\theta(|k|-k_F)] ) }
+\mbox{     }
+n_{ k  } )}
+{Tr(e^{ - \beta  n_{{\bf{k}}}  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times\frac{Tr(e^{ - \sum_{p \neq k} (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) 
+- \lambda \mbox{  }(k_F-|p|)+\lambda'\theta(|p|-k_F)]  ) } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+The $\lambda$ dependence in the first term ($p=k$) is 0, as $\theta(|k|-k_F)$ is the coefficient of the expression and $\theta(k_F-|k|)$ is the coefficient of $\lambda$, that is,
+
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{ k, > }> \mbox{     }  = \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{Tr(e^{- (n_{{\bf{k}}}  
+[ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'\theta(|k|-k_F)] ) }
+\mbox{     }
+n_{{\bf{k}}} )}
+{Tr(e^{ - \beta  n_{{\bf{k}}}  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times\frac{Tr(e^{ - \sum_{p \neq k} (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) 
+- \lambda \mbox{  }(k_F-|p|)+\lambda'\theta(|p|-k_F)]  ) } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_{\bf{p}}  (\epsilon_{{\bf{p}}}-\mu) } )}.
+\]
+
+Since Trace means summing over the diagonal eigenvalue of operators, here $n_{{\bf{k}}}\to \{0,1\}$. 
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     }  = \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times\frac{Tr(e^{ - \sum_{p \neq k} (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)] ) } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+
+Writing each term in the summation in the exponent as a product and then taking a trace over each factor in the product gives,
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     }  
+= \mbox{           }\mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times
+\frac{\prod_{p \neq k} 
+e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{\prod_{p \neq k}  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+Since $\prod_i^n A_i$ can be written as $e^{\sum_i^n\log(A_i)}$,
+
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{ k, > }> \mbox{     } = \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+e^{ \sum_{p \neq k}\mbox{     }\log \left( \frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right) }
+\]
+Adding and subtracting the log term in the exponential corresponding to $p=k$ the exponential,
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     }= \mbox{           } \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+-\log
+\left( 
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{k}}}-\mu) } )} \right)}
+\]
+Inverting the argument of the log and making the $-$ sign  a $+$ sign,
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     } \]
+\[=  \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
++\log
+\left( 
+\frac{  (1 + e^{ - \beta      (\epsilon_{{\bf{k}}}-\mu) } )} 
+{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } )}
+\right)}
+\]
+
+Taking the last $e^{\log}$ down and cancelling with the denominator of the first term,
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     } \]
+\[=  \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+}
+\frac{  (1 + e^{ - \beta      (\epsilon_{{\bf{k}}}-\mu) } )} 
+{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ -  [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)] } )}
+\]
+we get,
+
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     } \]
+\[=\mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' } }
+{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ - [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } ) }\!
+e^{ \sum_{p}\!
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+}\]
+\[=\mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }}
+{(1 + e^{ - [ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } ) }\mbox{     }
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+}\]
+or,
+
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     } =\!(1-n_F(k))\mbox{  }
+\frac{e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda' }}
+{(1 + e^{ - [ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } ) }\mbox{     }\]
+\[
+\times
+\prod_{{\bf{p}}}
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)\]
+The final answer is:
+
+=============================================================================================================
+
+
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     } =\!
+\frac{(1-n_F(k))\mbox{  }}
+{(1 + e^{ [ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'  \mbox{  }]   } ) }\mbox{     }\xi(\lambda,\lambda')\]
+
+
+=============================================================================================================
+\newpage
+\subsection{Derivation of $< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{k}},<}>$}
+For an operator $\hat{O}$, its trace is given by:
+\[
+\langle \hat{O} \rangle = \frac{\mathrm{Tr} \left( e^{-\beta (\hat{H} - \mu \sum_{{\bf{p}}}n_{{\bf{p}}})} \hat{O} \right)}{\mathrm{Tr} \left( e^{-\beta (\hat{H} - \mu \sum_{{\bf{p}}}n_{{\bf{p}}})} \right)},
+\]
+Hence, in our case, $\hat{H}=\sum_{{\bf{p}}}\epsilon_{{\bf{p}}} n_{{\bf{p}}}$, where $< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{p}},>}>$ we need to substitute $N_{>}=\sum_{\bf{p}}\theta(k_F-|p|)(1-n_{ p  } )$ and $N^{'}_{>}=\sum_{ {\bf{p}} }c^{\dagger}_{ {\bf{p}}, > }c_{ {\bf{p}}, > }=\sum_{ {\bf{p}} }\theta(|p|-k_F)n_{ {\bf{p}}}$ in the Grand canonical ensemble,
+
+\[
+< e^{-\lambda N_>} e^{-\lambda' N'_>} n_{{\bf{k}},<} >\mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{Tr(e^{ - \sum_p (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)\mbox{     } +\lambda'\mbox{  }\theta(|p|-k_F)])}n_{{\bf{k}}}) }{Tr(e^{ - \beta \sum_p n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+We separate the terms in the sum  ${\bf{p}}={\bf{k}}$ , ${\bf{p}}\neq{\bf{k}}$ so that we can easily put terms where ${\bf{p}}\neq {\bf{k}}$ to zero when $n_{{\bf{p}}}=0$ while taking the trace.
+
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{ {\bf{k}}, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{Tr(e^{- (\lambda  \mbox{  }\theta(k_F-|k|) 
++ n_{{\bf{k}}}  
+[ \beta  (\epsilon_{{\bf{k}}}-\mu) 
+- \lambda \mbox{  }(k_F-|k|)+\lambda'\theta(|k|-k_F)] ) }
+\mbox{     }
+n_{ k  } )}
+{Tr(e^{ - \beta  n_{{\bf{k}}}  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times\frac{Tr(e^{ - \sum_{p \neq k} (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) 
+- \lambda \mbox{  }(k_F-|p|)+\lambda'\theta(|p|-k_F)]  ) } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+The $\lambda'$ dependence in the first term ($p=k$) is 0, as $\theta(k_F-|k|)$ is the coefficient of the expression and $\theta(|k|-k_F)$ is the coefficient of $\lambda'$, that is,
+
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{Tr(e^{- (\lambda  \mbox{  }\theta(k_F-|k|) 
++ n_{{\bf{k}}}  
+[ \beta  (\epsilon_{{\bf{k}}}-\mu) 
+- \lambda \mbox{  }(k_F-|k|)] ) }
+\mbox{     }
+n_{{\bf{k}}} )}
+{Tr(e^{ - \beta  n_{{\bf{k}}}  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times\frac{Tr(e^{ - \sum_{p \neq k} (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) 
+- \lambda \mbox{  }(k_F-|p|)+\lambda'\theta(|p|-k_F)]  ) } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_{\bf{p}}  (\epsilon_{{\bf{p}}}-\mu) } )}.
+\]
+
+Since Trace means summing over the diagonal eigenvalue of operators, here $n_{{\bf{k}}}\to \{0,1\}$. 
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu) }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times\frac{Tr(e^{ - \sum_{p \neq k} (\lambda  \mbox{  }\theta(k_F-|p|) + n_{{\bf{p}}}  [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)] ) } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_{{\bf{p}}}  (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+
+Writing each term in the summation in the exponent as a product and then taking a trace over each factor in the product gives,
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     }  
+= \mbox{           }\mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu) }   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times
+\frac{\prod_{p \neq k} 
+e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{\prod_{p \neq k}  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )}
+\]
+Since $\prod_i^n A_i$ can be written as $e^{\sum_i^n\log(A_i)}$,
+
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{ k, < }> \mbox{     } = \mbox{           }\theta(k_F-|k|) \theta(|k|-k_F)\mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)}   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+e^{ \sum_{p \neq k}\mbox{     }\log \left( \frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right) }
+\]
+Adding and subtracting the log term in the exponential corresponding to $p=k$ the exponential,
+\[
+<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     }= \mbox{           } \mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)}   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+\times
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+-\log
+\left( 
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{k}}}-\mu) } )} \right)}
+\]
+Inverting the argument of the log and making the $-$ sign  a $+$ sign,
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     } \]
+\[=  \mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)}   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
++\log
+\left( 
+\frac{  (1 + e^{ - \beta      (\epsilon_{{\bf{k}}}-\mu) } )} 
+{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ -    [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } )}
+\right)}
+\]
+
+Taking the last $e^{\log}$ down and cancelling with the denominator of the first term,
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     } \]
+\[=  \mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{ e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)}   }
+{ (1 + e^{ - \beta  (\epsilon_{{\bf{k}}}-\mu) } )}\mbox{     }
+\]
+\[
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+}
+\frac{  (1 + e^{ - \beta      (\epsilon_{{\bf{k}}}-\mu) } )} 
+{e^{ -\lambda  \mbox{  }\theta(k_F-|k|)}
+(1 + e^{ -  [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)] } )}
+\]
+we get,
+
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     } \]
+\[=\mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)} }
+{
+(1 + e^{ - [ \beta  (\epsilon_{{\bf{k}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|k|)+\lambda'  \mbox{  }\theta(|k|-k_F)]   } ) }\!
+e^{ \sum_{p}\!
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+}\]
+\[=\mbox{           }\theta(k_F-|k|) \mbox{  }
+\frac{e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)}}
+{(e^{ -\lambda  \mbox{  }\theta(k_F-|k|)} + e^{ -  \beta  (\epsilon_{{\bf{k}}}-\mu)   } ) }\mbox{     }
+e^{ \sum_{p}\mbox{     }
+\log 
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)
+}\]
+or,
+
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     } =\!n_F(k)\mbox{  }
+\frac{e^{-\beta  (\epsilon_{{\bf{k}}}-\mu)}}
+{(e^{ -\lambda  \mbox{  }} + e^{ -  \beta  (\epsilon_{{\bf{k}}}-\mu)   } ) }\mbox{     }\]
+\[
+\times
+\prod_{{\bf{p}}}
+\left(
+\frac{e^{ -\lambda  \mbox{  }\theta(k_F-|p|)}
+(1 + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu) - \lambda  \mbox{  }\theta(k_F-|p|)+\lambda'  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)\]
+The final answer is:
+
+============================================================================================================
+
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     } =\!
+\frac{n_F(k)\mbox{  }}
+{(1 + e^{ [ \beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda  \mbox{  }]   } ) }\mbox{     }\xi(\lambda,\lambda')\]
+
+
+============================================================================================================
+
+
+
+\section{Final answer for $<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},> }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >$}
+
+Combining the terms \[ \mbox{           }<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}> \mbox{     }  = \prod_{{\bf{p}}} \left( \frac{ e^{-n_F(p)\lambda  \mbox{  }} + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu)+(1-n_F(p))\lambda'  \mbox{  }]  } } {  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)=\xi(\lambda,\lambda'), \] and
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, > }> \mbox{     } =\!\mbox{  }
+\frac{(1-n_F(k))}
+{(1 + e^{[ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'  \mbox{  }]} ) }\mbox{     }\xi(\lambda,\lambda'),\]
+to substitute in \[
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},> }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >    \]
+\[=\theta(t - t')e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t-t') } < e^{-\lambda N_>} e^{-\lambda' N'_>} c^\dagger_{{\bf{k}},>} c_{{\bf{k}},>} >\]
+\[- \theta(t' - t)e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t'-t) }  < e^{-\lambda N_>} e^{-\lambda' N'_>}(1- n_{{\bf{k}},>})>\]
+gives
+
+============================================================================================================
+\[
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},> }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >    \]
+\[=\bigg(\theta(t - t')e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t-t') }\!\mbox{  }
+\frac{(1-n_F(k))}
+{(1 + e^{[ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'  \mbox{  }]} ) }\mbox{     }-\theta(t' - t)e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t'-t) } \left(1-\mbox{  }
+\frac{(1-n_F(k))}
+{(1 + e^{[ \beta  (\epsilon_{{\bf{k}}}-\mu)+\lambda'  \mbox{  }]} ) }\right)\bigg)\xi(\lambda,\lambda')\]
+
+============================================================================================================
+
+\newpage
+\section{Final answer for $
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},< }(t) c^{\dagger}_{ {\bf{k}},< }(t^{'}) >    $}
+
+Combining the terms \[ \mbox{           }<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}> \mbox{     }  = \prod_{{\bf{p}}} \left( \frac{ e^{-n_F(p)\lambda  \mbox{  }} + e^{ -   [ \beta  (\epsilon_{{\bf{p}}}-\mu)+(1-n_F(p))\lambda'  \mbox{  }]  } } {  (1 + e^{ - \beta      (\epsilon_{{\bf{p}}}-\mu) } )} \right)=\xi(\lambda,\lambda'), \] and
+\[<e^{ - \lambda N_{>} }e^{-\lambda' N'_>}\mbox{     }n_{{\bf{k}}, < }> \mbox{     } =\!
+\frac{n_F(k)\mbox{  }}
+{(1 + e^{ [ \beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda  \mbox{  }]   } ) }\mbox{     }\xi(\lambda,\lambda')\]
+to substitute in
+\[
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},< }(t) c^{\dagger}_{ {\bf{k}},< }(t^{'}) >    \]
+\[=\theta(t - t')e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t-t') } < e^{-\lambda N_>} e^{-\lambda' N'_>} c^\dagger_{{\bf{k}},<} c_{{\bf{k}},<} >\]
+\[- \theta(t' - t)e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t'-t) }  < e^{-\lambda N_>} e^{-\lambda' N'_>} c_{{\bf{k}},<} c^\dagger_{{\bf{k}},<} >\]
+gives
+
+============================================================================================================
+\[
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},< }(t) c^{\dagger}_{ {\bf{k}},< }(t^{'}) >    \]
+\[=\bigg(\theta(t - t')e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t-t') }\!\mbox{  }
+\frac{n_F(k)}
+{(1 + e^{[ \beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda  \mbox{  }]} ) }-\theta(t' - t)e^{ - i \epsilon_{{\bf{k}}} \mbox{  } (t'-t) } \left(1-\mbox{  }
+\frac{n_F(k)}
+{(1 + e^{[ \beta  (\epsilon_{{\bf{k}}}-\mu)-\lambda  \mbox{  }]} ) }\right)\bigg)\xi(\lambda,\lambda')\]
+
+============================================================================================================
+\section{Simplification of one of the terms}
+
+\[
+e^{\lambda + \lambda'} 
+< T e^{-\lambda N_>(t)} e^{-\lambda' N'_>(t)} 
+c_{\mathbf{p},<}(t) c_{\mathbf{p},<}^\dagger(t') > 
+(1 - n_F(\mathbf{k})) 
+\left( \theta(t' - t) + \theta(t - t') e^{\beta (\epsilon_{\mathbf{k}} - \epsilon_{\mathbf{p}})} \right) 
+\]
+\[
+- < T e^{-\lambda N_>(t)} e^{-\lambda' N'_>(t)} 
+c_{\mathbf{k},>}(t) c_{\mathbf{k},>}^\dagger(t') > 
+n_F(\mathbf{p})
+\]
+
+\[
+ = e^{\lambda + \lambda'} \bigg[
+\bigg( \theta(t - t') 
+e^{-i \epsilon_{\mathbf{p}} (t-t')}
+e^{\beta (\epsilon_{\mathbf{k}} - \epsilon_{\mathbf{p}})}  
+\frac{n_F(p)(1 - n_F(\mathbf{k}))}{1 + e^{\beta (\epsilon_{\mathbf{p}} - \mu) - \lambda}} 
+- 
+\theta(t' - t) e^{-i \epsilon_{\mathbf{p}} (t' - t)} 
+\left((1 - n_F(\mathbf{k})) - \frac{n_F(p)(1 - n_F(\mathbf{k}))}{1 + e^{\beta (\epsilon_{\mathbf{p}} - \mu) - \lambda}} \right) \bigg)\bigg]
+\]
+\[
+- 
+\bigg( \theta(t - t') e^{-i \epsilon_{\mathbf{k}} (t-t')} 
+\frac{n_F(\mathbf{p})(1 - n_F(k))}{1 + e^{\beta (\epsilon_{\mathbf{k}} - \mu) + \lambda'}} 
+- 
+\theta(t' - t) e^{-i \epsilon_{\mathbf{k}} (t' - t)} 
+\left(n_F(\mathbf{p}) - \frac{n_F(\mathbf{p})(1 - n_F(k))}{1 + e^{\beta (\epsilon_{\mathbf{k}} - \mu) + \lambda'}} \right) \bigg)
+.
+\]
+
+
+
+
+\end{document}

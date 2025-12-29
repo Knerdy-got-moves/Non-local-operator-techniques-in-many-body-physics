@@ -1,0 +1,308 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{ Field operator in terms of Fermi Bilinears-1}
+\date{}
+\author{Idea from Girish S. Setlur, revised and rewritten by Rishi Paresh Joshi}
+
+\maketitle
+\small
+\subsection{Integral equation for $ q $ }
+Set ($ s \mbox{             } = \mbox{                }  >,< $),
+\[
+q_{ {\bf{p}}, s } \equiv c_{ {\bf{p}}, s }\mbox{          }  \frac{1}{\sqrt{n_{ {\bf{p}}, s } }}
+\]
+so that,
+\[
+q_{ {\bf{p}}, > } \mbox{   }\sqrt{n_{ {\bf{p}}, > } }
+\mbox{               }   = \mbox{                 }   \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}_2 } }
+ \mbox{        }q_{ {\bf{p}}-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+and
+\[
+\sqrt{ n_{ {\bf{p}}, < } }\mbox{             } q^{\dagger}_{ {\bf{p}}, < }    \mbox{            }  =    \mbox{            } \sqrt{N_{>}+1}\mbox{          }q^{\dagger}_{ {\bf{p}}, < }\mbox{  } e^{ i N \theta_{ {\bf{p}} } }
+\mbox{       } 
++ \sum_{  {\bf{q}}_1 }   q^{\dagger}_{ {\bf{p}}+{\bf{q}}_1,> } \mbox{          }\frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+We now have to solve these,
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{  {\bf{q}}_1 }  
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          }\frac{1}{\sqrt{N_{>}+1}}\mbox{             }q_{ {\bf{p}}+{\bf{q}}_1,> } \mbox{            } 
+ \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+and
+\[
+q_{ {\bf{p}}, > } \mbox{   }\sqrt{n_{ {\bf{p}}, > } }
+\mbox{               }   = \mbox{                 }   \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}_2 } }
+ \mbox{        }q_{ {\bf{p}}-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+q_{ {\bf{p}}+{\bf{q}}_1, > }
+\mbox{               }   = \mbox{                 }   \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2 } }
+ \mbox{        }q_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{q}}_1 - {\bf{q}}_2/2 }({\bf{q}}_2) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{q}}_1, > } }}
+\]
+
+Thus we get the following integral equation:
+
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{  {\bf{q}}_1, {\bf{q}}_2 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{  }\frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2 } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2,< }  \mbox{   }
+ \]\[\frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{q}}_1 - {\bf{q}}_2/2 }({\bf{q}}_2) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{q}}_1, > } }}\mbox{            } 
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+Taking $\bf{q}_{1}-\bf{q}_{2}=\bf{Q}$ and $\frac{\bf{q}_{1}+\bf{q}_{2}}{2}=\bf{K}$ which gives us $\bf{q}_1=\bf{K}+\bf{Q}/2$ and $\bf{q}_2=\bf{K}-\bf{Q}/2$
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ ({\bf{K}}+{\bf{Q}}/2)/2 }({\bf{K}}+{\bf{Q}}/2)\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }
+\]
+\[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 - ({\bf{K}}-{\bf{Q}}/2)/2 }({\bf{K}}-{\bf{Q}}/2) 
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 , > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+Simplifying and re-writing as:
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            } \sum_ {\bf{K}}\sum_ {\bf{Q}}  
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ ({\bf{K}}+{\bf{Q}}/2)/2 }({\bf{K}}+{\bf{Q}}/2)\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }
+\]
+\[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}/2}+{3\bf{Q}}/4 }({\bf{K}}-{\bf{Q}}/2) 
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 , > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+A different way of simplifying is, by taking $K={\bf{q}}_1$ and $Q={\bf{q}}_1-{\bf{q}}_2$
+ \[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+\subsection{The guess solution:}
+ \[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+or,
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            } \sum_{ {\bf{Q}}_2 }\sum_{m=-\infty}^{\infty} 
+   \mbox{  } q^{red, < }({\bf{p}},{\bf{Q}}_2;m) \mbox{            } e^{ i m N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }
+\]
+or,
+\[
+ \sum_{ {\bf{Q}}_2 }\sum_{m=-\infty}^{\infty}
+   \mbox{  } q^{red, < }({\bf{p}},{\bf{Q}}_2;m) \mbox{            } e^{ i m N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+\]
+\[
+ \mbox{        }
+  \sum_{ {\bf{Q}}_2 }\sum_{m=-\infty}^{\infty}
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_2;m) \mbox{            } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_2 } }
+  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+or,
+\[
+ q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+\]
+\[
+ \mbox{        }
+  \sum_{ {\bf{Q}}_1 }\sum_{m=-\infty}^{\infty}\mbox{            } 
+  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_1;m) \mbox{            }
+\]
+\[
+  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+
+===============================================================================================================================================================
+ 
+\[
+<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } = \mbox{  } 
+\]
+\[
+<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }>\mbox{          } <e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } + \mbox{  }
+\]
+\[
+<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } ><e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          }e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } + \mbox{  }
+\]
+\[
+< e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } >< e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }>
+\]
+We notice that the last term will not contribute as we get $\bf{K}=\bf{Q}$. Hence, we re-write the summation into two sums:-
+\[
+ q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+  \sum_{ {\bf{Q}}_1 }<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }>\mbox{          } <e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } 
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_1;m) \mbox{            }
+\]
+\[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+\[\mbox{    }
++\mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+  \sum_{ {\bf{Q}}_1 }<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } ><e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          }e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } 
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_1;m) \mbox{            }
+\]
+\[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+If $m\mbox{ },m^{'}>0,$ then only the first term survives,
+\[q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }  = \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+  \sum_{ {\bf{Q}}_1 }<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }>\mbox{          } <e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } 
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_1;m) \mbox{            }\]
+   \[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+For this case, we know that $e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } }e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }=\delta_{{\bf{Q}}_2,{\bf{K}} }$ and $e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }=\delta_{{\bf{Q}}_1,0 } $ we get,
+\[q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }  = \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+  \sum_{ {\bf{Q}}_1 }\delta_{{\bf{Q}}_2,{\bf{K}} }\mbox{          } \delta_{{\bf{Q}}_1,0 } \mbox{  } 
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_1;m) \mbox{            }\]
+   \[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+Hence, we finally get for $m,m^{'}>0,$
+\[q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }  =
+\mbox{          }a^{\dagger}_{ {\bf{p}}+{{\bf{Q}_2}}/2 }({\bf{Q}}_2)\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}\sum_{ \bf{Q}}
+ \mbox{        } q^{red, < }({\bf{p}}+{\bf{Q}},0;m) \mbox{            }\]
+ \[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{Q}_2}/2 + {\bf{Q}}/2 }({\bf{Q}_2}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{Q}_2}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+If $m, m^{'}<0,$  only the second term survives,
+\[q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }=\mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+  \sum_{ {\bf{Q}}_1 }<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } ><e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          }e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> \mbox{  } 
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}},{\bf{Q}}_1;m) \mbox{            }\]
+\[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+And for this case, we know that $<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } >=\delta_{{\bf{Q}}_2,{\bf{Q}}}$, and $<e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          }e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }>=\delta_{{\bf{K}},{\bf{Q}} + {\bf{Q}}_1}$ which gives, $<  e^{ - i m^{'} N \theta_{ {\bf{p}}+ {\bf{Q}}_2 } } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } } ><e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          }e^{ i m N \theta_{ {\bf{p}} + {\bf{Q}} + {\bf{Q}}_1 } }> =\delta_{{\bf{Q}},{\bf{Q}}_2}\delta_{{\bf{K}},{\bf{Q}}_2+ {\bf{Q}}_1}$
+\[q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }=\mbox{            } \sum_{ {\bf{Q}}_1 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+({\bf{Q}}_2+ {\bf{Q}}_1)/2 }({\bf{Q}}_2+ {\bf{Q}}_1)\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}}_2,{\bf{Q}}_1;m) \mbox{            }\]
+   \[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+({\bf{Q}}_2+ {\bf{Q}}_1)/2 + {\bf{Q}}_2/2 }(({\bf{Q}}_2+ {\bf{Q}}_1)-{\bf{Q}}_2)
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{Q}}_2+ {\bf{Q}}_1, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+In the above equation,  $K$ becomes in terms of ${\bf{Q}}_1 $; hence, the sum over ${\bf{Q}}_1 $, which was inside now goes outside. Simplifying and re-writing as:
+\[q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) 
+   \mbox{            }=\mbox{            } \sum_{ {\bf{Q}}_1 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+({\bf{Q}}_2+ {\bf{Q}}_1)/2 }({\bf{Q}}_2+ {\bf{Q}}_1)\mbox{  }
+ \frac{ 1 }{\sqrt{N_{>}+1}}
+ \mbox{        }
+   \mbox{  } q^{red, < }({\bf{p}}+{\bf{Q}}_2,{\bf{Q}}_1;m) \mbox{            }\]
+    \[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{Q}}_2+ {\bf{Q}}_1/2 }({\bf{Q}}_1)
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{Q}}_2+ {\bf{Q}}_1, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+In all other cases, where $m^{'}$ and $m$ have different signs, we get 0. 
+\subsubsection{Result so far:}
+\begin{enumerate}
+    \item We are getting an implicit equation for $q^{red, < }({\bf{p}},{\bf{Q}}_2;m^{'}) $ in terms of Sum over all ${\bf{Q}}_1$ ,$q^{red, < }({\bf{p}}+{\bf{Q}}_2,{\bf{Q}}_1;m) $ , where $m^{'}$ and $m$ have the same sign.
+    \item For the case $m^{'}=m=0,$ the equation becomes 0, because we get $K=Q$.
+\end{enumerate}
+\end{document} 

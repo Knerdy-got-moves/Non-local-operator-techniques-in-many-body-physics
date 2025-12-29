@@ -1,0 +1,888 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{Solution to the equation of motion}
+\date{}
+\author{Rishi Paresh Joshi}
+
+\maketitle
+
+\section{Solution to the equation of motion Eq. (28 and 29):}
+
+
+==========================================================================================================================\\
+The lesser than equation is:
+
+\[
+<T \mbox{   }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             }= \mbox{             }
+\]
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (f_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  n_F({\bf{k}}) \mbox{  }  <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}) \mbox{             } \theta(t_1-t)
+\]
+\[
+   \mbox{             } + \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( f_{max}-i  n_F({\bf{k}}) \mbox{  }  <T\mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             } \theta(t-t_1)
+\]
+
+
+==========================================================================================================================\\
+The greater than equation is:
+
+\[
+<T \mbox{   }a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)
+ \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >   \mbox{             }= \mbox{             }
+\]
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (g_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  (1-n_F({\bf{k}})) \mbox{  }
+<T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, < }(t^{'}) >   \mbox{             }
+i\mbox{       }  \theta (t^{'}-t_1) e^{\frac{ (2 i {\bf{k.q}} t^{'}+{\bf{q}}^2 (\beta -i t^{'}))}{2 m}}) \mbox{             }
+\theta(t_1-t)
+\]
+\[
+   \mbox{             } +  \mbox{             }
+e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( g_{max}-i  (1-n_F({\bf{k}})) \mbox{  }  <T  \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, < }(t^{'}) >   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}})\mbox{             }
+\theta(t-t_1)
+\]
+
+=================================================================================================
+
+\section{Solutions for f max and g max are:}
+\[
+f_{max}\mbox{       } = \mbox{            }
+ \frac{<T\mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{  <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)}
+\mbox{        }  c_{ {\bf{k}}, < }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+and
+\[
+g_{max}\mbox{       } = \mbox{            }
+ \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, < }(t^{'}) >   \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             }
+c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >   \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+
+\section{Simplification}
+
+Using a more compact notation,
+\begin{eqnarray}
+& G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \equiv \mbox{       } 
+<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}},> }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) > ; \nonumber\\&  
+\mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \equiv \mbox{       }<T  e^{ - \lambda N_{>}(t) } e^{ - \lambda^{'} N^{'}_{>}(t) }  c_{ {\bf{k}}, < }(t) c^{\dagger}_{ {\bf{k}},<  }(t^{'}) >
+\end{eqnarray}
+and,
+\begin{eqnarray}
+  F_{\bf k <}({\bf q}; t_1) &= \langle T e^{-\lambda N_>(t) -\lambda' N'_>(t)} \mbox{ } c_{\bf k+q >}(t) \mbox{ } a^\dagger_{{\bf k} + \frac{{\bf q}} {2} }({\bf q}, t_1 )\mbox{ }  c^\dagger_{\bf k<}(t')  \rangle\nonumber\\
+  F_{\bf k >}({\bf q}; t_1) &= \langle T e^{-\lambda N_>(t) -\lambda' N'_>(t)} \mbox{ } c_{\bf k-q <}(t) \mbox{ }a_{{\bf k} - \frac{{\bf q}} {2} }({\bf q}, t_1 ) \mbox{ }  c^\dagger_{\bf k>}(t')  \rangle
+\end{eqnarray}
+We get,
+ \[
+f_{max}\mbox{       } = \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+and,
+\[
+g_{max}\mbox{       } = \mbox{            }
+ \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+==========================================================================================================================\\
+The lesser than equation is
+
+\[
+F_{\bf k <}(-{\bf q}; t_1)   \mbox{             }= \mbox{             }
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (f_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}) \mbox{             } \theta(t_1-t)
+\]
+\[
+   \mbox{             } + \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( f_{max}-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             } \theta(t-t_1)
+\]
+
+
+==========================================================================================================================\\
+The greater than equation is:
+
+\[
+ F_{\bf k >}({\bf q}; t_1)  \mbox{             }= \mbox{             }
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (g_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  (1-n_F({\bf{k}})) \mbox{  }
+G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }
+i\mbox{       }  \theta (t^{'}-t_1) e^{\frac{ (2 i {\bf{k.q}} t^{'}+{\bf{q}}^2 (\beta -i t^{'}))}{2 m}}) \mbox{             }
+\theta(t_1-t)
+\]
+\[
+   \mbox{             } +  \mbox{             }
+e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( g_{max}-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}})\mbox{             }
+\theta(t-t_1)
+\]===================================================================\\
+\newpage
+\begin{comment}
+\section{Simplification-II}
+Using, 
+\[
+\mbox{   }e^{  \lambda N_{>}(t)}  \mbox{             }e^{ \lambda^{'} N^{'}_{>}(t)} \mbox{             }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)}  \mbox{   }e^{ - \lambda N_{>}(t)}
+ \mbox{             }= \mbox{             }
+e^{\lambda+ \lambda^{'} }\mbox{             }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\]
+Or,
+\[
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)}  \mbox{   }e^{ - \lambda N_{>}(t)}
+ \mbox{             }= \mbox{             }
+e^{\lambda+ \lambda^{'} }\mbox{             }
+\mbox{   }e^{  \lambda^{'}N^{'}_{>}(t)}  \mbox{             }e^{ \lambda N_{>}(t)} \mbox{             }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\]
+Or,
+\[
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)}  \mbox{   }e^{ - \lambda N_{>}(t)}
+ \mbox{             }= \mbox{             }
+e^{\lambda+ \lambda }\mbox{             }
+\mbox{   }e^{  \lambda N_{>}(t)}  \mbox{             }e^{ \lambda^{'} N^{'}_{>}(t)} \mbox{             }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\]
+==========================================================================================================================\\
+The lesser than equation is
+\[
+<T \mbox{   }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             }= \mbox{             }
+\]
+\[
+e^{\lambda+ \lambda }<\mbox{             }
+\mbox{   }e^{  \lambda N_{>}(t)}  \mbox{             }e^{ \lambda^{'} N^{'}_{>}(t)} \mbox{             }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t) c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             }= \mbox{             }
+\]
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (f_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}) \mbox{             } \theta(t_1-t)
+\]
+\[
+   \mbox{             } + \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( f_{max}-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             } \theta(t-t_1)
+\]
+
+
+==========================================================================================================================\\
+\end{comment}
+\newpage
+\section{$F_<(-q;t_1)$  and $F_>(q;t_1)$ derived}
+\begin{align*}
+<T \mbox{   }e^{ - \lambda N_{>}(t)} &\mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)}    \mbox{        } c_{ {\bf{k-q}}, > }(t) a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1) \mbox{             }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             } =\\
+&
+e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{\lambda+\lambda^{'}} -  1)\mbox{   } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)}  c_{ {\bf{k-q}}, > }(t)\mbox{             }
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t) \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } 
+\\
+&
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }e^{\lambda+\lambda^{'}}\mbox{ } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             }
+c_{ {\bf{k}}, < }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \bigg] \mbox{             } \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\\
+&
+ + n_F({\bf{k}}) e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  \mbox{       }  \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\end{align*}
+and 
+
+\begin{align*}
+<T \mbox{   }e^{ - \lambda N_{>}(t)} & \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= 
+\\
+&
+e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{ - \lambda-\lambda^{'} }  -1) \mbox{       } < T\mbox{                }
+ e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             }
+ \mbox{             } c_{ {\bf{k-q}}, < }(t) a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }
+\\
+&
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} < T\mbox{                } e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             }
+c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\bigg] \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\\
+&
++ e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} <T\mbox{          } e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\end{align*}
+Using a more compact notation,
+\begin{eqnarray}
+  F_{\bf k <}({\bf q}; t_1) &= \langle T e^{-\lambda N_>(t) -\lambda' N'_>(t)} \mbox{ } c_{\bf k+q >}(t) \mbox{ } a^\dagger_{{\bf k} + \frac{{\bf q}} {2} }({\bf q}, t_1 )\mbox{ }  c^\dagger_{\bf k<}(t')  \rangle\\
+  F_{\bf k >}({\bf q}; t_1) &= \langle T e^{-\lambda N_>(t) -\lambda' N'_>(t)} \mbox{ } c_{\bf k-q <}(t) \mbox{ }a_{{\bf k} - \frac{{\bf q}} {2} }({\bf q}, t_1 ) \mbox{ }  c^\dagger_{\bf k>}(t')  \rangle
+\end{eqnarray}
+===================================================================\\
+Lesser than derived equation is,
+\[
+F_{\bf k <}(-{\bf q}; t_1) \mbox{             } =
+e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{\lambda+\lambda^{'}} -  1)\mbox{   } F_{\bf k <}(-{\bf q}; t)  \mbox{             }
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }e^{\lambda+\lambda^{'}}\mbox{ } \mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \bigg] \mbox{             } \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\]
+\[
+ + n_F({\bf{k}}) e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+===================================================================\\
+and,\\
+===================================================================\\
+greater than derived equation is,
+\[
+F_{\bf k >}({\bf q}; t_1)  \mbox{             }= 
+e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{ - \lambda-\lambda^{'} }  -1) \mbox{       }F_{\bf k >}({\bf q}; t)\mbox{   }
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   }\bigg] \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+\[
++ e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right).
+\]
+===================================================================
+\newpage
+\section{Simplification of $F_<(-q;t_1)$  and $F_>(q;t_1)$ derived equations}
+\subsection{ $F_<(-q;t_1)$ derived simplified equation}
+Since we have $F_<(-q;t)$ and $F_>(q;t)$ in the RHS of the derived equations, we need to replace them with $G>$ and $G<$, so that we can match with answer after substituting $f_{max}$ and $g_{max}$ in the solution to the equations of motion.
+
+
+In $\lim t_1 \to t^{-}$, the lesser than derived equation is,
+\[
+F_{\bf k <}(-{\bf q}; t) \mbox{             } =
+ -\bigg[ (e^{\lambda+\lambda^{'}} -  1)\mbox{   } F_{\bf k <}({\bf q}; t)  \mbox{             }
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }e^{\lambda+\lambda^{'}}\mbox{ } \mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \bigg] \mbox{             } \left(\frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\]
+\[
+ + n_F({\bf{k}}) e^{-i(t -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+
+Taking the $F_{\bf k <}(-{\bf q}; t)$ terms on RHS,\\
+===================================================================\\
+$F_{\bf k <}(-{\bf q}; t)$ is:
+\[
+F_{\bf k <}(-{\bf q}; t) \mbox{             } =
+\frac{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}{e^{\lambda+\lambda^{'}}- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}
+\Bigg[(1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }
+ \frac{ e^{\lambda+\lambda^{'}}\mbox{ } }{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}
+\mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{             }       \]
+\[
+ + n_F({\bf{k}}) e^{-i(t -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\Bigg]
+\]
+===================================================================\\
+We need to substitute this into the lesser than derived equation.\\
+===================================================================\\
+Lesser than derived equation in terms $G_<$ and $G_>$is,
+\[
+F_{\bf k <}(-{\bf q}; t_1) \mbox{             } =
+e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{\lambda+\lambda^{'}} -  1)\mbox{   }\frac{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}{e^{\lambda+\lambda^{'}}- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}
+\Bigg((1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }
+ \frac{ e^{\lambda+\lambda^{'}}\mbox{ } }{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}
+\mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{             }       \]
+\[
+ + n_F({\bf{k}}) e^{-i(t -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\Bigg)
+\]
+\[\mbox{             }
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }e^{\lambda+\lambda^{'}}\mbox{ } \mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \bigg] \mbox{             } \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\]
+\[
+ + n_F({\bf{k}}) e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+===================================================================\\
+\newpage
+\subsection{ $F_>(q;t_1)$ derived simplified equation}
+Similarly, in $\lim t_1 \to t^{-}$, the greater than derived equation is,\\
+===================================================================\\
+\[
+F_{\bf k >}({\bf q}; t)  \mbox{             }=\left( - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right) 
+\bigg[ (e^{ - \lambda-\lambda^{'} }  -1) \mbox{       }F_{\bf k >}({\bf q}; t)\mbox{   }
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   }\bigg] 
+\]
+\[
++ e^{-i(t-t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right).
+\]
+Taking $F_{\bf k >}({\bf q}; t) $ to the right hand side,\\
+===================================================================\\
+$F_{\bf k >}({\bf q}; t) $ is:
+\[
+F_{\bf k >}({\bf q}; t)  \mbox{             }=
+\left( \frac{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })} }{  e^{ - \lambda-\lambda^{'} }  -e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right) 
+\bigg[ n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   } 
+\]
+\[
++ e^{-i(t-t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\bigg].
+\]
+
+
+===================================================================\\
+We need to substitute this into the greater than derived equation.\\
+===================================================================\\
+Greater than derived equation in terms $G_<$ and $G_>$is,
+\[
+F_{\bf k >}({\bf q}; t_1)  \mbox{             }= 
+e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{ - \lambda-\lambda^{'} }  -1) \mbox{       }\Bigg(\left( \frac{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })} }{  e^{ - \lambda-\lambda^{'} }  -e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right) 
+\bigg[ n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   } 
+\]
+\[
++ e^{-i(t-t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\bigg]\Bigg)
+\]
+\[\mbox{   }
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   }\bigg] \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+\[
++ e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right).
+\]
+===================================================================\\
+\newpage
+\section{RHS of F less equation}
+
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (f_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}) \mbox{             } \theta(t_1-t)
+\]
+\[
+   \mbox{             } + \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( f_{max}-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             } \theta(t-t_1)
+\]
+
+where,
+ \[
+f_{max}\mbox{       } = \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+The RHS is
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}}\Bigg[\Bigg( \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+
+\[\mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\Bigg)
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}\]
+\[+i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}\Bigg] \mbox{             } \theta(t_1-t)
+\]
+\[ \mbox{             } + \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg[\Bigg(\frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\Bigg)
+\]
+\[-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg] \mbox{             } \theta(t-t_1)
+\]
+
+\newpage
+\section{RHS of F greater equation}
+
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (g_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  (1-n_F({\bf{k}})) \mbox{  }
+G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }
+i\mbox{       }  \theta (t^{'}-t_1) e^{\frac{ (2 i {\bf{k.q}} t^{'}+{\bf{q}}^2 (\beta -i t^{'}))}{2 m}}) \mbox{             }
+\theta(t_1-t)
+\]
+\[
+   \mbox{             } +  \mbox{             }
+e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( g_{max}-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}})\mbox{             }
+\theta(t-t_1)
+\]
+
+where,
+\[
+g_{max}\mbox{       } = \mbox{            }
+ \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+The RHS is,
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} \Bigg[\Bigg( \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}\Bigg) e^{\frac{\beta  {\bf{k.q}} }{m}}
+\]
+\[\mbox{                   } +i  (1-n_F({\bf{k}})) \mbox{  }
+G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }
+i\mbox{       }  \theta (t^{'}-t_1) e^{\frac{ (2 i {\bf{k.q}} t^{'}+{\bf{q}}^2 (\beta -i t^{'}))}{2 m}}\Bigg] \mbox{             }
+\theta(t_1-t)
+\]
+\[
+   \mbox{             } +  \mbox{             }
+e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg[ \Bigg( \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}\Bigg)
+\]
+\[-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg]\mbox{             }
+\theta(t-t_1)
+\]
+
+\newpage
+\section{Verification of lesser than derived equation and Eq. (28) after substituting f max}
+We need to show,
+\[e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{\lambda+\lambda^{'}} -  1)\mbox{   }\frac{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}{e^{\lambda+\lambda^{'}}- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}
+\Bigg((1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }
+ \frac{ e^{\lambda+\lambda^{'}}\mbox{ } }{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}
+\mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{             }       \]
+\[
+ + n_F({\bf{k}}) e^{-i(t -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\Bigg)
+\]
+\[\mbox{             }
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       }e^{\lambda+\lambda^{'}}\mbox{ } \mbox{  }G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \bigg] \mbox{             } \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\]
+\[
+ + n_F({\bf{k}}) e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+and
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}}\Bigg[\Bigg( \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+
+\[\mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\Bigg)
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}\]
+\[+i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}\Bigg] \mbox{             } \theta(t_1-t)
+\]
+\[ \mbox{             } + \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg[\Bigg(\frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\Bigg)
+\]
+\[-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg] \mbox{             } \theta(t-t_1)
+\]
+are the same.
+\newpage
+\section{Verification of greater than derived equation and Eq. (29) after substituting g max}
+
+We need to show,
+\[e^{-i(t_1 -t)(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} \bigg[ (e^{ - \lambda-\lambda^{'} }  -1) \mbox{       }\Bigg(\left( \frac{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })} }{  e^{ - \lambda-\lambda^{'} }  -e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right) 
+\bigg[ n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   } 
+\]
+\[
++ e^{-i(t-t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)\bigg]\Bigg)
+\]
+\[\mbox{   }
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          }e^{ -\lambda - \lambda^{'}} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }\mbox{   }\bigg] \left( \theta(t_1 -t) - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right)
+\]
+\[
++ e^{-i(t_1 -t')(\epsilon_{ {\bf{k}} } - \epsilon_{ {\bf{k}}-{\bf{q}} })} G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'})  \mbox{   }(1-n_F({\bf{k}}))\mbox{   } \left( \theta(t_1 -t') - \frac{1}{1- e^{\beta(\epsilon_{ {\bf{k}} }  - \epsilon_{ {\bf{k}}-{\bf{q}} })}}      \right).
+\]
+and,
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} \Bigg[\Bigg( \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}\Bigg) e^{\frac{\beta  {\bf{k.q}} }{m}}
+\]
+\[\mbox{                   } +i  (1-n_F({\bf{k}})) \mbox{  }
+G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }
+i\mbox{       }  \theta (t^{'}-t_1) e^{\frac{ (2 i {\bf{k.q}} t^{'}+{\bf{q}}^2 (\beta -i t^{'}))}{2 m}}\Bigg] \mbox{             }
+\theta(t_1-t)
+\]
+\[
+   \mbox{             } +  \mbox{             }
+e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg[ \Bigg( \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}\Bigg)
+\]
+\[-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg]\mbox{             }
+\theta(t-t_1)
+\]
+are the same.
+\newpage
+
+
+\section{$\lim t_1 \to t^{-}$ LHS of lesser than and greater than equations }
+\subsection{$\lim t_1 \to t^{-}$ LHS of the lesser than equation}
+Now, we take $t_1 \to t^{-}$. Expanding $a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)$, taking a sum over ${\bf{q}}$ and writing in terms of $N^{'}_>$, the LHS of the lesser than equation becomes,
+\[
+\sum_q <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             } \]
+\[
+=\sum_q <T\mbox{   } e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k-q}}, > }(t)  \mbox{        } c_{ {\bf{k}},< }(t^{})
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) > \]
+
+\[
+ = 
+\sum_q (1-n_F({\bf k -q})) <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k}},< }(t^{})
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) > 
+\]
+\[ -  <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } N^{'}_{>}(t)\mbox{} c_{ {\bf{k}},< }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) > \]
+
+===================================================================
+
+Hence, the LHS of the lesser than equation is:
+\[
+\sum_q <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             } \]
+\[
+ = 
+\sum_q (1-n_F({\bf k -q})) G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } +\partial_{\lambda'} G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \]
+
+===================================================================\\
+\subsection{$\lim t_1 \to t^{-}$ LHS of the greater than equation}
+Similarly, the LHS of the greater than equation becomes,
+\[
+\sum_q <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             } \]
+\[
+=\sum_q <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+c^{\dagger}_{ {\bf{k-q}}, < }(t)  \mbox{        }
+c_{ {\bf{k}},> }(t)c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+\[
+=<T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } N_{>}(t)  \mbox{        }
+c_{ {\bf{k}},> }(t)c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+===================================================================
+
+Hence, the LHS of the greater than equation is:
+\[
+\sum_q <T \mbox{   }e^{ - \lambda N_{>}(t)}  \mbox{             }e^{ - \lambda^{'} N^{'}_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             } \]
+\[
+=-\partial_{\lambda} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})
+\]
+
+===================================================================
+\newpage
+
+\section{$\lim t_1 \to t^{-}$ RHS of the lesser than and greater than equations}
+\subsection{$\lim t_1 \to t^{-}$ RHS of the lesser than equation}
+Take $t_1 \to t^{-}$. Taking a sum over ${\bf{q}}$, makes the RHS terms in the lesser than equation,
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (f_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             }  i\mbox{       }  \theta (t^{'}-t_1)
+ \mbox{       }
+ e^{\frac{ {\bf{q}}. (2 i {\bf{k}} t^{'}+ {\bf{q}} (\beta -i t^{'}))}{2 m}}) \mbox{             } \theta(t_1-t)
+\]
+\[ +  \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( f_{max}-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             } \theta(t-t_1),
+\]
+now, become,
+\[ RHS= \sum_{{\bf{q}}} \mbox{             } e^{-\frac{i  t_1 {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( f_{max}-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             }
+\]
+\[=
+\sum_{{\bf{q}}}e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg( \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\frac{i  t (2 {\bf{k.q}} -q^2 )}{2 m}+\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
+-i  n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  i\mbox{       }  \theta (t-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg) \mbox{             }.
+\]
+\[=
+\sum_{{\bf{q}}}
+e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\lambda + \lambda^{'} } \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
+ \mbox{       } + \sum_{{\bf{q}}}\mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
++ \sum_{{\bf{q}}} n_F({\bf{k}}) \mbox{  }  G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'})     \mbox{             }  \mbox{       }  \theta (t-t^{'})
+\mbox{   } e^{\frac{i  (t^{'}-t) {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}) \mbox{             }.
+\]
+\[=
+\sum_{{\bf{q}}}
+e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}} \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
+ \mbox{       } +\sum_{{\bf{q}}} \mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+===================================================================\\
+Hence, RHS of the lesser than equation is:
+
+\[RHS =
+\sum_{{\bf{q}}}e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}  \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}} \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
+ \mbox{       } + \sum_{{\bf{q}}}\mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+===================================================================
+\newpage
+\section{$\lim t_1 \to t^{-}$ of the simplified lesser than equation}
+\[
+\sum_q (1-n_F({\bf k -q})) G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } +\partial_{\lambda'} G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \]
+\[=
+\sum_{{\bf{q}}}e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}  \mbox{            }
+ \frac{G_{ {\bf{k}}-{\bf{q}},> }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } \mbox{             }  n_F({\bf{k}}) e^{\frac{i  t^{'} (2 {\bf{k.q}}-q^2)}{2 m}} \mbox{        }
+\left(e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}} \theta (t-t^{'})+\theta (t^{'}-t)\right) }
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+\[
+ \mbox{       } + \sum_{{\bf{q}}}\mbox{            }
+ \frac{  G_{ {\bf{k}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       } 
+\mbox{             }
+( n_F( {\bf{k}}-{\bf{q}} )-1) e^{\lambda + \lambda^{'} }}
+{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}}-e^{\lambda + \lambda^{'} }}\]
+Taking ${\bf{p}}\to {\bf{k}}-{\bf{q}}$, we verified the equations.
+\newpage
+
+\subsection{$\lim t_1 \to t^{-}$ of the RHS of the greater than equation}
+Take $t_1 \to t^{-}$. Taking a sum over ${\bf{q}}$, makes the RHS terms in the greater than equation, 
+\[
+ e^{\frac{i {\bf{q}}.(-2 {\bf{k}} t_1 + {\bf{q}} (t_1+i \beta ))}{2 m}} (g_{max}
+\mbox{                   }  e^{\frac{\beta  {\bf{k.q}} }{m}}+i  (1-n_F({\bf{k}})) \mbox{  }
+G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }
+i\mbox{       }  \theta (t^{'}-t_1) e^{\frac{ (2 i {\bf{k.q}} t^{'}+{\bf{q}}^2 (\beta -i t^{'}))}{2 m}}) \mbox{             }
+\theta(t_1-t)
+\]
+\[
+   \mbox{             } +  \mbox{             }
+e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( g_{max}-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t_1-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}})\mbox{             }
+\theta(t-t_1)
+\]
+now, become,
+\[RHS= \sum_{{\bf{q}}} \mbox{             }
+e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} ( g_{max}-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}})\mbox{             }
+\]
+\[= \sum_{{\bf{q}}} \mbox{             }
+e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg(
+ \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[-i  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }  i\mbox{       }  \theta (t-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg)
+\]
+\section{ of $\lim t_1 \to t^{-}$ of the simplified greater than equation}
+
+\[
+-\partial_{\lambda} G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})
+\]
+\[= \sum_{{\bf{q}}} \mbox{             }
+e^{-\frac{i  t {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}} \Bigg(
+ \frac{ e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         }G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }  \mbox{             }( n_F({\bf{k}})-1) \mbox{            }
+\left(-e^{\frac{i {\bf{k.q}} }{m} t^{'} }\right) \left(e^{\lambda + \lambda^{'} }
+\mbox{              }  \theta (t^{'}-t)+\theta (t-t^{'})\right)
+  }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[
+ \mbox{       } + \mbox{            }
+ \frac{
+-e^{-\frac{i q^2 t^{'} }{2 m}}\mbox{         } G_{ {\bf{k}},> }(\lambda, \lambda^{'}; t,t^{'})  \mbox{             } n_F({\bf{k}}-{\bf{q}})
+\mbox{               }
+e^{\frac{i  (2 {\bf{k.q}} t+q^2 (t^{'}-t))}{2 m}} }{e^{\frac{\beta (2 {\bf{k.q}}-q^2)}{2 m}+\lambda + \lambda^{'} }-1}
+\]
+\[+  (1-n_F({\bf{k}})) \mbox{  } G_{ {\bf{k}}-{\bf{q}},< }(\lambda, \lambda^{'}; t,t^{'}) \mbox{       }   \mbox{             }\theta (t-t^{'})
+\mbox{   } e^{\frac{i  t^{'} {\bf{q}}.(2 {\bf{k}}-{\bf{q}})}{2 m}}\Bigg)
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

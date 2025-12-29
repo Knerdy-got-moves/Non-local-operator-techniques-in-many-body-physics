@@ -1,0 +1,31 @@
+\chapter{Mathematical preliminaries}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\section{Second quantization}
+\begin{definition}[Fock space]\label{Fock space}
+The Fock space is the (Hilbert) direct sum of tensor products of copies of a single-particle Hilbert space \cite{DefFock}. 
+\begin{equation}
+\displaystyle {F (H)}=\bigoplus _{n=0}^{\infty } H^{\otimes n}=\mathbb {C} \oplus H\oplus    \left(H\otimes H\right)\oplus   \left(H\otimes H\otimes H\right)\oplus \cdots     
+\end{equation}
+
+Here $\displaystyle \mathbb {C}$, the complex scalars consist of the states corresponding to no particles, $\displaystyle H$ the states of one particle,
+$ (H\otimes H)$ the states of two identical particles etc.
+A general state in 
+${\displaystyle F (H)}$ is given by 
+\begin{equation}\label{linear combination of Fock space states}
+ {\displaystyle |\Psi \rangle  =|\Psi _{0}\rangle  \oplus |\Psi _{1}\rangle  \oplus |\Psi _{2}\rangle  \oplus \cdots =a|0\rangle \oplus \sum _{i}a_{i}|\psi _{i}\rangle \oplus \sum _{ij}a_{ij}|\psi _{i},\psi _{j}\rangle  \oplus \cdots }   
+\end{equation}
+where 
+\begin{itemize}
+    \item capital $|\Psi_i \rangle$ (tensor product states) are expanded in terms of small $|\psi \rangle$ the single-particle Hilbert space states, 
+    \item ${\displaystyle |0\rangle }$ is a vector of length 1 called the vacuum state and 
+${\displaystyle a\in \mathbb {C} }$ is a complex coefficient,
+    \item ${\displaystyle |\psi _{i}\rangle \in H}$ is a state in the single particle Hilbert space and 
+${\displaystyle a_{i}\in \mathbb {C} }$ is a complex coefficient,
+    \item ${\textstyle |\psi _{i},\psi _{j}\rangle  =a_{ij}|\psi _{i}\rangle \otimes |\psi _{j}\rangle +a_{ji}|\psi _{j}\rangle \otimes |\psi _{i}\rangle \in S (H\otimes H)}$, and 
+${\displaystyle a_{ij}=\nu a_{ji}\in \mathbb {C} }$ is a complex coefficient, etc.
+\end{itemize}
+
+
+
+\end{definition}

@@ -1,0 +1,707 @@
+\chapter{Second quantization: Creation and annihilation operators}
+\section{Occupation number representation}
+The occupation number representation simplifies the description of identical quantum particles by focusing on how many particles occupy each state, avoiding redundancy from labelling. This approach leads to a compact formulation essential for second quantization, a powerful tool in quantum mechanics applicable in various fields, including quantum field theory and statistical mechanics.
+
+Instead of asking which particle is in which level, we ask the question how many particles are there in each level.
+\begin{figure}
+    \centering
+    \includegraphics{Figures/Chapter_2_figures/Initial state vs occupation number representation.png}
+    \caption{Initial state and occupation number representation of a 6-Ball System. The left diagram shows the initial state of the balls across four levels. The right diagram represents the occupation numbers, indicating the number of balls at each level.}
+    \label{Occupation number representation}
+\end{figure}
+
+\begin{comment}
+Occupation number representation provides a compact way to describe systems of identical quantum particles, eliminating redundancy found in previous labeling methods. This alternative forms the basis for powerful techniques in quantum mechanics, especially second quantization. 
+The importance of symmetrization and anti-symmetrization in quantum mechanics is highlighted, as it ensures correct particle behavior based on their statistical nature. This forms a foundation for understanding particle types.
+Applications of occupation number representation extend beyond quantum mechanics into fields like quantum chemistry and material science, demonstrating its versatility in describing complex quantum systems.  
+\end{comment}
+
+
+By focusing on the number of particles in each state, we achieve a more efficient description. The occupation number representation allows us to describe states without labelling identical particles. This leads to a more compact and manageable representation of particle systems.
+\subsection{Classification of Identical particles under occupation number representation}
+Identical particles can be classified as bosons or fermions, each requiring different mathematical treatments. Symmetric states describe bosons, while fermions are described by antisymmetric states. The symmetrization and antisymmetrization processes are essential for building appropriate bases for identical particle systems. These operations help in obtaining valid states in quantum mechanics.
+
+In terms of equations for more clarity, let's consider a system of  $N$ identical particles who's state space $\mathcal{V}_N$ is the tensor product of the single particle state spaces  $V_{i}$.
+% Definition of the space V  
+\[\mathcal{V}_N = V_1 \otimes V_2 \otimes \cdots \otimes V_N  \]
+The symmetric operator is given by,
+% Symmetric operator S^{\dagger}  
+\[\hat{S}^{\dagger} = \frac{1}{N!} \sum_{\alpha} \hat{P}_{\alpha},  \] 
+and the anti-symmetric operator is given by,
+\[\hat{S}^- = \frac{1}{N!} \sum_{\alpha} \eta_{\alpha} \hat{P}_{\alpha},  \] 
+where $\hat{P}_{\alpha} $ is the permutation operator and $\eta_{\alpha} $ is given by,
+
+\[\eta_{\alpha} =\begin{cases}  
++1 &  even~\hat{P}_{\alpha} \\
+-1 &  odd~\hat{P}_{\alpha}. 
+\end{cases} \]
+The state space $ \mathcal{V}_N $ consists of subspace  ${\mathcal{V}_N}_+ $ and ${\mathcal{V}_N}_-  $ which represent Bosonic and Fermionic subspace respectively.
+\[ \mathcal{V}_N \implies \begin{cases}  
+\text{Bosons: } &{\mathcal{V}_N}_+ \\
+\text{Fermions: } & {\mathcal{V}_N}_-  
+\end{cases} \] 
+% Basis states in V  
+The basis states in $ \mathcal{V}_N $ be given by:   
+\begin{equation}  
+\left\{ |u_{i_1}\rangle \otimes |u_{j_2}\rangle \otimes \cdots \otimes |u_{p_N}\rangle \right\} \in  \mathcal{V}_N ,
+\end{equation}  
+where $i$ represents the energy level and $1,2,3 \cdots, N$ represent the particle number.
+Each state in $ \mathcal{V}_N $ is a linear combination of the basis states in  $ \mathcal{V}_N $.
+% Basis states in V
+\[|\psi\rangle \in \mathcal{V}_N  \implies |\psi\rangle = \sum_{i_1 j_2 \cdots p_N} c_{i_1 j_2 \cdots p_N} |u_{i_1}\rangle |u_{j_2}\rangle \cdots |u_{p_N}\rangle\]  
+where $ c_{i_1 j_2 \cdots p_N}\in \mathbb{C}$ are some constants.
+then the states in ${\mathcal{V}_N}_+$ is given by, 
+\[|\psi^{\dagger}\rangle \in {\mathcal{V}_N}_+  \implies |\psi^{\dagger}\rangle = \hat{S}^{\dagger} \sum_{i_1 j_2 \cdots p_N} c_{i_1 j_2 \cdots p_N} |u_{i_1}\rangle |u_{j_2}\rangle \cdots |u_{p_N}\rangle,\]
+and the states in $V_-$ is given by, 
+\[|\psi^-\rangle \in {\mathcal{V}_N}_-  \implies |\psi^-\rangle = \hat{S}^- \sum_{i_1 j_2 \cdots p_N} c_{i_1 j_2 \cdots p_N} |u_{i_1}\rangle |u_{j_2}\rangle \cdots |u_{p_N}\rangle.\]
+Since the particles are identical, applying any permutation to a general state in  $V_+$ gives back the same state. These states called bosonic states. Thus,
+\[\hat{P}_{\alpha}|\psi^{\dagger}\rangle=|\psi^{\dagger}\rangle. \]
+Applying any permutation to a general state in  $V_-$ gives,
+\[\hat{P}_{\alpha}|\psi^-\rangle=\eta_{\alpha}|\psi^-\rangle .\]
+
+
+The redundancy in the basis states for systems of identical particles arises from different permutations yielding the same state in   ${\mathcal{V}_N}_+$   and   ${\mathcal{V}_N}_- $. This motivates the need for a new representation to minimize repeated states. Hence, the introduction of the occupation number representation aims to eliminate redundancy by focusing on the distinct occupation numbers of single particle states. This representation simplifies the analysis of identical particles.
+
+While associating occupation numbers with basis states, we also ensure that the permutations of the tensor product of states do not alter the physical properties of the system. We will see that this new approach enhances clarity in particle representation.
+
+The occupation number representation uniquely labels states of identical particles, enabling the characterization of any permutation of a basis state using occupation numbers. This method removes redundancy and simplifies analysis in quantum systems.
+
+For bosons, the occupation number represented state reflects how many particles occupy each single particle state. Symbolically given by,
+
+\[
+|m_1, m_2, ..., m_k, ...\rangle \in {\mathcal{V}_N}_+ \]
+\[= \sqrt{\frac{N!}{m_1!m_2!...m_k!...}} \hat{S}^{\dagger} |u_1\rangle^{m_1} |u_2\rangle^{m_2} ... |u_k\rangle^{m_k} ...
+\]
+where $m_k$ represents number of particles occupying the $k$th state.
+ Similarly, we write the state in occupation number representation for fermions, with the caveat that the state must obey the Pauli exclusion principle.
+ \[
+|m_1, m_2, ..., m_k, ...\rangle \in {\mathcal{V}_N}_-\]
+\[ =
+\begin{cases}
+\sqrt{N!} \hat{S}^-|u_1\rangle ... |u_i\rangle_{m_i} |u_2\rangle_{m_{i+1}} ... & \text{if all } u_i \text{ different} \\
+0 & \text{if two } u_i \text{ equal}
+\end{cases}
+\]
+As we can see in the case of fermions, the occupation numbers $m_{i}$ can only be 0 or 1 due to the Pauli exclusion principle. 
+
+\section{Fock space}
+Fock space (Def. \ref{Fock space}) allows for the description of quantum systems with a variable number of particles, crucial in quantum field theory and statistical mechanics. It combines states of different particle numbers and employs creation and annihilation operators, facilitating calculations while maintaining a fixed particle count. Understanding Fock space is essential for advanced quantum mechanics.
+
+The Fock space, $\displaystyle {F (H)}$ is defined as the direct sum of state spaces for different particle numbers, forming a basis from individual spaces.
+
+We know from the previous discussion that, the single particle space for identical particles, $H$ consists of  
+\[H_=\begin{cases}Bosonic~subspace:&{\mathcal{V}_1}_+\\ Fermionic ~subspace:&{\mathcal{V}_1}_- \end{cases},\]
+where we have substituted $N=1$ for the state spaces discussed above.
+
+Direct sums of vector spaces allow for the combination of dimensions, leading to a new space that encompasses all possible linear combinations as in Eq. \eqref{linear combination of Fock space states}. 
+
+Fock space serves as a mathematical tool for fixed particle systems, simplifying calculations while allowing temporary variations in particle number during the process, which we can see in Quantum field theory and Quantum statistical mechanics. Since this notion of state space leads to the notion of particle creation and annihilation, this space can be used to reflect the dynamic nature of quantum systems. Similarly, Quantum statistical mechanics utilizes Fock space to describe systems in equilibrium with particle reservoirs, facilitating the exchange of particles in the grand canonical ensemble. 
+
+Thus, we come to an understanding the operators that change the number of particles is essential for navigating the Fock space. These operators are known as creation and annihilation operators. 
+\begin{figure}
+    \centering
+    \includegraphics{Figures/Chapter_2_figures/Bosons and fermions.png}
+    \caption{Action of Bosons and Fermions in Fock Space. (Top) Multiple bosons can occupy the same energy state, as shown by the green dots. Creation (\(a^\dagger\)) and annihilation (\(a\)) operators are represented by blue and red arrows, respectively. (Bottom) Fermions obey the Pauli exclusion principle, with only one fermion per state.}
+    \label{Bosons and fermions in the Fock space}
+\end{figure}
+\section{Bosonic creation and annihilation operators}
+Boson creation and annihilation operators are essential in quantum mechanics, allowing for the manipulation of bosonic particle states within Fock space. 
+The creation operator adds a particle to a quantum state, while the annihilation operator removes a particle from the same state. 
+
+Suppose, we have single particle state, ${|u_i\rangle}$ in the single particle space, $V _i$,
+\[
+{|u_i\rangle} \in V _i.\]
+Since the occupation number representation of the bosonic states is given by,
+\[|m_1, m_2, \ldots, m_i, \ldots\rangle \Rightarrow \quad m_i \text{ particles in state } |u_i\rangle,
+\]
+we can define the bosonic creation operator doing the following operation,
+\[
+\hat{a}_{u_i}^\dagger |m_1, m_2, \ldots, m_i, \ldots\rangle = \sqrt{m_i + 1} |m_1, m_2, \ldots, m_i + 1, \ldots\rangle.
+\]
+The proportionality constant in the creation operator's definition aids in simplifying mathematical expressions, ensuring consistency in calculations. This choice is foundational in quantum mechanics applications ie. in defining the number operator for the state $u_i$.  
+
+There is a shift in the subspace of the Fock space due to the action of the creation operator,
+\[
+H^{\otimes N}\xrightarrow{\hat{a}_{u_i}^\dagger}H^{\otimes N+1}.
+\]
+The action on a single state is given by,
+\[
+\hat{a}_{u_i}^\dagger |m_i\rangle = \sqrt{m_i + 1} |m_i + 1\rangle.
+\]
+The adjoint operator is given by,
+\[
+(\hat{a}_{u_i}^\dagger)^\dagger = \hat{a}_{u_i}
+\]
+Taking inner product $\langle m_i + 1 | \hat{a}_{u_i}^\dagger | m_i \rangle$, we get
+\[
+\langle m_i + 1 | \hat{a}_{u_i}^\dagger | m_i \rangle = \sqrt{m_i + 1} \underbrace{\langle m_i + 1 | m_i + 1 \rangle}_{= 1} = \sqrt{m_i + 1}.
+\]
+Since $\sqrt{m_i + 1}$ is real, complex conjugate of  $\sqrt{m_i + 1}$ is also real, hence taking complex conjugate on both sides gives,
+\[
+\langle m_i + 1 | \hat{a}_{u_i}^{\dagger} | m_i \rangle = \langle m_i | \underbrace{(\hat{a}_{u_i}^{\dagger})^\dagger}_{\hat{a}_{u_i}}| m_i + 1 \rangle^* = \langle m_i | \hat{a}_{u_i} | m_i + 1 \rangle^*,
+\]
+\[
+\implies \langle m_i | \hat{a}_{u_i} | m_i + 1 \rangle = (\sqrt{m_i + 1})^* = \sqrt{m_i + 1}
+\]
+and hence, $ \hat{a}_{u_i} | m_i + 1 \rangle \propto  | m_i \rangle  $. 
+
+Thus, we get,
+\[
+\hat{a}_{u_i} | m_i + 1 \rangle = \sqrt{m_i + 1} | m_i \rangle \]
+
+\[
+\Longrightarrow \hat{a}_{u_i} | m_i \rangle = \sqrt{m_i} | m_i - 1 \rangle.
+\]
+\subsection{Bosonic commutation rules}
+The commutation relations between any two creation/ annihilation operators for bosons indicate that they commute, meaning their order does not affect the outcome. Here, $\hat{a}_{u_i} $ is written in short as $\hat{a}_{i} $ . The commutation relations are,
+\[
+\begin{aligned}
+\hat{a}_i^\dagger \hat{a}_j^\dagger |m_i, m_j\rangle &= \sqrt{m_i + 1} \sqrt{m_j + 1} |m_i + 1, m_j + 1\rangle \\
+\hat{a}_j^\dagger \hat{a}_i^\dagger |m_i, m_j\rangle &= \sqrt{m_j + 1} \sqrt{m_i + 1} |m_i + 1, m_j + 1\rangle.
+\end{aligned}
+\]
+Hence,
+\[
+[\hat{a}_i^\dagger, \hat{a}_j^\dagger] = 0.
+\]
+Similarly,
+\[
+\begin{aligned}
+0 = [\hat{a}_i^\dagger, \hat{a}_j^\dagger]^\dagger = (\hat{a}_i^\dagger \hat{a}_j^\dagger - \hat{a}_j^\dagger \hat{a}_i^\dagger)^\dagger = (\hat{a}_i^\dagger \hat{a}_j^\dagger)^\dagger - (\hat{a}_j^\dagger \hat{a}_i^\dagger)^\dagger = \hat{a}_j \hat{a}_i - \hat{a}_i \hat{a}_j = [\hat{a}_j, \hat{a}_i].
+\end{aligned}
+\]
+The commutation relations between $ \hat{a}_i$ and $\hat{a}_j^\dagger$ is given by,
+\[
+\text{(i) } i \neq j
+\]
+\[
+ \hat{a}_i \hat{a}_j^\dagger |m_i, m_j\rangle = \sqrt{m_i} \sqrt{m_j + 1} |m_i - 1, m_j + 1\rangle \,
+\]
+
+\[
+\hat{a}_j^\dagger \hat{a}_i |m_i, m_j\rangle = \sqrt{m_j + 1} \sqrt{m_i} |m_i - 1, m_j + 1\rangle.
+\]
+Hence,
+\[
+[\hat{a}_i, \hat{a}_j^\dagger] = 0, \quad i \neq j.
+\]
+\[
+\text{(ii) } i = j
+\]
+\[
+\hat{a}_i \hat{a}_i^\dagger |m_i\rangle = \sqrt{m_i + 1} \hat{a}_i |m_i + 1\rangle = (m_i + 1) |m_i\rangle ,
+\]
+\[
+\hat{a}_i^\dagger \hat{a}_i |m_i\rangle = \sqrt{m_i} \hat{a}_i^\dagger |m_i - 1\rangle = m_i |m_i\rangle.
+\]
+Hence,
+\[
+[\hat{a}_i, \hat{a}_j^\dagger] = 1, \quad i = j,
+\]
+\begin{equation}\label{bosonic non zero commutation}
+     \Longrightarrow[\hat{a}_i, \hat{a}_j^\dagger] = \delta_{ij}.
+\end{equation}
+
+\subsection{Bosonic occupation number operator}
+The occupation number operator is defined as the product of creation and annihilation operators, which reveals the action of creation and annihilation operators on the Fock states and their eigenvalues. 
+\[
+\hat{n}_i |m_i\rangle = \hat{a}_i^\dagger \hat{a}_i |m_i\rangle = \sqrt{m_i} \hat{a}_i^\dagger |m_i - 1\rangle{\sqrt{m_i} |m_i\rangle} = m_i |m_i\rangle.
+\]
+
+The total number of bosons in a state can be given by the sum over all  occupation number operators, ie.
+\[
+\hat{N} = \sum_i \hat{n}_i = \sum_i \hat{a}_i^\dagger \hat{a}_i.
+\]
+\section{Fermionic creation and annihilation operators}
+The fermionic creation and annihilation operators create and remove particles while adhering to the Pauli exclusion principle. 
+
+Suppose, we have single particle state, ${|u_i\rangle}$ in the single particle space, $V _i$,
+\[
+{|u_i\rangle} \in V _i.\]
+States representation for the fermionic states is given by,
+\[|u_i, u_j, \ldots, u_k, \ldots\rangle \Rightarrow \quad 1\text{ particle in states } |u_i\rangle,|u_j\rangle\ldots |u_k\rangle \ldots ~\text{and}~0\text{ particles in all other  states } ,
+\]
+we can define the fermionic creation operator doing the following operation,
+\[
+\hat{c}_{u_i}^\dagger |u_j, u_k, \ldots, u_p, \ldots\rangle =  |u_i,u_j, u_k, \ldots, u_p, \ldots\rangle ~where~i~\neq j,k , \ldots,p,\ldots
+\]
+As we can see the proportionality constant is 1 as there can be only one particle in a given state. Also, Pauli's exclusion principle tells us that,
+\[
+\hat{c}_{u_i}^\dagger |u_j, u_k,u_i, \ldots, u_p, \ldots\rangle =  0
+\]
+The adjoint operator is given by,
+\[
+(\hat{c}_{u_i}^\dagger)^\dagger = \hat{c}_{u_i}
+\]
+Taking inner product as last time, we get
+\[
+\langle u_i,u_j, u_k, \ldots, u_p, \ldots|\hat{c}_{u_i}^\dagger|u_j, u_k, \ldots, u_p, \ldots\rangle  = 1.
+\]
+Since $1$ is real, complex conjugate of 1 is also real, hence taking complex conjugate on both sides gives,
+\[
+\langle u_i,u_j, u_k, \ldots, u_p, \ldots|\hat{c}_{u_i}^\dagger|u_j, u_k, \ldots, u_p, \ldots\rangle  = \langle u_i,u_j, u_k, \ldots, u_p, \ldots|(\hat{c}_{u_i}^{\dagger})^\dagger|u_j, u_k, \ldots, u_p, \ldots\rangle ^*  ,
+\]
+\[
+\implies   \langle u_j, u_k, \ldots, u_p, \ldots|\hat{c}_{u_i}| u_i, u_j, u_k, \ldots, u_p, \ldots\rangle = 1
+\]
+and hence, $ \hat{c}_{u_i}| u_i, u_j, u_k, \ldots, u_p, \ldots\rangle  \propto  | u_j, u_k, \ldots, u_p, \ldots\rangle  $. 
+
+Thus, we get,
+\[
+\hat{c}_{u_i}| u_i, u_j, u_k, \ldots, u_p, \ldots\rangle = | u_j, u_k, \ldots, u_p, \ldots\rangle  .
+\]
+Note:-
+
+The annihilation operator, denoted as $\hat{c}_{u_i}$, removes a particle from a single particle state in a fermionic system. Its application is sensitive to the order of particles, introducing minus signs during exchanges. 
+For example,
+\[\hat{c}_{u_2}|u_1, u_2\rangle=-\hat{c}_{u_2}|u_2, u_1\rangle=| u_1\rangle\]
+\subsection{Fermionic commutation rules}
+Fermions and bosons exhibit distinct properties in quantum mechanics, particularly in their creation and annihilation operators. Fermions obey anti-commutation relations, while bosons follow commutation relations. This can be shown mathematically, by
+\[
+\text{(i) } i \neq j
+\]
+\[
+ \hat{c}_i^\dagger, \hat{c}_j^\dagger, ~Assuming \quad n_i = n_j = 0
+\]
+If $ n_i~or~ n_j \neq 0$, we get $\hat{c}_i^\dagger\hat{c}_j^\dagger=\hat{c}_j^\dagger, \hat{c}_i^\dagger=0$ trivially. Hence we are left with the above case. In this case,
+\[
+\hat{c}_i^\dagger \hat{c}_j^\dagger |u_k, \ldots\rangle = \hat{c}_i^\dagger |u_j, u_k, \ldots\rangle = |u_i, u_j, u_k, \ldots\rangle ,\]
+\[
+\hat{c}_j^\dagger \hat{c}_i^\dagger |u_k, \ldots\rangle = \hat{c}_j^\dagger |u_i, u_k, \ldots\rangle = |u_j, u_i, u_k, \ldots\rangle = -|u_i, u_j, u_k, \ldots\rangle.
+\]
+Adding the two equations, we get,
+\[
+(\hat{c}_i^\dagger \hat{c}_j^\dagger + \hat{c}_j^\dagger \hat{c}_i^\dagger) |u_k, \ldots\rangle = 0. \]
+We know that the anti commutator is defined as:
+\[
+\hat{A}\hat{B} + \hat{B}\hat{A} = \{\hat{A}, \hat{B}\}.
+\]
+Hence,
+\[
+\Longrightarrow \quad \{\hat{c}_i^\dagger, \hat{c}_j^\dagger\} = 0 
+\]
+\newpage
+
+\[
+\text{(ii) } i = j
+\]
+The annihilation operator kills the state of fermions since two fermions cannot occupy the same quantum state. Hence, 
+
+\[(\hat{c}_i^\dagger)^2 = 0\]
+
+Taking $ \{\hat{c}_i^\dagger, \hat{c}_j^\dagger\}^\dagger $, we get
+\[
+\Longrightarrow \quad \{\hat{c}_i, \hat{c}_j\} = 0 .
+\]
+Hence for all $i,j$ we have,
+\begin{equation}
+\label{fermionic zero anti-commutation rule +}
+    \{\hat{c}_i^\dagger, \hat{c}_j^\dagger\} = 0  
+\end{equation}
+
+and
+\begin{equation}
+\label{fermionic zero anti-commutation rule}
+\{\hat{c}_i, \hat{c}_j\} = 0 .
+\end{equation}
+
+Since, each particle can occupy a unique state, resulting in occupation numbers of either 0 or 1, we start by taking cases. 
+
+For $\hat{c}_i$ and $\hat{c}_j^\dagger$ commutation, 
+\[
+\text{(i) } i \neq j
+\]
+\[
+ \hat{c}_i, \hat{c}_j^\dagger, ~Assuming \quad n_j = 0~n_i=1.
+\]
+In all the other values of $n_i,n_j$, the commutation rules is trivially satisfied. We calculate,
+\[
+\hat{c}_i \hat{c}_j^\dagger |u_i, u_k, \ldots\rangle = \hat{c}_i |u_j, u_i, u_k, \ldots\rangle,\]
+
+\[= -\hat{c}_i |u_i, u_j, u_k, \ldots\rangle = -|u_j, u_k, \ldots\rangle. \]
+The operators operated in reverse order is,
+\[
+\hat{c}_j^\dagger \hat{c}_i |u_i, u_k, \ldots\rangle= \hat{c}_j^\dagger |u_k, \ldots\rangle,\]
+\[=  |u_j, u_k, \ldots\rangle.
+\]
+Thus, adding the two equation derived, we get,
+\[
+(\hat{c}_i \hat{c}_j^\dagger + \hat{c}_j^\dagger \hat{c}_i) |u_i, u_k, \ldots\rangle = 0 .\]
+Hence, we get,
+\[
+\Longrightarrow  \{\hat{c}_i, \hat{c}_j^\dagger\} = 0 .
+\]
+
+\[
+\text{(ii) } i = j
+\]
+
+\[
+\quad \text{(a) } n_i = 0
+\]
+\[
+\hat{c}_i \hat{c}_i^\dagger |u_k, \ldots\rangle
+=\hat{c}_i|u_i,u_k, \ldots\rangle,\]
+\[=|u_k, \ldots\rangle.\]
+We have,
+\[\hat{c}_i^\dagger\hat{c}_i  |u_k, \ldots\rangle=0,\]
+as $n_i=0$.
+
+This implies for $n_i=0$ ,
+\[\{\hat{c}_i \hat{c}_i^\dagger \}=1\]
+\newpage
+
+\[
+\quad \text{(b) } n_i = 1
+\]
+\[
+\hat{c}_i \hat{c}_i^\dagger |u_k,\ldots u_i\ldots\rangle
+=0,\]
+as $n-i=1$.
+We have,
+\[\hat{c}_i^\dagger\hat{c}_i  |u_k,\ldots u_i\ldots\rangle
+=\hat{c}_i^\dagger|u_k,\ldots\rangle,\]
+\[= |u_k,\ldots u_i\ldots\rangle\]
+as $n_i=1$.
+
+This implies for $n_i=1$,
+\[\{\hat{c}_i, \hat{c}_i^\dagger \}=1\]
+Hence for all $i,j$ we have, 
+\begin{equation}\label{Fermionic non zero anti-commutation}
+    \{\hat{c}_i ,\hat{c}_j^\dagger \}=\delta_{i,j}
+\end{equation}
+
+\subsection{Fermionic occupation number operator}
+The occupation number operator helps identify the number of particles in a state. It operates differently based on whether the occupation number is zero or one, affecting the state accordingly. 
+For a state with zero particles,
+\[ m_i = 0 ,\]
+the operator $\hat{c}_{u_i}^{\dagger} \hat{c}_{u_i} $, gives,
+\[
+\quad \hat{n}_{u_i} |u_j, \ldots\rangle = \hat{c}_{u_i}^{\dagger} \hat{c}_{u_i} |u_j, \ldots\rangle = 0.
+\]
+And for a state with one particle,
+\[m_i = 1,\]
+The occupation number operator gives,
+\[
+ \quad \hat{n}_{u_i} |u_i, u_j, \ldots\rangle = \hat{c}_{u_i}^{\dagger} \hat{c}_{u_i} |u_i, u_j, \ldots\rangle, \]
+ \[= \hat{c}_{u_i}^{\dagger} |u_j, \ldots\rangle \
+= |u_i, u_j, \ldots\rangle,
+\]
+The reason why we don't see any negative sign due to interchange in case of states like $|u_j, \ldots, u_i, \ldots\rangle$ is that,
+\[
+|u_j, \ldots, u_i, \ldots\rangle \xrightarrow{(-1)^p} |u_i, u_j, \ldots\rangle \xrightarrow{\hat{n}_{u_i}} |u_i, u_j, \ldots\rangle \xrightarrow{(-1)^p} |u_j, \ldots, u_i, \ldots\rangle,
+\]
+and hence,
+\[
+(-1)^{2p} = 1.
+\]
+The total number operator is then,
+
+\[\hat{N}=\sum_{u_{i}}\hat{n}_{u_i}=\sum_{u_{i}}\hat{c}_{u_i}^{\dagger} \hat{c}_{u_i}.\]
+\subsection{Quantum field operators}
+Quantum field operators as the creation
+and the annihilation operators associated
+with the position representation.
+
+We start with a single-particle
+basis ${|u_i\rangle}$ that is
+orthonormal. The associated creation
+operator is a $\hat{x}_{u_i}^\dagger$
+dagger and the associated annihilation
+the operator is its adjoint. Let us also consider a second single-particle basis. In this case, we write
+the creation operator as a $\hat{x}_{v_i}^\dagger$ and
+the annihilation operator as a
+$\hat{x}_{v_i}$. If this creation and
+annihilation operator describes identical
+bosons they obey a set of commutation
+relations and if they describe fermions
+they obey a set of anti-commutation
+relations. Luckily for us, the expressions
+for the change of bases are the same for
+both types of particles.
+The creation operator in the ${|v_i\rangle}$ basis is:
+\[
+\hat{x}_{v_j}^\dagger|0\rangle
+=
+\hat{I} |v_j\rangle
+=\sum_i 
+|u_i\rangle\langle u_i|
+|v_j\rangle
+\]
+\[
+= \sum_i 
+\langle u_i| v_j\rangle |u_i\rangle
+\]
+\[=
+\sum_i 
+\langle u_i| v_j\rangle \hat{x}_{u_i}^\dagger|0\rangle
+\]
+Here, since we can replace  the state $|0\rangle$ with any state, we conclude that,
+\begin{equation}
+\label{Creation operator change of basis}
+  \hat{x}_{v_j}^\dagger
+=
+\sum_i 
+\langle u_i| v_j\rangle \hat{x}_{u_i}^\dagger.  
+\end{equation}
+
+Taking $^\dagger$ on both sides of Eq.\eqref{Annihilation operator change of basis},
+
+\begin{equation}
+\label{Annihilation operator change of basis}
+  \hat{x}_{v_j}
+  =
+\sum_i 
+\langle u_i| v_j\rangle^{*} \hat{x}_{u_i}
+=
+\sum_i 
+\langle v_j| u_i\rangle \hat{x}_{u_i},  
+\end{equation}
+
+We get the equations Eq\eqref{Annihilation operator change of basis} and \eqref{Creation operator change of basis} for creation and annihilation operators resp. in a different basis.
+
+Using the above equations and the properties of the position continuous eigenkets, ${| r \rangle}$,
+
+\begin{itemize}
+    \item Orthonormality:
+
+\[
+\langle {\bf{r}}|{\bf{r}}^{'}\rangle
+=
+\delta({\bf{r}}-{\bf{r}}^{'})
+\]
+    \item Completeness- it spans the whole Hilbert space (rigged)
+\[
+\hat{I}
+=
+\int_{-\infty}^{\infty} d {\bf{r}}^{'} |{\bf{r}}^{'}\rangle \langle {\bf{r}}^{'}|,
+\]
+\end{itemize}
+gives us the Quantum field operators.
+
+Denoting the wave function as $\langle{\bf{r}}| u_i\rangle =   u_i({\bf{r}})$, the field operator is given by $\hat{\psi}({\bf{r}})$,
+
+\begin{equation}
+\label{Field creation operator}
+     \hat{\psi}({\bf{r}})^\dagger
+=
+\sum_i 
+ u_i({\bf{r}})^{*}\hat{x}_{u_i}^\dagger,  
+\end{equation}
+and,
+
+
+\begin{equation}
+\label{Field annihilation operator}
+     \hat{\psi}({\bf{r}})
+=
+\sum_i 
+ u_i({\bf{r}})\hat{x}_{u_i}. 
+\end{equation}
+
+
+
+Conversely, any operator ($\hat{X}_{u_i}$) in the Fock space can hence be written as:
+
+
+\begin{equation}
+\label{Creation operators in terms of field creation operator}
+     \hat{X}_{u_i}^\dagger
+=
+\int _{-\infty}^{\infty} d {\bf{r}}
+ ~ u_i({\bf{r}})
+  \hat{\psi}({\bf{r}})^\dagger,  
+\end{equation}
+and,
+\begin{equation}
+\label{Annihilation operators in terms of field annihilation operator}
+\hat{X}_{u_i}
+=
+\int _{-\infty}^{\infty} d {\bf{r}}
+ ~ u_i({\bf{r}})^{*}
+  \hat{\psi}({\bf{r}}).
+\end{equation}
+\section{The One-Body Operator \label{One body operator}}
+
+\subsection{Notation}
+
+Consider a state space of one particle:
+\[
+V_q \rightarrow \text{State space}
+\]
+The total state space for an N-particle system is the tensor product:
+\begin{equation}
+V = V_1 \otimes \dots \otimes V_q \otimes V_{q+1} \otimes \dots \otimes V_N
+\end{equation}
+An operator $\hat{f}_q$ acts only on the $q$-th particle's state space. In the total state space $V$, this is represented as:
+\begin{equation}
+\hat{F}_q = \mathds{1}_1 \otimes \dots \otimes \hat{f}_q \otimes \dots \otimes \mathds{1}_N \quad (\text{represented for simplicity as } \hat{f}_q)
+\end{equation}
+
+\subsection{Recap: Symmetrization Postulate}
+
+Since this is a system of N identical particles, exchanging any two particles leads to the exact same physical system. Consequently, the state space is not the full space $V$, but a subspace of $V$ spanned by totally symmetric states for bosons or totally antisymmetric states for fermions.
+
+Similarly, the operators that act on a system of identical particles must be symmetric with respect to particle exchange. For a one-body operator $\hat{F}$, this means it is a sum of operators acting on each particle individually:
+\begin{equation}
+\hat{F} = \sum_{q=1}^{N} \hat{f}_q
+\end{equation}
+
+\subsection{Goal: One-Body Operator in Second Quantization}
+
+Our goal is to write a one-body operator in the second quantization formalism (occupation number representation). This means we want to write an operator which will act at only one particle "at a time" - individually. To apply this to symmetric/antisymmetric states, we must sum over all particles $q$, as they are identical.
+
+Let $\{|u_k\rangle\}$ be a complete orthonormal basis for the single-particle state space. The operator $\hat{f}_q$ can be written as:
+\[
+\hat{f}_q = \sum_{k,l} f_{kl} |u_k\rangle_q \langle u_l|_q
+\]
+where the matrix elements are $f_{kl} = \langle u_k | \hat{f} | u_l \rangle$. The total operator is then:
+\begin{equation}
+\hat{F} = \sum_{q=1}^{N} \hat{f}_q = \sum_{q=1}^{N} \sum_{k,l} f_{kl} |u_k\rangle_q \langle u_l|_q
+\end{equation}
+Taking the sum over $q$ inside:
+\begin{equation}
+\hat{F} = \sum_{k,l} f_{kl} \left( \sum_{q=1}^{N} |u_k\rangle_q \langle u_l|_q \right)
+\end{equation}
+
+\subsection{From First to Second Quantization}
+
+We start from the occupation number representation. Any state is written as $|n_1, n_2, \dots \rangle$, where $n_k$ is the number of particles in the single-particle state $|u_k\rangle$. For bosons $n_k \in \{0, 1, 2, \dots\}$, for fermions $n_k \in \{0, 1\}$.
+
+In terms of the tensor product of single-particle states, this state is constructed through symmetrization (for bosons) or antisymmetrization (for fermions):
+\begin{equation}
+|n_1, n_2, \dots \rangle = \sqrt{\frac{N!}{\prod_i n_i!}} \hat{S}_{\pm} |u_{k_1}\rangle_1 |u_{k_2}\rangle_2 \dots |u_{k_N}\rangle_N
+\end{equation}
+where $\hat{S}_{\pm}$ is the (anti)symmetrizer operator. $\hat{S}_+$ is for bosons and $\hat{S}_-$ is for fermions. They are defined using permutation operators $\hat{P}_\alpha$:
+\[
+\hat{S}_+ = \frac{1}{N!} \sum_{\alpha} \hat{P}_\alpha \quad ; \quad \hat{S}_- = \frac{1}{N!} \sum_{\alpha} \eta_\alpha \hat{P}_\alpha
+\]
+where $\eta_\alpha = +1$ for even permutations and $-1$ for odd permutations.
+
+Let us operate with $\sum_q |u_k\rangle_q \langle u_l|_q$ on the state $|n_1, n_2, \dots \rangle$. The operator $\sum_q |u_k\rangle_q \langle u_l|_q$ is symmetric under particle exchange and thus commutes with $\hat{S}_{\pm}$.
+\[
+\left( \sum_{q=1}^{N} |u_k\rangle_q \langle u_l|_q \right) |n_1, n_2, \dots \rangle = \sqrt{\frac{N!}{\prod_i n_i!}} \hat{S}_{\pm} \left( \sum_{q=1}^{N} |u_k\rangle_q \langle u_l|_q \right) |u_{k_1}\rangle_1 \dots |u_{k_N}\rangle_N
+\]
+The operator $|u_k\rangle_q \langle u_l|_q$ acts on the $q$-th particle. It changes the state of particle $q$ from $|u_l\rangle$ to $|u_k\rangle$. Summing over $q$ means we do this for every particle that is in state $|u_l\rangle$. There are $n_l$ such particles.
+\[
+\left( \sum_{q=1}^{N} |u_k\rangle_q \langle u_l|_q \right) |u_{k_1}\rangle_1 \dots |u_{k_N}\rangle_N = n_l \times (\text{a state where one } |u_l\rangle \text{ is replaced by } |u_k\rangle)
+\]
+This resulting state, after symmetrization, corresponds to the occupation number state $|n_1, \dots, n_l-1, \dots, n_k+1, \dots \rangle$. Let's call this new state $|n'\rangle$.
+\[
+|n'\rangle = |n_1, \dots, n_l' = n_l-1, \dots, n_k' = n_k+1, \dots \rangle
+\]
+The normalization constant changes accordingly. Since, \(|n_1, n_2, \dots n_l'\dots n_k'\ldots\rangle = \sqrt{\frac{N!}{\prod_i n_i'!}} \hat{S}_{\pm} |u_{k_1}\rangle_1 |u_{k_2}\rangle_2 \dots |u_{k_l}\rangle_{l'} \dots
+|u_{k_k}\rangle_{k'} \dots
+|u_{k_N}\rangle_N\), writing the state in occupation number representation by taking the normalization to the RHS,
+\begin{align*}
+\left( \sum_{q=1}^{N} |u_k\rangle_q \langle u_l|_q \right) |n_1, n_2, \dots \rangle &= n_l \sqrt{\frac{N!}{\prod_i n_i!}} \sqrt{\frac{\prod_i n_i'!}{N!}} |n'\rangle \\
+&= n_l \sqrt{\frac{n_l! (n_k)!}{(n_l-1)! (n_k+1)!}} |n'\rangle \\
+&= n_l \sqrt{\frac{n_l}{n_k+1}} |n'\rangle \\
+&= \sqrt{n_l(n_k+1)} |n_1, \dots, n_l-1, \dots, n_k+1, \dots \rangle
+\end{align*}
+We know that the annihilation operator $\hat{a}_l$ and creation operator $\hat{a}_k^\dagger$ act as:
+\[
+\hat{a}_k^\dagger \hat{a}_l |n_1, \dots, n_l, \dots, n_k, \dots \rangle = \sqrt{n_l(n_k+1)} |n_1, \dots, n_l-1, \dots, n_k+1, \dots \rangle
+\]
+(This holds for both bosons and fermions, provided $n_k=0$ for fermions before creation).
+This means:
+\begin{equation}
+\sum_{q=1}^N |u_k\rangle_q \langle u_l|_q = \hat{a}_k^\dagger \hat{a}_l
+\end{equation}
+Substituting this back into the expression for the one-body operator:
+\begin{equation}
+\hat{F} = \sum_{k,l} f_{kl} \hat{a}_k^\dagger \hat{a}_l
+\end{equation}
+This is the general form of a one-body operator (OBO) in second quantization.
+
+\newpage
+\section{The Two-Body Operator\label{Two body operator}}
+
+\subsection{Notation}
+Consider a two-particle operator $\hat{g}_{qq'}$ that describes an interaction between particle $q$ and particle $q'$. It acts on the state space $V_q \otimes V_{q'}$. A symmetric two-body operator for an N-particle system is given by:
+\begin{equation}
+\hat{G} = \frac{1}{2} \sum_{\substack{q,q'=1 \\ q \neq q'}}^{N} \hat{g}_{qq'}
+\end{equation}
+The factor of $1/2$ avoids double counting, and $q \neq q'$ because a particle does not interact with itself.
+
+\subsection{Goal: Two-Body Operator in Second Quantization}
+Our goal is to write the two-body operator $\hat{G}$ in terms of creation and annihilation operators.
+
+\subsection{Commutation Relations}
+We will need the (anti)commutation relations for the creation and annihilation operators. Let $\hat{a}_i$ denote either a bosonic operator or a fermionic operator $\hat{c}_i$.
+\[
+[\hat{a}_i, \hat{a}_j^\dagger] = \delta_{ij} \quad (\text{bosons}) \qquad \{\hat{c}_i, \hat{c}_j^\dagger\} = \delta_{ij} \quad (\text{fermions})
+\]
+These can be written in a general form:
+\[
+\hat{a}_i \hat{a}_j^\dagger - \eta \hat{a}_j^\dagger \hat{a}_i = \delta_{ij}
+\]
+where $\eta = +1$ for bosons and $\eta = -1$ for fermions.
+Similarly, for operators of the same type:
+\[
+\hat{a}_k \hat{a}_l - \eta \hat{a}_l \hat{a}_k = 0 \implies \hat{a}_k \hat{a}_l = \eta \hat{a}_l \hat{a}_k
+\]
+From these, we can derive a useful identity for a product of four operators:
+\begin{equation}\label{M_Four body operator identity}
+\hat{a}_i^\dagger \hat{a}_k \hat{a}_j^\dagger \hat{a}_l = \hat{a}_i^\dagger (\eta \hat{a}_j^\dagger \hat{a}_k + \delta_{jk}) \hat{a}_l = \eta \hat{a}_i^\dagger \hat{a}_j^\dagger \hat{a}_k \hat{a}_l + \delta_{jk} \hat{a}_i^\dagger \hat{a}_l
+\end{equation}
+
+\subsection{Derivation for a General Two-Body Operator}
+A general two-body operator $\hat{g}_{qq'}$ can be written in the basis $\{|u_k\rangle\}$:
+\[
+\hat{g}_{qq'} = \sum_{i,j,k,l} g_{ijkl} |u_i\rangle_q |u_j\rangle_{q'} \langle u_k|_q \langle u_l|_{q'}
+\]
+where $g_{ijkl} = \langle u_i, u_j | \hat{g} | u_k, u_l \rangle$. The total operator is:
+\[
+\hat{G} = \frac{1}{2} \sum_{\substack{q,q'=1 \\ q \neq q'}}^{N} \sum_{i,j,k,l} g_{ijkl} |u_i\rangle_q |u_j\rangle_{q'} \langle u_k|_q \langle u_l|_{q'}
+\]
+We can rearrange the sums:
+\[
+\hat{G} = \frac{1}{2} \sum_{i,j,k,l} g_{ijkl} \sum_{\substack{q,q'=1 \\ q \neq q'}}^{N} |u_i\rangle_q \langle u_k|_q |u_j\rangle_{q'} \langle u_l|_{q'}
+\]
+The sum over $q, q'$ can be related to creation/annihilation operators.
+\[
+\sum_{\substack{q,q'=1 \\ q \neq q'}}^{N} |u_i\rangle_q \langle u_k|_q |u_j\rangle_{q'} \langle u_l|_{q'} = \sum_{q,q'} |u_i\rangle_q \langle u_k|_q |u_j\rangle_{q'} \langle u_l|_{q'} - \sum_q |u_i\rangle_q \langle u_k|_q |u_j\rangle_q \langle u_l|_q
+\]
+Using the one-body operator result $\sum_q |u_i\rangle_q \langle u_k|_q = \hat{a}_i^\dagger \hat{a}_k$:
+\[
+= \left(\sum_q |u_i\rangle_q \langle u_k|_q\right) \left(\sum_{q'} |u_j\rangle_{q'} \langle u_l|_{q'}\right) - \delta_{kl} \sum_q |u_i\rangle_q \langle u_j|_q = \hat{a}_i^\dagger \hat{a}_k \hat{a}_j^\dagger \hat{a}_l - \delta_{jk} \hat{a}_i^\dagger \hat{a}_l
+\]
+Using the four-operator identity from before, Eq. \eqref{M_Four body operator identity}:
+\[
+\hat{a}_i^\dagger \hat{a}_k \hat{a}_j^\dagger \hat{a}_l - \delta_{jk} \hat{a}_i^\dagger \hat{a}_l = \eta \hat{a}_i^\dagger \hat{a}_j^\dagger \hat{a}_k \hat{a}_l
+\]
+For a symmetric interaction, $g_{ijkl} = g_{jilk}$. This allows us to write the final result in a standard form that holds for both bosons and fermions:
+\begin{equation}
+\hat{G} = \frac{1}{2} \sum_{i,j,k,l} g_{ijkl} \hat{a}_i^\dagger \hat{a}_j^\dagger \hat{a}_l \hat{a}_k
+\end{equation}
+The order of the annihilation operators is important. The state is $|u_k u_l\rangle$, so we first annihilate a particle in state $|u_k\rangle$ and then one in state $|u_l\rangle$. The standard convention is to write the annihilation operators in the reverse order of the kets, hence $\hat{a}_l \hat{a}_k$.
+
+\subsection{The Hamiltonian}
+With the results from Sec. \ref{One body operator} and \ref{Two body operator}, we can write a general Hamiltonian for an interacting many-body system in second quantization. The Hamiltonian typically consists of a kinetic energy term (one-body), a potential energy term from an external field (one-body), and a particle-particle interaction term (two-body).
+\begin{equation}
+\hat{H} = \hat{T} + \hat{V} + \hat{W}
+\end{equation}
+where:
+\begin{itemize}
+    \item $\hat{T} = \sum_{q=1}^N \hat{t}_q$, with $\hat{t} = \frac{\hat{p}^2}{2m}$ (Kinetic Energy). In second quantization:
+    \begin{equation} \label{KE in second quantization}
+         \hat{T} = \sum_{i,j} t_{ij} \hat{a}_i^\dagger \hat{a}_j \quad \text{where} \quad t_{ij} = \langle u_i | \frac{\hat{p}^2}{2m} | u_j \rangle
+    \end{equation} 
+    \item $\hat{V} = \sum_{q=1}^N \hat{v}_q$, with $\hat{v} = v(\hat{\vec{r}})$ (External Potential). In second quantization:
+    \begin{equation} \label{Potential energy in second quantization}
+     \hat{V} = \sum_{i,j} v_{ij} \hat{a}_i^\dagger \hat{a}_j \quad \text{where} \quad v_{ij} = \langle u_i | v(\hat{\vec{r}}) | u_j \rangle    
+    \end{equation} 
+    \item $\hat{W} = \frac{1}{2}\sum_{q \neq q'} \hat{w}_{qq'}$, with $\hat{w}_{12} = w(\hat{\vec{r}}_1, \hat{\vec{r}}_2)$ (Two-Body Interaction). In second quantization:
+\begin{equation}\label{Two body interaction in second quantization}
+  \hat{W} = \frac{1}{2} \sum_{i,j,k,l} w_{ijkl} \hat{a}_i^\dagger \hat{a}_j^\dagger \hat{a}_l \hat{a}_k \quad \text{where} \quad w_{ijkl} = \langle u_i u_j | w | u_k u_l \rangle  
+\end{equation} 
+
+
+\end{itemize}
+Examples of interaction potentials:
+\begin{itemize}
+    \item \textbf{Coulomb potential:} $w(\vec{r}_1, \vec{r}_2) = \frac{1}{4\pi\epsilon_0} \frac{e^2}{|\vec{r}_1 - \vec{r}_2|}$
+    \item \textbf{Yukawa potential:} $w(\vec{r}_1, \vec{r}_2) = -g^2 \frac{e^{-m|\vec{r}_1 - \vec{r}_2|}}{|\vec{r}_1 - \vec{r}_2|}$
+\end{itemize}
+It is this interaction term $\hat{W}$ which is part of the Hamiltonian that is extremely hard to calculate in many-body problems.

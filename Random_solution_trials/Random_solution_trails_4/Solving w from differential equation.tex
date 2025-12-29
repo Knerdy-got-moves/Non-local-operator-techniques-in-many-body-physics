@@ -1,0 +1,284 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{ $w_{>~and~<}(p,\lambda)$ variable separation}
+\date{}
+\author{Girish S. Setlur, verification by Rishi}
+
+\maketitle
+
+\section{ Non-interacting - Finite temperature }
+
+\[
+w_{<}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, < }> \mbox{     }  = \mbox{           }
+n_F(p)\mbox{           }<e^{ - \lambda N_{>} }>
+ - \sum_{ q } < \frac{1}{N_{>}} \mbox{  }e^{ - \lambda N_{>} }\mbox{     }  a^{\dagger}_{ p + q/2 }(q)
+a_{ p+q/2 }(q)>
+\]
+and
+\[
+w_{>}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, > }> \mbox{     }  = \mbox{           }
+\sum_{ q }< \frac{1}{N_{>}} \mbox{  }e^{ - \lambda N_{>} }\mbox{     }  a^{\dagger}_{ p - q/2 }(q)
+a_{ p-q/2 }(q)>
+\]
+We want to find those individual terms in the RHS, like $ < \frac{1}{N_{>}} \mbox{  }e^{ - \lambda N_{>} }\mbox{     }  a^{\dagger}_{ p + q/2 }(q)
+a_{ p+q/2 }(q)>$ and $< \frac{1}{N_{>}} \mbox{  }e^{ - \lambda N_{>} }\mbox{     }  a^{\dagger}_{ p - q/2 }(q)
+a_{ p-q/2 }(q)>$. Rather, their differentials are given by,
+\[
+< e^{ - \lambda N_{>} }\mbox{       }  a^{\dagger}_{ p-q/2 }(q)a_{ p-q/2 }(q)>\mbox{         } = \mbox{          }
+ \frac{ e^{ -\lambda} e^{ - v_F|q| \beta }\mbox{       }   n_F(p-q)(1-n_F(p)) }{  (1-e^{ -\lambda} e^{ - v_F|q| \beta }) }\mbox{          }
+<  e^{ - \lambda N_{>} } (n_{p-q,<}-n_{p,>}) >
+\]
+and
+\[
+< e^{ - \lambda N_{>} }\mbox{       }  a^{\dagger}_{ p+q/2 }(q)a_{ p+q/2 }(q)>\mbox{         } = \mbox{          }
+ \frac{  e^{ -\lambda} e^{ - v_F|q| \beta }\mbox{       }   n_F(p)(1-n_F(p+q)) }{ (1-e^{ -\lambda} e^{ - v_F|q| \beta }) }
+\mbox{            } <  e^{ - \lambda N_{>} } (n_{p,<}-n_{p+q,>}) >
+\]
+The above expressions were solved by taking the trace of these operators and using the cyclic permutation property of trace.
+ Differentiating the expression for $w_{>}(p,\lambda)\mbox{     }  $ and $w_{<}(p,\lambda)\mbox{     }$ and substituting from above,
+\[
+-\partial_{\lambda}w_{>}(p,\lambda)  \mbox{     }  = \mbox{           }
+\sum_q \frac{    n_F(p-q)(1-n_F(p)) }{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }
+\mbox{           }
+(w_{<}(p-q,\lambda) - w_{>}(p,\lambda))
+\]
+and
+\[
+n_F(p)\mbox{           }< N_{>}\mbox{           }e^{ - \lambda N_{>} }>
+ +\partial_{\lambda}w_{<}(p,\lambda)
+ \mbox{         } = \mbox{          }
+\sum_q \frac{    n_F(p)(1-n_F(p+q)) }{ ( e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }
+\mbox{            } (w_{<}(p,\lambda) - w_{>}(p+q,\lambda))
+\]
+Since we want to solve for $w_{>}(p,\lambda)  $ and $w_{<}(p,\lambda)$ within our formalism through the differential equations, we take the hint to solve the differential equations by finding $w_{>}(p,\lambda)  $ and $w_{<}(p,\lambda)$ explicitly through the trace.
+To maintain convention, $n_{k,>}=(1-\theta(k_F-|k|))\mbox{  }$
+\[
+w_{<}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, < }> \mbox{     }  = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{Tr(e^{ - \sum_k n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }\mbox{     }n_{ p  } )}{Tr(e^{ - \beta \sum_k n_k  (\epsilon_k-\mu) } )}
+\]
+
+\[
+w_{<}(p,\lambda)\mbox{     } = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{Tr(e^{ -  n_p  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }\mbox{     }n_{ p  } )}
+{Tr(e^{ - \beta  n_p  (\epsilon_p-\mu) } )}\mbox{     }
+\frac{Tr(e^{ - \sum_{k \neq p} n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{Tr(e^{ - \beta \sum_{k \neq p} n_k  (\epsilon_k-\mu) } )}
+\]
+\[
+w_{<}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, < }> \mbox{     }  = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_p-\mu) } )}\mbox{     }
+\frac{Tr(e^{ - \sum_{k \neq p} n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{Tr(e^{ - \beta \sum_{k \neq p} n_k  (\epsilon_k-\mu) } )}
+\]
+
+\[
+w_{<}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, < }> \mbox{     }  = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_p-\mu) } )}\mbox{     }
+\frac{\prod_{k \neq p} (1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{\prod_{k \neq p}  (1 + e^{ - \beta      (\epsilon_k-\mu) } )}
+\]
+
+
+\[
+w_{<}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, < }> \mbox{     }  = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_p-\mu) } )}\mbox{     }
+e^{ \sum_{k \neq p}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right) }
+\]
+
+\[= \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_p-\mu) } )}\mbox{     }
+e^{ \sum_{k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)-\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)}\]
+Inverting the argument of the log by making the $-$ sign  a $+$ sign,
+
+\[w_{<}(p,\lambda)\mbox{     } = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_p-\mu) } )}\mbox{     }
+e^{ \sum_{k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)+\log \left( \frac{(1 + e^{ - \beta      (\epsilon_p-\mu) } )}
+{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )  } \right)}\]
+Taking the last $e^{\log}$ down and canceling with the denominator of the first term,
+\[w_{<}(p,\lambda)\mbox{     } = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_p-\mu) } )}\mbox{     }
+e^{ \sum_{k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}\frac{(1 + e^{ - \beta      (\epsilon_p-\mu) } )}
+{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )  }\]
+we get,
+\[w_{<}(p,\lambda)\mbox{     } = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  }   }
+{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )  }\mbox{     }
+e^{ \sum_{k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}\]
+or,
+\[w_{<}(p,\lambda)\mbox{     } = \mbox{           }\theta(k_F-|p|)\mbox{  }
+\frac{1}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )  }\mbox{     }
+e^{ \sum_{k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}.\]
+Since $\theta(k_F-|p|)=1$, hence $(1-\theta(k_F-|p|))=0$,
+\[
+w_{<}(p,\lambda)\mbox{     }  = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, < }> \mbox{     }  = \mbox{           }\mbox{  }
+\frac{ \theta(k_F-|p|) }
+{ (1 + e^{     \beta  (\epsilon_p-\mu)  } )}\mbox{     }
+e^{ \sum_{|k| > k_F }\mbox{     }\log \left( \frac{ 1 + e^{ -   \beta  (\epsilon_k-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_k-\mu) }  } \right) }.
+\]
+For $w_{>}(p,\lambda)$, all the steps are similar except the last term, ie.
+\[w_{>}(p,\lambda)\mbox{     } = \mbox{           }<e^{ - \lambda N_{>} }\mbox{     }n_{ p, >}> \mbox{     } \]
+\[=\mbox{           }
+\mbox{  }\frac{(1-\theta(k_F-|p|))}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )  }\mbox{     }
+e^{ \sum_{|k|>k_{F}}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}.\]
+
+====================================================================================================================================
+\subsection{Differential equation basic simplification}
+The above exercise shows that we can take  $w_{<}(p,\lambda)=f(p)g(\lambda)$ and $w_{>}(p,\lambda)=h(p,\lambda)g(\lambda)$.\\
+This means, from the equation, 
+\[
+n_F(p)\mbox{           }< N_{>}\mbox{           }e^{ - \lambda N_{>} }>
+ +\partial_{\lambda}w_{<}(p,\lambda)
+ \mbox{         } = \mbox{          }
+\sum_q \frac{    n_F(p)(1-n_F(p+q)) }{ ( e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }
+\mbox{            } (w_{<}(p,\lambda) - w_{>}(p+q,\lambda))
+\]
+ we want to explore a solution as near $p\to k_{F}$ we get
+\[
+n_F(p)\mbox{           }< N_{>}\mbox{           }e^{ - \lambda N_{>} }>
+ +f(p)\partial_{\lambda}g(\lambda)
+ \mbox{         } = \mbox{          }
+\sum_q \frac{    n_F(p)(1-n_F(p+q)) }{ ( e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }
+\mbox{            } (f(p)-h(k_F+q,\lambda))g(\lambda),
+\]
+and from, 
+\[
+-\partial_{\lambda}w_{>}(p,\lambda)  \mbox{     }  = \mbox{           }
+\sum_q \frac{    n_F(p-q)(1-n_F(p)) }{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }
+\mbox{           }
+(w_{<}(p-q,\lambda) - w_{>}(p,\lambda))
+\]
+we want to explore a solution as near $p\to k_{F}$ we get the equation to be,
+\[
+-\partial_{\lambda}h(p,\lambda)g(\lambda)\mbox{     }  = \mbox{           }
+\sum_q \frac{    n_F(p-q)(1-n_F(p)) }{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }
+\mbox{           }
+(f(k_{F}-q) -h(p,\lambda))g(\lambda)).
+\]
+======================================================================================================================================
+\subsection{Calculation of $< N_{>}\mbox{           }e^{ - \lambda N_{>} }>$}
+Let us calculate $< N_{>}\mbox{           }e^{ - \lambda N_{>} }>$. From the cyclic permutation property of trace,
+\[ <N_{>}\mbox{           }e^{ - \lambda N_{>} }>=\frac{Tr(e^{ - \sum_k n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }\mbox{     }\sum_{k'} n_{k'}  (1-\theta(k_F-|k'|)) )}{Tr(e^{ - \beta \sum_k n_k  (\epsilon_k-\mu) } )}\]
+\[ <N_{>}\mbox{           }e^{ - \lambda N_{>} }>=\frac{Tr(\sum_{k'} e^{ - \sum_k n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }\mbox{     }n_{k'}  (1-\theta(k_F-|k'|)) )}{Tr(e^{ - \beta \sum_k n_k  (\epsilon_k-\mu) } )}\]
+    Since, $Tr(A+B)=Tr(A)+Tr(B)$,
+    \[ <N_{>}\mbox{           }e^{ - \lambda N_{>} }>=\sum_{k'} \frac{Tr( e^{ - \sum_k n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }\mbox{     }n_{k'}  (1-\theta(k_F-|k'|)) )}{Tr(e^{ - \beta \sum_k n_k  (\epsilon_k-\mu) } )}\]
+    We know that,
+    \[<e^{ - \lambda N_{>} }\mbox{     }n_{ p, >}>=\frac{Tr( e^{ - \sum_k n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }\mbox{     }n_{k'}  (1-\theta(k_F-|k'|)) )}{Tr(e^{ - \beta \sum_k n_k  (\epsilon_k-\mu) } )}\]
+    \[=\mbox{           }
+\mbox{  }\frac{(1-\theta(k_F-|p|))}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )  }\mbox{     }
+e^{ \sum_{|k|>k_{F}}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}.\]
+Thus,
+ \[ <N_{>}\mbox{           }e^{ - \lambda N_{>} }>=\sum_{k'}\frac{(1-\theta(k_F-|k'|))}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )  }\mbox{     }
+e^{ \sum_{|k|>k_{F}}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}. \]
+If we define, $\sum_{k'}(1-\theta(k_F-|k'|)):= N_{H}$,
+\[ <N_{>}\mbox{           }e^{ - \lambda N_{>} }>=\frac{N_{H}}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )  }\mbox{     }
+e^{ \sum_{|k|>k_{F}}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}. \]
+
+=======================================================================================================
+\subsection{Solving the differential equation }
+    
+We need to simplify further from,    
+\[
+n_F(p)\mbox{           }< N_{>}\mbox{           }e^{ - \lambda N_{>} }>
+ +\partial_{\lambda}w_{<}(p,\lambda)
+ \mbox{         } = \mbox{          }
+\sum_q \frac{    n_F(p)(1-n_F(p+q)) }{ ( e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }
+\mbox{            } (w_{<}(p,\lambda) - w_{>}(k_{F}+q,\lambda))
+\]
+and from, 
+\[
+-\partial_{\lambda}w_{>}(p,\lambda)  \mbox{     }  = \mbox{           }
+\sum_q \frac{    n_F(p-q)(1-n_F(p)) }{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }
+\mbox{           }
+(w_{<}(k_{F}-q,\lambda) - w_{>}(p,\lambda))
+\]
+Substituting in the first equation,
+\[ <N_{>}\mbox{           }e^{ - \lambda N_{>} }>=\frac{N_{H}}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )  }\mbox{     }
+e^{ \sum_{|k|>k_{F}}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)},\]
+and
+\[\sum_q \frac{    n_F(p)(1-n_F(p+q)) }{ ( e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }
+\mbox{            }=n_{F}(p)\frac{L}{2\pi}\int_{-\infty}^{\infty}dq\frac{1-\theta(k_{F}-|p+q|)}{{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }}\]
+\[:=n_F(p)B,\]
+\[\sum_q \frac{    n_F(p-q)(1-n_F(p)) }{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }=(1-n_F(p))\frac{L}{2\pi}\int_{-\infty}^{\infty}dq\frac{\theta(k_{F}-|p-q|)}{{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }}\]
+\[:=(1-n_F(p))A,\]
+
+We get the first equation to be,
+
+\[
+n_F(p)\mbox{           }\frac{N_{H}}
+{(1 + e^{  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )  }\mbox{     }
+e^{ \sum_{|k|>k_{F}}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}
+ +\partial_{\lambda}w_{<}(p,\lambda)
+ \mbox{         }-n_F(p)Bw_{<}(p,\lambda) \]
+ \[= \mbox{          }
+  -\sum_q \frac{    n_F(p)(1-n_F(p+q)) }{ ( e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) } w_{>}(k_{F}+q,\lambda)
+\]
+
+The second equation is,
+\[
+-\partial_{\lambda}w_{>}(p,\lambda)  \mbox{     }+(1-n_F(p))Aw_{>}(p,\lambda)  = \mbox{           }
+\sum_q \frac{    n_F(p-q)(1-n_F(p)) }{  (e^{ \lambda} e^{  v_F|q| \beta }\mbox{       }-1) }\mbox{          }
+\mbox{           }
+w_{<}(k_{F}-q,\lambda)
+\]
+
+
+
+
+\end{document}

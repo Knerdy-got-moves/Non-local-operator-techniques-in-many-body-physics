@@ -1,0 +1,231 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+\newcommand{\addRPJ}[1]{{\color{red}{#1}}}
+\newcommand{\addGSS}[1]{{\color{blue}{#1}}}
+\begin{document}
+
+\title{Exact bosons though iterative methods}
+\date{}
+\author{Idea from Girish S. Setlur, revised and rewritten by Rishi Paresh Joshi}
+
+
+\maketitle
+
+\begin{equation}\label{Commutation<}
+  [c_{ {\boldsymbol{p}}, < }, a_{ {\boldsymbol{p}} + {\boldsymbol{q}}/2 }({\boldsymbol{q}})] \mbox{      } = \mbox{       }
+ n_F({\boldsymbol{p}})\mbox{  }c_{ {\boldsymbol{p}}+{\boldsymbol{q}}, > }  
+\end{equation}
+
+
+\begin{equation}\label{Commutation>}
+  [c_{ {\boldsymbol{p}}, > }, a^{\dagger}_{ {\boldsymbol{p}} - {\boldsymbol{q}}/2 }({\boldsymbol{q}})
+  ] \mbox{      } = \mbox{       }
+ (1-n_F({\boldsymbol{p}}))\mbox{  }c_{ {\boldsymbol{p}}-{\boldsymbol{q}}, < }  
+\end{equation}
+
+All other commutators of this type other than the two shown above are zero,
+\[
+[c_{ ..., >  }, a_{..}(..)] = [c_{ ..., >  }, a^{\dagger}_{..}(..)]  = [c_{ ..., <  }, a_{..}(..)] = [c_{ ..., <  }, a^{\dagger}_{..}(..)] = 0
+\]
+$a_{\bf{k}}(\bf{q})$ and $a^{\dagger}_{\bf{k}}(\bf{q})$ follow the commutation rules of bosonic creation and annihilation operators, ie.
+
+\begin{equation}\label{a with a}
+   [a_{\boldsymbol{k}}(\boldsymbol{q}), a_{\boldsymbol{k'}}(\boldsymbol{q'})]=0~and,
+\end{equation}
+\begin{equation}\label{a with a+}
+  [a_{\boldsymbol{k}}(\boldsymbol{q}), a^{\dagger}_{\boldsymbol{k'}}(\boldsymbol{q'})]= \delta_{\boldsymbol{k},\boldsymbol{k'}}\delta_{\boldsymbol{q},\boldsymbol{q'}}
+\end{equation}
+
+ \mbox{   } \\
+{\bf{Iterative solution: 0 order}}
+\\ \mbox{  }  \\
+\[
+ c_{ {\bf{p}}, < } \mbox{      } = \mbox{       }
+ \xi_{ {\bf{p}}, < } 
+\]
+
+\[
+ c_{ {\bf{p}}, > } \mbox{      } = \mbox{       }
+ \xi_{ {\bf{p}}, > }
+\]
+\\ \mbox{   } \\
+{\bf{Iterative solution: I order}}
+\\ \mbox{  }  \\
+\[
+ c_{ {\bf{p}}, < } \mbox{      } = \mbox{       }
+ \xi_{ {\bf{p}}, < } -  \sum_{ {\bf{q}}_1 }
+ \xi_{ {\bf{p}}+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p}} + {\bf{q}}_1/2 }({\bf{q}}_1)
+=I_{I,<}(\bf{p})\]
+
+\[
+ c_{ {\bf{p}}, > } \mbox{      } = \mbox{       }
+ \xi_{ {\bf{p}}, > }
+  + \sum_{ {\bf{q}}_1 } \xi_{ {\bf{p}}-{\bf{q}}_1, < } a_{ {\bf{p}} - {\bf{q}}_1/2 }({\bf{q}}_1)= \mbox{      }I_{I,>}(\bf{p})
+\]
+\\ \mbox{   } \\
+{\bf{Verification of Ist and 0th order solutions:}}
+
+  We need to substitute the 0th order solution in the RHS of Eq.\eqref{Commutation<} for $c_{\bf{p},<}$ and 1st order solution for $c_{\bf{p},<}$ in LHS of Eq.\eqref{Commutation<} If both the sides are equal, we are done. Similarly, we need to substitute the zeroth-order solution in RHS of Eq. \eqref{Commutation>}, for $c_{\bf{p},>}$ and first-order solution for $c_{\bf{p},>}$ in LHS of Eq.\eqref{Commutation>} and show they are equal.  
+ \\ \mbox{  }  \\
+{\bf{Verifying Eq.\eqref{Commutation<}}}
+\[[\xi_{ {\bf{p}}, < } -  \sum_{ {\bf{q}}_1 }
+ \xi_{ {\bf{p}}+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p}} + {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{ } ,\mbox{ }a_{ {\boldsymbol{p}} + {\boldsymbol{q}}/2 }({\boldsymbol{q}})]]=\mbox{ }-\xi_{ {\bf{p+q/2}}, > }\times(-1) =\mbox{ } c_{ {\bf{p+q/2}}, > } \]
+ This is from Eq.\eqref{a with a+}, and it verifies the zeroth and first order iteration, since if $|\boldsymbol{p}|> k_F$, then $c_{\bf{p},<}$=0 and the RHS of Eq.\eqref{Commutation<}=0. This fact is used to verify all iteration solutions that satisfy Eq.\eqref{Commutation<}.
+ \\ \mbox{  }  \\
+ {\bf{Verifying Eq.\eqref{Commutation>}}}
+ \[[\xi_{ {\bf{p}}, > }
+  + \sum_{ {\bf{q}}_1 } \xi_{ {\bf{p}}-{\bf{q}}_1, < } a_{ {\bf{p}} - {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{ }, \mbox{ } a^{\dagger}_{ {\boldsymbol{p}} - {\boldsymbol{q}}/2 }({\boldsymbol{q}})]=\mbox{ }\xi_{\bf{p}-\bf{q/2}}=c_ {{\bf{p-q/2}}, <} \]
+  This is from Eq.\eqref{a with a+}, and it verifies the zeroth and first order iteration, since if $|\boldsymbol{p}|\leq k_F$, then $c_{\boldsymbol{p},>}$=0 and the RHS of Eq.\eqref{Commutation>}=0. This fact is also used in all the other verification that the iterations satisfy Eq.\eqref{Commutation>}.
+  \\ \mbox{  }  \\
+\par\noindent\rule{\textwidth}{0.4pt}
+
+
+{\bf{Iterative solution: II order}}
+\\ \mbox{  }  \\
+\[
+ c_{ {\bf{p}}, < } \mbox{      } = \mbox{       }
+\xi_{ {\bf{p}}, < } -   \sum_{ {\bf{q}} }\xi_{ {\bf{p}}+{\bf{q}}, > }a^{\dagger}_{ {\bf{p}} + {\bf{q}}/2 }({\bf{q}})
+  - \sum_{ {\bf{q}}, {\bf{q}}_1 } \xi_{ {\bf{p}}+{\bf{q}}-{\bf{q}}_1, < }
+  a^{\dagger}_{ {\bf{p}} + {\bf{q}}/2 }({\bf{q}}) a_{ {\bf{p}}+{\bf{q}} - {\bf{q}}_1/2 }({\bf{q}}_1) = \mbox{      }I_{II,<}(\bf{p})
+\]
+and
+\[
+ c_{ {\bf{p}}, > }  \mbox{      } = \mbox{       }
+\xi_{ {\bf{p}}, > }  + \sum_{ {\bf{q}} }\xi_{ {\bf{p}}-{\bf{q}}, < }a_{ {\bf{p}} - {\bf{q}}/2 }({\bf{q}}) -  \sum_{ {\bf{q}}, {\bf{q}}_1 }
+ \xi_{ {\bf{p}}-{\bf{q}}+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p}}-{\bf{q}} + {\bf{q}}_1/2 }({\bf{q}}_1)
+ a_{ {\bf{p}} - {\bf{q}}/2 }({\bf{q}})= \mbox{      }I_{II,>}(\bf{p})
+\]
+\\ \mbox{   } \\
+{\bf{Verification of IInd and Ist order solutions:}}\\
+{\bf{Verifying Eq.\eqref{Commutation<}}}
+\[\mbox{       }
+[\xi_{ {\bf{p}}, < } -   \sum_{ {\bf{q'}} }\xi_{ {\bf{p}}+{\bf{q'}}, > }a^{\dagger}_{ {\bf{p}} + {\bf{q'}}/2 }({\bf{q'}})
+  - \sum_{ {\bf{q'}}, {\bf{q}}_1 } \xi_{ {\bf{p}}+{\bf{q'}}-{\bf{q}}_1, < }
+  a^{\dagger}_{ {\bf{p}} + {\bf{q'}}/2 }({\bf{q'}}) a_{ {\bf{p}}+{\bf{q'}} - {\bf{q}}_1/2 }({\bf{q}}_1), \mbox{ }a_{ {\boldsymbol{p}} + {\boldsymbol{q}}/2}(\boldsymbol{q})]= \mbox{      } I_{I,>}(\bf{p+q})\]
+
+      Breaking the commutator into different sums, the commutator with $\xi_{ {\bf{p}}, < }=0$, and from the previous order iteration, the commutator with the second term is just $\xi_{ {\bf{p+q}}, > }$, We need to find the commutator with the third term. Taking the summation outside the commutator with the third term, 
+      
+  \[-\sum_{ {\bf{q'}}, {\bf{q}}_1 } \xi_{ {\bf{p}}+{\bf{q'}}-{\bf{q}}_1, < }
+  [a^{\dagger}_{ {\bf{p}} + {\bf{q'}}/2 }({\bf{q'}}) a_{ {\bf{p}}+{\bf{q'}} - {\bf{q}}_1/2 }({\bf{q}}_1), \mbox{ }a_{ {\boldsymbol{p}} + {\boldsymbol{q}}/2}(\boldsymbol{q})]=-(-\sum_{ {\bf{q}}_1 } \xi_{ {\bf{p+q}}-{\bf{q}}_1, < } a_{ {\bf{p+q}} - {\bf{q}}_1/2 }({\bf{q}}_1))]\]
+Hence, by adding the third term, we get $I_{I,>}(\bf{p+q})$. \addRPJ{How do I know this is the most general solution, why can't there be $a\cdot a^{\dagger}$ convolution?}
+\\ \mbox{  }  \\
+{\bf{Verifying Eq.\eqref{Commutation>}}}
+\[[\xi_{ {\bf{p}}, > }  + \sum_{ {\bf{q'}} }\xi_{ {\bf{p}}-{\bf{q'}}, < }a_{ {\bf{p}} - {\bf{q'}}/2 }({\bf{q'}}) -  \sum_{ {\bf{q'}}, {\bf{q}}_1 }
+ \xi_{ {\bf{p}}-{\bf{q'}}+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p}}-{\bf{q'}} + {\bf{q}}_1/2 }({\bf{q}}_1)
+ a_{ {\bf{p}} - {\bf{q'}}/2 }({\bf{q'}}), \mbox{ }a^{\dagger}_{ {\boldsymbol{p}} - {\boldsymbol{q}}/2 }({\boldsymbol{q}})] = I_{I,<}(\bf{p-q})\]
+ Looking at the second and third term, since we are taking a commutator with $a^{\dagger}_{ {\boldsymbol{p}} - {\boldsymbol{q}}/2 }({\boldsymbol{q}})$, hence terms with $-\bf{q'}$ become $-\bf{q}$. Thus, we will get $\xi_{ {\bf{p-q}}, <}$ from the second term. The third term gives us $-  \sum_{ {\bf{q}}_1 }
+ \xi_{ {\bf{p-q}}+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p-q}} + {\bf{q}}_1/2 }({\bf{q}}_1)$
+\par\noindent\rule{\textwidth}{0.4pt}
+
+{\bf{Iterative solution: III order}}
+\\ \mbox{  }  \\
+ 
+
+\[
+ c_{ {\bf{p}}, < } \mbox{      } = \mbox{       }
+\xi_{ {\bf{p}}, < } -   \sum_{ {\bf{q}}_1 }\xi_{ {\bf{p}}+{\bf{q}}_1, > }a^{\dagger}_{ {\bf{p}} + {\bf{q}}_1/2 }({\bf{q}}_1)
+  - \sum_{ {\bf{q}}_2, {\bf{q}}_1 } \xi_{ {\bf{p}}+{\bf{q}}_2-{\bf{q}}_1, < }
+  a^{\dagger}_{ {\bf{p}} + {\bf{q}}_2/2 }({\bf{q}}_2) a_{ {\bf{p}}+{\bf{q}}_2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+\[
+ +
+\frac{1}{2}\sum_{  {\bf{q}}_1,{\bf{q}}_2,{\bf{q}}_3 } 
+\mbox{       }
+ \xi_{ {\bf{p}} + {\bf{q}}_3 -{\bf{q}}_2+{\bf{q}}_1, > } 
+ \mbox{             } 
+ a^{\dagger}_{  {\bf{p}}+{\bf{q}}_3-{\bf{q}}_2 + {\bf{q}}_1/2 }({\bf{q}}_1)a^{\dagger}_{ {\bf{p}} + {\bf{q}}_3/2 }( {\bf{q}}_3 )a_{ {\bf{p}} + {\bf{q}}_3 - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+and
+\[
+ c_{ {\bf{p}}, > }  \mbox{      } = \mbox{       }
+\xi_{ {\bf{p}}, > }  + \sum_{ {\bf{q}}_1 }\xi_{ {\bf{p}}-{\bf{q}}_1, < }a_{ {\bf{p}} - {\bf{q}}_1/2 }({\bf{q}}_1) 
+-  \sum_{ {\bf{q}}_2, {\bf{q}}_1 }
+ \xi_{ {\bf{p}}-{\bf{q}}_2+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p}}-{\bf{q}}_2 + {\bf{q}}_1/2 }({\bf{q}}_1)
+ a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+  -\frac{1}{2}\sum_{ {\bf{q}}_1, {\bf{q}}_2, {\bf{q}}_3 }
+\mbox{                   }     \xi_{ {\bf{p}}-{\bf{q}}_3+{\bf{q}}_2-{\bf{q}}_1, < }
+   \mbox{             }
+a^{\dagger}_{ {\bf{p}}-{\bf{q}}_3 + {\bf{q}}_2/2 }({\bf{q}}_2)a_{  {\bf{p}}-{\bf{q}}_3+{\bf{q}}_2 - {\bf{q}}_1/2  }({\bf{q}}_1)a_{ {\bf{p}} - {\bf{q}}_3/2 }({\bf{q}}_3)
+\]
+\\ \mbox{   } \\
+{\bf{Verification of IIIrd and IInd order solutions:}}\\
+
+{\bf{Iterative solution: IV order}}
+\\ \mbox{  }  \\
+\[
+ c_{ {\bf{p}}, < } \mbox{      } = \mbox{       }
+\xi_{ {\bf{p}}, < } -   \sum_{ {\bf{q}}_1 }\xi_{ {\bf{p}}+{\bf{q}}_1, > }a^{\dagger}_{ {\bf{p}} + {\bf{q}}_1/2 }({\bf{q}}_1)
+  - \sum_{ {\bf{q}}_2, {\bf{q}}_1 } \xi_{ {\bf{p}}+{\bf{q}}_2-{\bf{q}}_1, < }
+  a^{\dagger}_{ {\bf{p}} + {\bf{q}}_2/2 }({\bf{q}}_2) a_{ {\bf{p}}+{\bf{q}}_2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+\[
+ +
+\frac{1}{2}\sum_{  {\bf{q}}_1,{\bf{q}}_2,{\bf{q}}_3 } 
+\mbox{       }
+ \xi_{ {\bf{p}} + {\bf{q}}_3 -{\bf{q}}_2+{\bf{q}}_1, > } 
+ \mbox{             } 
+ a^{\dagger}_{  {\bf{p}}+{\bf{q}}_3-{\bf{q}}_2 + {\bf{q}}_1/2 }({\bf{q}}_1)a^{\dagger}_{ {\bf{p}} + {\bf{q}}_3/2 }( {\bf{q}}_3 )a_{ {\bf{p}} + {\bf{q}}_3 - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
++ \frac{1}{4} \sum_{  {\bf{q}}_1,{\bf{q}}_2,{\bf{q}}_3 , {\bf{q}}_4 }
+\mbox{                   }     \xi_{ {\bf{p}}+{\bf{q}}_4-{\bf{q}}_3+{\bf{q}}_2-{\bf{q}}_1, < }
+   \mbox{             }
+\mbox{              } a^{\dagger}_{ {\bf{p}} + {\bf{q}}_4/2 }({\bf{q}}_4) a^{\dagger}_{  {\bf{p}}+{\bf{q}}_4-{\bf{q}}_3 + {\bf{q}}_2/2  }({\bf{q}}_2) 
+ a_{ {\bf{p}}+{\bf{q}}_4-{\bf{q}}_3+{\bf{q}}_2 - {\bf{q}}_1/2 }({\bf{q}}_1) a_{ {\bf{p}}+{\bf{q}}_4 - {\bf{q}}_3/2  }({\bf{q}}_3) 
+\]
+ and
+ \[
+ c_{ {\bf{p}}, > }  \mbox{      } = \mbox{       }
+\xi_{ {\bf{p}}, > }  + \sum_{ {\bf{q}}_1 }\xi_{ {\bf{p}}-{\bf{q}}_1, < }a_{ {\bf{p}} - {\bf{q}}_1/2 }({\bf{q}}_1) 
+-  \sum_{ {\bf{q}}_2, {\bf{q}}_1 }
+ \xi_{ {\bf{p}}-{\bf{q}}_2+{\bf{q}}_1, > } a^{\dagger}_{ {\bf{p}}-{\bf{q}}_2 + {\bf{q}}_1/2 }({\bf{q}}_1)
+ a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+  -\frac{1}{2}\sum_{ {\bf{q}}_1, {\bf{q}}_2, {\bf{q}}_3 }
+\mbox{                   }     \xi_{ {\bf{p}}-{\bf{q}}_3+{\bf{q}}_2-{\bf{q}}_1, < }
+   \mbox{             }
+a^{\dagger}_{ {\bf{p}}-{\bf{q}}_3 + {\bf{q}}_2/2 }({\bf{q}}_2)a_{  {\bf{p}}-{\bf{q}}_3+{\bf{q}}_2 - {\bf{q}}_1/2  }({\bf{q}}_1)a_{ {\bf{p}} - {\bf{q}}_3/2 }({\bf{q}}_3)
+\]
+\[
++ \frac{1}{4} \sum_{  {\bf{q}}_1,{\bf{q}}_2,{\bf{q}}_3 , {\bf{q}}_4 }
+\mbox{       }
+ \xi_{ {\bf{p}} - {\bf{q}}_4 + {\bf{q}}_3 -{\bf{q}}_2+ {\bf{q}}_1, > } 
+ \mbox{             }   
+ a^{\dagger}_{  {\bf{p}} - {\bf{q}}_4 +{\bf{q}}_3-{\bf{q}}_2 +  {\bf{q}}_1/2 }({\bf{q}}_1) 
+ a^{\dagger}_{ {\bf{p}} -{\bf{q}}_4 + {\bf{q}}_3/2  }({\bf{q}}_3) 
+ a_{  {\bf{p}} - {\bf{q}}_4 + {\bf{q}}_3 - {\bf{q}}_2/2 }({\bf{q}}_2) a_{ {\bf{p}} - {\bf{q}}_4/2 }( {\bf{q}}_4 ) 
+\]
+\\ \mbox{   } \\
+\end{document}
+

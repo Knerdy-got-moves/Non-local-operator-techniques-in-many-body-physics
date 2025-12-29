@@ -1,0 +1,134 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{ Guess solution}
+\date{}
+\author{Idea from Girish Setlur, revised and rewritten by Rishi Paresh Joshi}
+
+\maketitle
+
+
+
+\section{Try this } 
+
+\[
+b_{ {\bf{k}} }({\bf{q}}) = a_{ {\bf{k}} }({\bf{q}}) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} }
+\]
+\subsection{Commutation that should give 0}
+
+\[
+[b_{ {\bf{k}} }({\bf{q}}), b_{ {\bf{k}}^{'} }({\bf{q}}^{'})]  =   
+\]
+\[
+a_{ {\bf{k}} }({\bf{q}}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} }, a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ] \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} } 
+\]
+\[
+    - a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} },a_{ {\bf{k}} }({\bf{q}})]  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} } \]
+We start with the commutation, $[n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]$ 
+\[[n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+
+\[=[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }c_{ {\bf{k}}-{\bf{q}}/2 }, c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]-[c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 } c_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+Using the formula, 
+\[[A\mbox{}B\mbox{}, C\mbox{}D\mbox{}]=  A\mbox{}\{B\mbox{},C\mbox{}\}D\mbox{}-A\mbox{}C\mbox{}\{B\mbox{},D\mbox{}\}+\{A\mbox{},C\mbox{}\}D\mbox{}B\mbox{}-C\mbox{}\{A\mbox{},D\mbox{}\}B\mbox{}\]
+In this formula, only $A\mbox{}\{B\mbox{},C\mbox{}\}D-C\mbox{}\{A\mbox{},D\mbox{}\}B\mbox{}$ remain. The first term becomes,
+\[[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }c_{ {\bf{k}}-{\bf{q}}/2 }, c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+\[=c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }\mbox{}\{c_{ {\bf{k}}-{\bf{q}}/2 }\mbox{},c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\}c_{ {\bf{k}^{'}} - {\bf{q}^{'}}/2, < }\]\[-c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\{c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }\mbox{},c_{ {\bf{k}^{'}} - {\bf{q}^{'}}/2, < }\mbox{}\}c_{ {\bf{k}}-{\bf{q}}/2 }\mbox{}
+\]
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{\bf{k}}-{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}\]
+\[-a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{ {\bf{k}}-{\bf{q}}/2 },{\bf{k}^{'}} - {\bf{q}^{'}}/2}.\]
+
+The second term becomes,
+\[[c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 } c_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+\[=c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }\mbox{}\{ c_{ {\bf{k}}+{\bf{q}}/2 }\mbox{},c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\}c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } \]\[-c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\{c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }\mbox{},c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } \mbox{}\} c_{ {\bf{k}}+{\bf{q}}/2 }\mbox{}\]
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}\]
+\[-a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} - {\bf{q}^{'}}/2}\]
+Finally, the total commutator term gives,
+
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\left(\delta_{{\bf{k}}-{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}-\delta_{{ {\bf{k}}-{\bf{q}}/2 },{\bf{k}^{'}} - {\bf{q}^{'}}/2}-\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}+\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} - {\bf{q}^{'}}/2}\right)\]
+
+Thus,
+\[
+[b_{ {\bf{k}} }({\bf{q}}), b_{ {\bf{k}}^{'} }({\bf{q}}^{'})] 
+\]
+\[
+ =   a_{ {\bf{k}} }({\bf{q}}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} }, a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ] \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} } 
+\]
+\[
+    - a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} },a_{ {\bf{k}} }({\bf{q}})]  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} } 
+\]
+\[=0\]
+\subsection{Commutation that should prospectively give a c number}
+
+\[
+b^{\dagger}_{ {\bf{k}} }({\bf{q}}) =\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} } a^{\dagger}_{ {\bf{k}} }({\bf{q}}) \mbox{   }
+\]
+We now check the commutation relation:
+\[[b_{ {\bf{k}} }({\bf{q}}),b^{\dagger}_{ {\bf{k}^{'}} }({\bf{q}^{'}})]\]
+\[= [a_{ {\bf{k}} }({\bf{q}}) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }}}\mbox{    }, \frac{1}{\sqrt{n_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2 } - n_{ {\bf{k}^{'}}+{\bf{q}^{'}}/2 }} } \mbox{  }a^{\dagger}_{ {\bf{k}^{'}} }({\bf{q}^{'}}) \mbox{   }]\]
+From the formula,
+\[[A\mbox{}B\mbox{}, C\mbox{}D\mbox{}]=  A\mbox{}[B\mbox{},C\mbox{}]D\mbox{}+A\mbox{}C\mbox{}[B\mbox{},D\mbox{}]+[A\mbox{},C\mbox{}]D\mbox{}B\mbox{}+C\mbox{}[A\mbox{},D\mbox{}]B\mbox{}\]
+
+The first term is 0 as $[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }}}, \frac{1}{\sqrt{n_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2 } - n_{ {\bf{k}^{'}}+{\bf{q}^{'}}/2 }} } ]=0$ . \\
+   
+The third term is 0 as $[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }}} , a_{\bf{k}^{'}}({\bf{q}^{'}})]=0 $.\\
+   
+Taking hermitian adjoint on both sides, we get:
+\[[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }}} , a^{\dagger}_{\bf{k}^{'}}({\bf{q}^{'}})]=0\] as $n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }$ , is hermitian.
+Hence, the second term is 0.\\
+   
+We are left with the last term.
+\[\frac{1}{\sqrt{n_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2 } - n_{ {\bf{k}^{'}}+{\bf{q}^{'}}/2 }} }\mbox{}[a_{ {\bf{k}} }({\bf{q}}) \mbox{   }\mbox{},a^{\dagger}_{ {\bf{k}^{'}} }({\bf{q}^{'}}) \mbox{   }\mbox{}]\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }}}\mbox{    }\]
+Since, 
+\[[a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})] \mbox{  } = \mbox{  } \delta_{ {\bf{k}}, {\bf{k}}^{'} }\mbox{  } \delta_{ {\bf{q}}, {\bf{q}}^{'} }
+\mbox{  }(n_{ {\bf{k}} - {\bf{q}}/2  } - n_{ {\bf{k}}+{\bf{q}}/2 }) \mbox{  } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\]
+\[\frac{1}{\sqrt{n_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2 } - n_{ {\bf{k}^{'}}+{\bf{q}^{'}}/2 }} }\mbox{}\mbox{  } \delta_{ {\bf{k}}, {\bf{k}}^{'} }\mbox{  } \delta_{ {\bf{q}}, {\bf{q}}^{'} }
+\mbox{  }(n_{ {\bf{k}} - {\bf{q}}/2  } - n_{ {\bf{k}}+{\bf{q}}/2 }) \mbox{  } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }}}\mbox{    }\]
+Hence,
+\[[b_{ {\bf{k}} }({\bf{q}}),b^{\dagger}_{ {\bf{k}^{'}} }({\bf{q}^{'}})]\]
+\[=\delta_{ {\bf{k}}, {\bf{k}}^{'} }\mbox{  } \delta_{ {\bf{q}}, {\bf{q}}^{'} } \mbox{  } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\]
+We get exact bosons.
+
+
+\begin{comment}
+
+\section{ Momentum distribution of interacting systems }
+
+\[
+H = \sum_{ {\bf{p}} }\epsilon_p \mbox{   } c^{\dagger}_{ {\bf{p}} }c_{ {\bf{p}} }
+  + \sum_{ {\bf{Q}} } \frac{v_Q}{2V} (a_{.}(-{\bf{Q}}) + a^{\dagger}_{.}({\bf{Q}}))(a_{.}({\bf{Q}}) + a^{\dagger}_{.}(-{\bf{Q}}))
+\]
+
+
+\end{comment}
+
+\end{document} 

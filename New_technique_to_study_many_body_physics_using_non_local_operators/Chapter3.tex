@@ -1,0 +1,865 @@
+\chapter{Non-local particle-hole creation operators}
+\section{Outline}
+\subsection{Aim}
+We aim to describe fermions using \hyperlink{Type of operator}{operators}\footnote{\hypertarget{Type of operator}{It turns out that these operators are non-local.}} corresponding to creating particle-hole pairs across a Fermi sea. The main goal is to create a formalism using this operator for exact computations of \hyperlink{In progress}{Green functions of many-particle systems}\footnote{\hypertarget{In progress}{It is in progress.}}. Here, we have used 
+\subsection{Notation\cite{GirBook}} 
+\begin{enumerate}
+    \item First, we define our fermionic creation and annihilation operators in the momentum basis, given by $c^{\dagger}_{{\bf{p}}}$ and $c_{{\bf{p}}}$. From this, we infer that the anti-commutation of momentum creation operators is zero,
+\begin{equation}\label{Eq.3.1}
+\left\{c^\dagger_{{\bf{p}}}, c^\dagger_{{\bf{q}}}\right\} = 0
+\end{equation}
+and that the anti-commutator of creation and annihilation operators is the Dirac-delta operator of the momenta,
+\begin{equation}\label{Eq.3.2}
+\left\{c^\dagger_{{\bf{p}}}, c_{{\bf{q}}}\right\}_{momenta} = \delta_{{\bf{p}},{\bf{q}}}
+\end{equation}.
+    We can now drop our notation for operator usin  the $\hat{}$.
+    \item The filled Fermi sea contains $N_{0}$, number of fermions and is given by the state $|F.S\rangle$.
+    \item The momentum distribution\footnote{probability that a fermion has momentum, ${\bf{k}}$} of fermions at T=0 for non-interacting fermions is given by:
+    \begin{equation}\label{Eq.3.3}
+       n_F({\bf{k}}) = \Theta\left(k_F-|{\bf{k}}|\right) \quad .
+    \end{equation}
+    This also means that we can write the number of fermions in the filled Fermi Sea, $N_{0}$ as a sum over all possible momentum in the $N_{0}$ fermion Fermi sea ${\bf{k}}$:
+    \begin{equation}\label{Eq.3.4}
+        N_0 = \sum_{{\bf{k}}} n_F({\bf{k}}).
+    \end{equation}
+    \item We want to create a notation that distinguishes a creation or annihilation operator, with the criteria that it creates or annihilates fermion with $|{\bf{p}}|\leq k_F$ and otherwise is 0 and  $|{\bf{p}}|> k_F$ and otherwise is 0. Here, ${\bf{p}}$ is the state's momentum that the creation or annihilation operator creates or annihilates. To facilitate this notation, we form the \hypertarget{Notation4}{operators} given by:
+    \begin{equation}
+        \label{Eq.3.5}
+        c^{\dagger}_{{\bf{p}},<} = n_{F}({\bf{p}}) c^{\dagger}_{{\bf{p}}},
+    \end{equation}
+    \begin{equation}\label{Eq.3.6}
+        c_{{\bf{p}},<} = n_{F}({\bf{p}}) c_{{\bf{p}}}
+    \end{equation}
+    and,
+    \begin{equation}\label{Eq.3.7}
+        c^{\dagger}_{{\bf{p}},>} = (1-n_{F})({\bf{p}})c^{\dagger}_{{\bf{p}}},
+    \end{equation}
+    \begin{equation}\label{Eq.3.8} 
+        c_{{\bf{p}},>} = (1-n_{F})({\bf{p}}) c_{{\bf{p}}}.
+    \end{equation}
+    \item We want to construct the operator that gives us the number of particle-hole pairs in the state it acts on. Such an operator can be written using the newly defined operators in \hyperlink{Notation4}{point 4}. The number of particles in a given eigenstate can be found by operating the operator comprising the product of annihilation and creation operators for that eigenstate on the system's state. For counting the number of states with momentum ${\bf{k}}$ below the Fermi momentum ($k_F$), $c^{\dagger}_{{\bf{k}},<} c_{{\bf{k}},<}$ operated on a state will give either 1 or 0 as we assume these are spinless fermions and no two fermions can occupy the same state. Summing over all momentum states in the $N_{0}$ particle Fermi sea gives us the total number of states below the Fermi level. Subtracting this sum from $N_{0}$ will give us the number of holes or the particle-hole pairs. 
+Hence,
+\begin{equation}\label{Eq.3.9}
+        \hat{N}_{>} = N_{0} - \sum_{{\bf{k}}} c^{\dagger}_{{\bf{k}},<} c_{{\bf{k}},<} = \sum_{{\bf{k}}} c^{\dagger}_{{\bf{k}},>} c_{{\bf{k}},>}+\hat{N}-N_{0},
+    \end{equation}
+where $\hat{N}= \sum_{{\bf{k}}} c^{\dagger}_{{\bf{k}}} c_{{\bf{k}}}$
+    This can be simplified only in term of $c_{{\bf{k}},<}c^{\dagger}_{{\bf{k}},<}$ using the anti-commutation relations,
+    \begin{equation}\label{Eq.3.10}
+        c_{{\bf{k}}} c^{\dagger}_{{\bf{k}}} + c^{\dagger}_{{\bf{k}}} c_{{\bf{k}}} = \hat{1}
+    \end{equation}
+which gives,
+\begin{equation}
+    \label{N> (<)}
+        \hat{N}_{>} = \sum_{{\bf{k}}} c_{{\bf{k}},<} c_{{\bf{k}},<}^{\dagger}
+    \end{equation}
+    Since the $\hat{1}$ or the identity operator summed over all possible momentum states in the $N_{0}$ fermion Fermi sea gives just $N_{0}\times\hat{1}=\hat{N}$, we get 
+    \begin{equation}
+    \label{N> (>)}
+        \hat{N}_{>} = \sum_{{\bf{k}}} c_{{\bf{k}},>}^{\dagger} c_{{\bf{k}},>}
+    \end{equation}
+\item We now move toward defining the Fermionic sea displacement operators. As the name suggests, there is a displacement in momenta; hence, this operator is dependent on two values of momenta. From the above definition of $c^{\dagger}_{{\bf{k}},<}$, $\hat{N}_{>}$ and $c_{{\bf{k}},>}$ we get the Fermionic sea displacement operator to be:
+\begin{equation}\label{Eq.3.12}
+    A_{{\bf{k}}}({\bf{q}}) = c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}~\frac{1}{\sqrt{\hat{N}_{>}}}~c_{{\bf{k}}+\frac{{\bf{q}}}{2},>}
+\end{equation}
+and its adjoint is given by:
+\begin{equation}\label{Eq.3.13}
+    A^{\dagger}_{{\bf{k}}}({\bf{q}}) = c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>}~\frac{1}{\sqrt{\hat{N}_{>}}}~c_{{\bf{k}}-\frac{{\bf{q}}}{2},<}
+\end{equation}  
+\item Since the commutation of the operators,$[A_{{\bf{k}}}({\bf{q}}),A^{\dagger}_{{\bf{k}}'}({\bf{q}}')]$ is not simple and gives rise to very complicated operators depending on ${\bf{k}}={\bf{k}}'$, ${\bf{q}}={\bf{q}}'$  we use a simpler operator defined by:
+\begin{equation}\label{Eq.3.14}
+    c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           } a^{\dagger}_{ {\bf{p}} }({\bf{q}})
+\end{equation}
+and its adjoint is given by:
+\item \begin{equation}\label{Eq.3.15}
+    c^{\dagger}_{ {\bf{p}} - {\bf{q}}/2, < }c_{ {\bf{p}}+{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+a_{ {\bf{p}} }({\bf{q}}),
+\end{equation}
+
+    \end{enumerate}
+    \section{Writing some important operators in terms of the Sea-displacement operators}
+\subsection{Writing number conserving operators in terms of Sea-displacement operators}
+\subsubsection{The operator similar to greater than occupation number operator}
+\begin{equation}\label{Eq.3.16}
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  
+= \mbox{           }
+\sum_{ {\bf{q}}_1 } 
+\frac{1}{N_{>}} \mbox{  } 
+a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}-{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+=\mbox{}\sum_{{\bf{q}}_{1}}
+A^{\dagger}_{{\bf{p}}+\frac{{\bf{q}}}{2}+\frac{{\bf{q}}_{1}}{2}}\left({\bf{q}}_{1}\right)\mbox{}
+A_{{\bf{p}}-{\bf{q}}_{1}}\left(-{\bf{q}}+{\bf{q}}_{1}\right)
+\end{equation}
+\textbf{Proof\footnote{Derived by Prof. Girish Sampath Setlur, verified by the author under his guidance.}}
+Unwinding the definition of the operators summed over on the right, gives,
+\[A^{\dagger}_{{\bf{p}}+\frac{{\bf{q}}}{2}+\frac{{\bf{q}}_{1}}{2}}\left({\bf{q}}_{1}\right)\mbox{}
+A_{{\bf{p}}-{\bf{q}}_{1}}\left(-{\bf{q}}+{\bf{q}}_{1}\right)\]
+\[
+=\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)\left(\frac{1}{\sqrt{N_>}}\right)
+\underbrace{\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right) 
+\times
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right)}_{1-n_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}}
+\left(\frac{1}{\sqrt{N_>}}\right)\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right).
+\]
+Since, $[N_>,
+n_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}]=0$, (because the particle or hole number doesn't change) the above expression becomes,
+\[A^{\dagger}_{{\bf{p}}+\frac{{\bf{q}}}{2}+\frac{{\bf{q}}_{1}}{2}}\left({\bf{q}}_{1}\right)\mbox{}
+A_{{\bf{p}}-{\bf{q}}_{1}}\left(-{\bf{q}}+{\bf{q}}_{1}\right)\]
+\[
+=\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)\left(\frac{1}{\sqrt{N_>}}\right)
+\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right) 
+\times
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right)
+\left(\frac{1}{\sqrt{N_>}}\right)\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right)
+\]
+\[
+=\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)
+\left(\frac{1}{N_>}\right)
+\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right)
+\]
+We know that  $[N_>,c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}]=0$ from Eq. \eqref{Eq.3.9} , hence we get,
+\[A^{\dagger}_{{\bf{p}}+\frac{{\bf{q}}}{2}+\frac{{\bf{q}}_{1}}{2}}\left({\bf{q}}_{1}\right)\mbox{}
+A_{{\bf{p}}-{\bf{q}}_{1}}\left(-{\bf{q}}+{\bf{q}}_{1}\right)\]
+\[
+=\left(\frac{1}{N_>}\right)\mbox{}
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}},>}{2}}\right)
+\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right).
+\]
+\[=\frac{1}{N_{>}} \mbox{  } 
+a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}-{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)\]
+\[=
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)
+\left(\frac{1}{N_>}\right)
+\underbrace{
+\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1 ,<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2} -{\bf{q}}_1,<}\right)}_{=1-n_{{\bf{p}} +\frac{{\bf{q}}}{2}-{\bf{q}}_1,<}}
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right)
+\]
+Also, we know from Eqs. \eqref{Eq.3.5},\eqref{Eq.3.6} and \eqref{Eq.3.8} that $[c_{{\bf{p}},>},n_{{\bf{q}},<}]=0$,
+\[=\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right)
+\left(\frac{1}{N_>}\right)
+\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1 ,<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right)
+\]
+Now, taking sum over ${\bf{q}}_1$ gives,
+\[
+\sum_{ {\bf{q}}_1 } 
+\frac{1}{N_{>}} \mbox{  } 
+a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}-{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+\[=
+\sum_{ {\bf{q}}_1 } 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right)
+\left(\frac{1}{N_>}\right)
+\left(c_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1 ,<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2}-{\bf{q}}_1,<}\right)
+\]
+\[=\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},>}\right)\]
+\subsubsection{The operator similar to the lesser-than-occupation number operator}
+\begin{equation}\label{Eq.3.17}
+    c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }
+    c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  
+    = \mbox{           }
+n_F({\bf{p}})\mbox{  }\delta_{ {\bf{q}}, 0 }
+ - \sum_{ {\bf{q}}_1 } 
+ \frac{1}{N_{>}} \mbox{  } 
+ a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{ }
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\end{equation}
+\textbf{Proof\footnote{Derived by Prof. Girish Sampath Setlur, verified by the author under his guidance.}}
+\[\frac{1}{N_{>}} \mbox{  } 
+a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)\]
+\[
+=\left(\frac{1}{N_>}\right)\mbox{}
+\left(c^{\dagger}_{{\bf{p}} -\frac{{\bf{q}} }{2}+{\bf{q}}_1 ,>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},<}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2}+{\bf{q}}_1,>}\right).
+\]
+Also, we know from Eqs. \eqref{Eq.3.5},\eqref{Eq.3.6} and \eqref{Eq.3.8} that $[c_{{\bf{p}},>},c^{1~or~\dagger}_{{\bf{q}},<}]=0$, (since at ${\bf{p}}={\bf{q}}$, $c_{{\bf{p}},>}c^{\dagger}_{{\bf{p}},<}=0$), hence we get,
+\[\frac{1}{N_{>}} \mbox{  } 
+a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)\]
+\[
+=\left(\frac{1}{N_>}\right)\mbox{}
+\left(c^{\dagger}_{{\bf{p}} -\frac{{\bf{q}} }{2}+{\bf{q}}_1 ,>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2}+{\bf{q}}_1,>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},<}\right).
+\]
+Now, taking sum over ${\bf{q}}_1$ gives, since we are in $N_0$ particle subspace, $\sum_{{\bf{q}}_1}\left(c^{\dagger}_{{\bf{p}} -\frac{{\bf{q}} }{2}+{\bf{q}}_1 ,>}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2}+{\bf{q}}_1,>}\right)=N_{>}$. This gives, 
+\[
+\sum_{ {\bf{q}}_1 } 
+ \frac{1}{N_{>}} \mbox{  } 
+ a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{ }
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+\[=\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},<}\right).\]
+From the commutation relations, Eq. \eqref{Fermionic non zero anti-commutation},
+\[LHS=n_F({\bf{p}})\mbox{  }\delta_{ {\bf{q}}, 0 }-\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},<}\right) 
+\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},<}\right),\]
+\[=n_F({\bf{p}})\mbox{  }\delta_{ {\bf{q}}, 0 }
+-\bigg(n_F({\bf{p}})\mbox{  }\delta_{ {\bf{q}}, 0 }
+-\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},<}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},<}\right) 
+\bigg)\]
+\[
+=\left(c^{\dagger}_{{\bf{p}} +\frac{{\bf{q}} }{2},<}\right)
+\left(c_{{\bf{p}} -\frac{{\bf{q}} }{2},<}\right) 
+\]
+\subsection{Kinetic energy in terms of Sea displacement operators}
+\[
+KE = \sum_{\bf{p}} \frac{|{\bf{p}}|^2}{2m} c_{\bf{p}}^{\dagger} c_{\bf{p}}
+\]
+
+\begin{equation}\label{KE-A}
+    KE= \sum_{\bf{p}} \frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}}) + \sum_{{\bf{k}},{\bf{q}}} \frac{{\bf{k}} \cdot {\bf{q}}}{m} A_{\bf{k}}^{\dagger}({\bf{q}}) A_{\bf{k}}({\bf{q}})
+\end{equation}
+\begin{equation}\label{KE-a}
+    KE=
+    \sum_{\bf{p}} 
+    \frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}}) 
+    + \sum_{{\bf{k}},{\bf{q}}} 
+    \frac{{\bf{k}} \cdot {\bf{q}}}{m} 
+    \frac{1}{N_>}
+    a_{\bf{k}}^{\dagger}({\bf{q}})
+    a_{\bf{k}}({\bf{q}})
+\end{equation}
+
+\textbf{Proof\footnote{Derived by Prof. Girish Sampath Setlur, verified by the author under his guidance.}}
+\[
+A_{\bf{k}}^{\dagger}({\bf{q}}) A_{\bf{k}}({\bf{q}})
+=c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} \mbox{}
+\frac{1}{\sqrt{N_>}}\mbox{}
+\underbrace{c_{{\bf{k}}-\frac{{\bf{q}}}{2}, < }\mbox{}
+c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}}_{1-n_{{\bf{k}}-\frac{{\bf{q}}}{2},<}}\mbox{}
+\frac{1}{\sqrt{N_>}} \mbox{}
+c_{{\bf{k}}+\frac{{\bf{q}}}{2},>}
+\]
+Since, $[N_>,n_{{\bf{k}}-\frac{{\bf{q}}}{2},<}]=0$, and 
+\[
+A_{\bf{k}}^{\dagger}({\bf{q}})
+A_{\bf{k}}({\bf{q}})
+\]
+\[=c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} \mbox{}
+\frac{1}{N_>}\mbox{}
+c_{{\bf{k}}-\frac{{\bf{q}}}{2}, < }\mbox{}
+c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}\mbox{}
+c_{{\bf{k}}+\frac{{\bf{q}}}{2},>}.\]
+Since, $[c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} ,\mbox{}
+N_>]=0$ from Eq. \eqref{Eq.3.9},
+\[
+A_{\bf{k}}^{\dagger}({\bf{q}}) 
+A_{\bf{k}}({\bf{q}})=
+\frac{1}{N_>}\mbox{}
+c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} \mbox{}
+c_{{\bf{k}}-\frac{{\bf{q}}}{2}, < }\mbox{}
+c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}\mbox{}
+c_{{\bf{k}}+\frac{{\bf{q}}}{2},>},
+\]
+\[A_{\bf{k}}^{\dagger}({\bf{q}}) 
+A_{\bf{k}}({\bf{q}})
+=\frac{1}{N_>}\mbox{}
+a_{\bf{k}}^{\dagger}({\bf{q}}) 
+a_{\bf{k}}({\bf{q}}).
+\]
+Also, since $[c_{{\bf{k}}+\frac{{\bf{q}}}{2},>},n_{{\bf{k}}-\frac{{\bf{q}}}{2},<}]=0$ and $[c_{{\bf{k}}+\frac{{\bf{q}}}{2},>} ,\mbox{}
+N_>]=0$,
+\[
+A_{\bf{k}}^{\dagger}({\bf{q}})
+A_{\bf{k}}({\bf{q}})
+\]
+\[=c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} \mbox{}
+\frac{1}{N_>}\mbox{}
+\underbrace{c_{{\bf{k}}-\frac{{\bf{q}}}{2}, < }\mbox{}
+c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}}_{1-n_{{\bf{k}}-\frac{{\bf{q}}}{2},<}}\mbox{}\mbox{}
+c_{{\bf{k}}+\frac{{\bf{q}}}{2},>},
+\]
+\[
+=c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} \mbox{}
+c_{{\bf{k}}+\frac{{\bf{q}}}{2},>}
+\frac{1}{N_>}\mbox{}
+c_{{\bf{k}}-\frac{{\bf{q}}}{2}, < }\mbox{}
+c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}\mbox{}.
+\]
+Substituting the above in the LHS of the equation,
+
+\[
+LHS= \sum_{\bf{p}} 
+\frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}}) +
+\sum_{\bf{q}} \sum_{\bf{k}}
+\frac{{\bf{k}} \cdot {\bf{q}}}{m} 
+c^{\dagger}_{{\bf{k}}+\frac{{\bf{q}}}{2},>} 
+c_{{\bf{k}}+\frac{{\bf{q}}}{2},>} 
+\frac{1}{N_>} 
+c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<} 
+c_{{\bf{k}}-\frac{{\bf{q}}}{2},<}
+\]
+Uisng the formula,
+\[
+{\bf{k}} \cdot {\bf{q}} = \frac{1}{2}\left(\left({\bf{k}}+\frac{{\bf{q}}}{2}\right)^2 - \left({\bf{k}}-\frac{{\bf{q}}}{2}\right)^2\right),
+\]
+we get,
+\[LHS
+= \sum_{\bf{p}} 
+\frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}}) 
++ \sum_{\bf{q}} \sum_{\bf{k}} \frac{\left({\bf{k}}+\frac{{\bf{q}}}{2}\right)^2}{2m} c^{\dagger} _{{\bf{k}}+\frac{q}{2},>}\mbox{}
+c_{{\bf{k}}+\frac{q}{2},>} 
+\frac{1}{N_>} \mbox{}
+c^{\dagger}_{{\bf{k}}-\frac{q}{2},<} \mbox{}
+c_{{\bf{k}}-\frac{q}{2},<}
+\]
+
+\[
+-\sum_q \sum_{\bf{k}} 
+\frac{\left({\bf{k}}-\frac{{\bf{q}}}{2}\right)^2}{2m} 
+c^{\dagger}_{{\bf{k}}+\frac{q}{2},>}
+c_{{\bf{k}}+\frac{q}{2},>} 
+\frac{1}{N_>} 
+c^{\dagger}_{{\bf{k}}-\frac{q}{2},<}
+c_{{\bf{k}}-\frac{q}{2},<}
+\]
+We can separate the two double sums, taking,
+\[
+{\bf{k}}' = {\bf{k}} + \frac{{\bf{q}}}{2}
+\]
+Calling the first double sum $S_{1}$, we get, 
+\[
+S_1 = 
+\sum_{{\bf{k}}'}
+\frac{{\bf{k}}'^2}{2m} 
+\hat{c}^{\dagger}_{{\bf{k}}',>} 
+\hat{c}_{{\bf{k}}',>} 
+\sum_{{\bf{q}}} 
+\frac{1}{N_>} \hat{c}_{{\bf{k}}'-{\bf{q}},<} \hat{c}^{\dagger}_{{\bf{k}}'-{\bf{q}},<}
+\]
+and summing over ${\bf{q}}$,
+
+\[
+S_{1}= \sum_{{\bf{k}}'} 
+\frac{({\bf{k}}')^2}{2m} \hat{c}^{\dagger}_{{\bf{k}}',>}
+\hat{c}_{{\bf{k}}',>} \frac{1}{N_>} N_>
+=\sum_{{\bf{k}}'} 
+\frac{({\bf{k}}')^2}{2m} \hat{c}^{\dagger}_{{\bf{k}}',>}
+\hat{c}_{{\bf{k}}',>}.
+\]
+
+Calling the second double sum $S_2$, we get, 
+\[
+\quad {\bf{k}}' = {\bf{k}} - \frac{{\bf{k}}}{2},
+\]
+\[
+\implies S_{2} 
+= \sum_{{\bf{k}}'} 
+\sum_{{\bf{q}}} 
+\frac{({\bf{k}}')^2}{2m} 
+\hat{c}^{\dagger}_{{\bf{k}}'+{\bf{q}},>} 
+\hat{c}_{{\bf{k}}'+{\bf{q}},>} 
+\frac{1}{N_>}
+\hat{c}^{\dagger}_{{\bf{k}}',<}
+\hat{c}_{{\bf{k}}',<} ,
+\]
+
+and summing over ${\bf{q}}$,
+\[
+S_{2}= \sum_{{\bf{k}}'} 
+\frac{({\bf{k}}')^2}{2m} 
+\left(\frac{N_> -N_0+ \hat{N}}{N_>}\right) 
+\hat{c}_{{\bf{k}}',<} 
+\hat{c}^{\dagger}_{{\bf{k}}',<}
+=\sum_{{\bf{k}}'} 
+\frac{({\bf{k}}')^2}{2m}  
+\hat{c}_{{\bf{k}}',<} 
+\hat{c}^{\dagger}_{{\bf{k}}',<}.
+\]
+
+Therefore, working in the $N_0$ particle subspace, the LHS becomes,
+\[LHS=\sum_{\bf{p}} 
+\frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}})\mbox{}
++\sum_{{\bf{k}}'} 
+\frac{({\bf{k}}')^2}{2m} 
+\hat{c}^{\dagger}_{{\bf{k}}',>}
+\hat{c}_{{\bf{k}}',>}\mbox{}
+-\sum_{{\bf{k}}'} 
+\frac{({\bf{k}}')^2}{2m}  
+\hat{c}_{{\bf{k}}',<} 
+\hat{c}^{\dagger}_{{\bf{k}}',<}\]
+Writing $n_F({\bf{k}})\times I
+=\hat{c}^{\dagger}_{{\bf{k}}',<}
+\hat{c}_{{\bf{k}}',<}
++\hat{c}_{{\bf{k}}',<}
+\hat{c}^{\dagger}_{{\bf{k}}',<}
+$, LHS equals,
+\[LHS=\sum_{{\bf{k}'}}
+\frac{|{\bf{k}}'|^2}{2m}\mbox{}
+\hat{c}^{\dagger}_{{\bf{k}}',<}
+\hat{c}_{{\bf{k}}',<}\mbox{}
++\sum_{{\bf{k}}'} 
+\frac{|{\bf{k}}'|^2}{2m} 
+\hat{c}^{\dagger}_{{\bf{k}}',>}
+\hat{c}_{{\bf{k}}',>}\mbox{}
+=\sum_{{\bf{k}'}}
+\frac{|{\bf{k}}'|^2}{2m}\mbox{}
+\hat{c}^{\dagger}_{{\bf{k}}'}
+\hat{c}_{{\bf{k}}'}\mbox{}.
+\]
+\section{Important commutation properties of Sea-displacement operators}
+We find the commutators of $a_{ {\bf{p}} }({\bf{q}})$ and $a^{\dagger}_{ {\bf{p}} }({\bf{q}})$ so that we can use this algebra to substitute and find correlation function $<e^{-\lambda N_{>}} a_{\mathbf{k}}^{\dagger}(\mathbf{q}) a_{\mathbf{k}}(\mathbf{q})>$ and further derive the Fermi-Dirac distribution in Section. \ref{Deriving the Fermi-Dirac distribution}.
+\begin{itemize}
+    \item We find what is the commutator, $[a_{ {\bf{k}} }({\bf{q}}),a_{ {\bf{k}}' }({\bf{q}}')]$
+
+\[[a_{ {\bf{k}} }({\bf{q}}),a_{ {\bf{k}}' }({\bf{q}}')]\]
+\[
+=
+[
+c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }
+,
+c^{\dagger}_{ {\bf{k}}' - {\bf{q}}'/2, < }
+c_{ {\bf{k}}'+{\bf{q}}'/2, > } \mbox{     }
+].
+\]
+Using the formula, 
+\begin{equation}\label{Commutation and anti-commutation algebra}
+    [A\mbox{}B\mbox{}, C\mbox{}D\mbox{}]=  
+A\mbox{}\{B\mbox{},C\mbox{}\}D\mbox{}
+-A\mbox{}C\mbox{}\{B\mbox{},D\mbox{}\}
++\{A\mbox{},C\mbox{}\}D\mbox{}B\mbox{}
+-C\mbox{}\{A\mbox{},D\mbox{}\}B\mbox{},
+\end{equation}
+
+we see that the second and third term cancels from Eq. \eqref{fermionic zero anti-commutation rule +} and Eq. \eqref{fermionic zero anti-commutation rule} respectively. Hence,
+\[[a_{ {\bf{k}} }({\bf{q}}),a_{ {\bf{k}}' }({\bf{q}}')]\]
+\[=c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }\mbox{}
+\{
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{},
+c^{\dagger}_{ {\bf{k}}' - {\bf{q}}'/2, < }\mbox{}
+\}
+c_{ {\bf{k}}'+{\bf{q}}'/2, > } \mbox{     }\mbox{}
+-c^{\dagger}_{ {\bf{k}}' - {\bf{q}}'/2, < }\mbox{}
+\{
+c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }\mbox{},
+c_{ {\bf{k}}'+{\bf{q}}'/2, > } \mbox{     }\mbox{}
+\}
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{}.
+\]
+From Eq. \eqref{Eq.3.5} and Eq.\eqref{Eq.3.8}, we get,
+\begin{equation}
+\label{a with a commutation}
+[a_{ {\bf{k}} }({\bf{q}}),a_{ {\bf{k}}' }({\bf{q}}')]=0
+\end{equation}
+
+We find what is the commutator, $[a^{\dagger}_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]$,
+\[[a^{\dagger}_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]\]
+\[=
+[
+c^{\dagger}_{ {\bf{k}} + {\bf{q}}/2, >}
+c_{ {\bf{k}}-{\bf{q}}/2, < } \mbox{     }
+,
+c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, >}
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+].
+\]
+Similarly from Eq. \eqref{Commutation and anti-commutation algebra}, and Eq. \eqref{fermionic zero anti-commutation rule +} and Eq.\eqref{fermionic zero anti-commutation rule}, we get,
+\[[a^{\dagger}_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]\]
+\[=c^{\dagger}_{ {\bf{k}} + {\bf{q}}/2, >}\mbox{}
+\{
+c_{ {\bf{k}}-{\bf{q}}/2, <} \mbox{     }\mbox{},
+c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, > }\mbox{}
+\}
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }\mbox{}
+-c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, > }\mbox{}
+\{
+c^{\dagger}_{ {\bf{k}} + {\bf{q}}/2, > }\mbox{},
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }\mbox{}
+\}
+c_{ {\bf{k}}-{\bf{q}}/2, <} \mbox{     }\mbox{}.
+\]
+ From Eq. \eqref{Eq.3.6} and Eq.\eqref{Eq.3.7}, we get,
+\begin{equation}
+\label{a+ with a+ commutation}[a^{\dagger}_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]=0
+\end{equation}
+ \item We find what is the commutator, $[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]$,
+\[[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]\]
+\[
+=[
+c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }
+,c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, >}
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+].
+\]
+
+Similarly from Eq. \eqref{Commutation and anti-commutation algebra}, and Eq. \eqref{fermionic zero anti-commutation rule +} and Eq.\eqref{fermionic zero anti-commutation rule}, we get,
+\[[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]\]
+
+\[=
+c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }\mbox{}
+\{
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{},
+c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, >}\mbox{}
+\}
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+\mbox{}
+-c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, >}\mbox{}
+\{
+c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }\mbox{},
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }\mbox{}
+\}
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{}.
+\]
+
+From Eq. \eqref{Fermionic non zero anti-commutation}, we get,
+\[[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]\]
+\[=
+c^{\dagger}_{ {\bf{k}} - {\bf{q}}/2, < }\mbox{}
+c_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+\delta_{ {\bf{k}}+{\bf{q}}/2, {\bf{k}}' + {\bf{q}}'/2}
+\mbox{}
+-c^{\dagger}_{ {\bf{k}}' + {\bf{q}}'/2, >}\mbox{}
+c_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{}
+\delta_{  {\bf{k}} - {\bf{q}}/2, {\bf{k}}'-{\bf{q}}'/2}
+\]
+\[=n_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+\delta_{ {\bf{k}}+{\bf{q}}/2, {\bf{k}}' + {\bf{q}}'/2}
+\mbox{}
+-n_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{}
+\delta_{  {\bf{k}} - {\bf{q}}/2, {\bf{k}}'-{\bf{q}}'/2}.\]
+To summarize, we have,
+\begin{equation}\label{a with a+ commutation}
+    [a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]=
+n_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+\delta_{ {\bf{k}}+{\bf{q}}/2, {\bf{k}}' + {\bf{q}}'/2}
+\mbox{}
+-n_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{}
+\delta_{  {\bf{k}} - {\bf{q}}/2, {\bf{k}}'-{\bf{q}}'/2}.
+\end{equation}
+\end{itemize}
+\section{Approximations for commutation of Sea- displacement operator: a and its adjoint}
+We have derived the exact result,
+\[[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]=
+n_{ {\bf{k}}'-{\bf{q}}'/2, < } \mbox{     }
+\delta_{ {\bf{k}}+{\bf{q}}/2, {\bf{k}}' + {\bf{q}}'/2}
+\mbox{}
+-n_{ {\bf{k}}+{\bf{q}}/2, > } \mbox{     }\mbox{}
+\delta_{  {\bf{k}} - {\bf{q}}/2, {\bf{k}}'-{\bf{q}}'/2}.\]
+On closer inspection, we notice that the first term depends on the parameters of $a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')$ , even when ${\bf{k}}\neq{\bf{k}'}$ and ${\bf{q}}\neq{\bf{q}'}$. Similarly, the second term depends on the parameters of $a_{ {\bf{k}} }({\bf{q}})$ even when ${\bf{k}}\neq{\bf{k}'}$ and ${\bf{q}}\neq{\bf{q}'}$. 
+
+This becomes a problem as for ${\bf{k}}\neq{\bf{k}'}$ and ${\bf{q}}\neq{\bf{q}'}$, the commutator, $[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}' }({\bf{q}}')]$ doesn't vanish.
+
+    Hence, there are two possibilities, first being that we work with this exact result as the commutator. However, the mathematics becomes very complicated.
+
+The second possibility is to make an appropriate approximation from the physical aspect of systems, which gives rise to the Random Phase Approximation (RPA) and General Random Phase Approximation (GRPA).
+
+ \subsection{SRPA versus GRPA -  I }\footnote{Derived by Prof. Girish Sampath Setlur, verified by the author under his guidance.}
+We know that,
+\[
+[a_{ {\bf{k}} }({\bf{q}}), a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  = 0.
+\]
+Using the commutation and anti-commutation algebra (Eq. \eqref{Commutation and anti-commutation algebra}), we can calculate the commutator of $a_{ {\bf{k}} }({\bf{q}})$ with $n_{ {\bf{p}} }$ as ,
+\[
+[a_{ {\bf{k}} }({\bf{q}}), n_{ {\bf{p}} }] = a_{ {\bf{k}} }({\bf{q}}) \mbox{        }
+(\delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 }).
+\]
+and
+\[
+ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2},
+\]
+
+\[
+ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ (1-n_F({\bf{p}}))\mbox{  }c_{ {\bf{p}}-{\bf{q}}, < }\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+and
+\[
+ [c_{ {\bf{p}}, < }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ [c_{ {\bf{p}}, > }, a_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+0
+\]
+SRPA is given by,
+\begin{equation}\label{SRPA}
+   [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  = \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)).  
+\end{equation}
+and GRPA is given by,
+\begin{equation}\label{GRPA}
+    [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  = \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))(n_{ {\bf{k}}-{\bf{q}}/2 }
+ - n_{ {\bf{k}} + {\bf{q}}/2 })
+\end{equation} 
+Suppose we select the simple {\bf{SRPA}}.
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+[c_{ {\bf{p}},< }, \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)) ]
+ \mbox{              } = \mbox{               } 0
+\]
+On the other hand,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [ [c_{ {\bf{p}},< },a_{ {\bf{k}} }({\bf{q}})], a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]
+  + [a_{ {\bf{k}} }({\bf{q}}), [c_{ {\bf{p}},< }, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\]
+this means,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [  n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  + 0
+\]
+\[
+\mbox{              } = \mbox{               }
+   n_F({\bf{p}})\mbox{  }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2} \mbox{       }
+ (1-n_F({\bf{p}}+{\bf{q}}))\mbox{  }c_{ {\bf{p}}+{\bf{q}}-{\bf{q}}^{'}, < }\mbox{        } \delta_{ {\bf{k}}^{'}, {\bf{p}}+{\bf{q}} - {\bf{q}}^{'}/2 }
+\]
+Thus we have reached a contradiction.
+
+Suppose we select the {\bf{GRPA}}.
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{    }
+ [c_{ {\bf{p}},< }, n_{ {\bf{k}}-{\bf{q}}/2 }-n_{ {\bf{k}} + {\bf{q}}/2 }]
+ \mbox{              } = \mbox{               }
+\]
+\[
+ \mbox{              } = \mbox{               }
+\delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{    }
+n_F({\bf{p}}) \mbox{  } (\delta_{ {\bf{p}},{\bf{k}}-{\bf{q}}/2 }-\delta_{ {\bf{p}}, {\bf{k}} + {\bf{q}}/2 })\mbox{  }c_{ {\bf{p}} }
+\]
+On the other hand,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [ [c_{ {\bf{p}},< },a_{ {\bf{k}} }({\bf{q}})], a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]
+  + [a_{ {\bf{k}} }({\bf{q}}), [c_{ {\bf{p}},< }, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\]
+this means,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [  n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  + 0
+\]
+\[
+\mbox{              } = \mbox{               }
+   n_F({\bf{p}})\mbox{  }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2} \mbox{       }
+ (1-n_F({\bf{p}}+{\bf{q}}))\mbox{  }c_{ {\bf{p}}+{\bf{q}}-{\bf{q}}^{'}, < }\mbox{        } \delta_{ {\bf{k}}^{'}, {\bf{p}}+{\bf{q}} - {\bf{q}}^{'}/2 }
+\]
+This is not contradiction at least for $ {\bf{k}} = {\bf{k}}^{'} $ and $ {\bf{q}} = {\bf{q}}^{'} $.
+
+\subsection{ SRPA versus GRPA - II }\footnote{Derived by Prof. Girish Sampath Setlur, verified by the author under his guidance.}
+Using Eq. \eqref{Commutation and anti-commutation algebra}, we have,
+\[
+ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2},
+\]
+and,
+\[
+ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ (1-n_F({\bf{p}}))\mbox{  }c_{ {\bf{p}}-{\bf{q}}, < }\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }.
+\]
+Take a further commutator with $ a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) $ and  $ a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) $,
+\[
+[ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{      } = \mbox{       }
+ n_F({\bf{p}})\mbox{  }[c_{ {\bf{p}}+{\bf{q}}, > } ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+\]
+
+\[
+[ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] ,a_{ {\bf{k}}^{'} }({\bf{q}}^{'})] \mbox{      } = \mbox{       }
+ (1-n_F({\bf{p}}))\mbox{  }[c_{ {\bf{p}}-{\bf{q}}, < },a_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+In {\bf{SRPA}},
+\[
+[ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{      } = \mbox{       }
+ [ c_{ {\bf{p}}, < },[ a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]]
+  +  [ [c_{ {\bf{p}}, < },a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})], a_{ {\bf{k}} }({\bf{q}})]
+\]
+\[
+  =  [ c_{ {\bf{p}}, < },\delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))]
+  + 0 = 0
+\]
+whereas,
+\[
+ n_F({\bf{p}})\mbox{  }[c_{ {\bf{p}}+{\bf{q}}, > } ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}  =  n_F({\bf{p}})\mbox{  }
+ (1-n_F({\bf{p}}+{\bf{q}}))\mbox{  }c_{ {\bf{p}}+{\bf{q}}-{\bf{q}}^{'}, < }\mbox{        } \delta_{ {\bf{k}}^{'}, {\bf{p}} + {\bf{q}}- {\bf{q}}^{'}/2 }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+\]
+which is a contradiction. 
+
+Whereas in {\bf{GRPA}},
+\[
+[ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{      } = \mbox{       }
+ [ c_{ {\bf{p}}, < },[ a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]]
+  +  [ [c_{ {\bf{p}}, < },a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})], a_{ {\bf{k}} }({\bf{q}})]
+\]
+\[
+  =  \delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{ } (\delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 })
+  \mbox{           } c_{ {\bf{p}}, < }
+\]
+These two are equal when $ {\bf{q}}^{'} = {\bf{q}} $ ({\bf{GRPA}}). Also,
+\[
+[ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})], a_{ {\bf{k}}^{'} }({\bf{q}}^{'})]  \mbox{      } = \mbox{       }
+-n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)\delta_{ {\bf{k}}, {\bf{k}}^{'}}
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{          }
+[c_{ {\bf{p}}, > }, n_{ {\bf{k}} - {\bf{q}}/2 } - n_{ {\bf{k}} + {\bf{q}}/2 }]
+\]
+\[
+   \mbox{      } = \mbox{       }
+-n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)\delta_{ {\bf{k}}, {\bf{k}}^{'}}
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{          }
+( \delta_{ {\bf{p}}, {\bf{k}} - {\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}} + {\bf{q}}/2 })\mbox{           }
+c_{ {\bf{p}}, > }
+\]
+and
+\[ (1-n_F({\bf{p}}))\mbox{  }[c_{ {\bf{p}}-{\bf{q}}, < }, a_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }\mbox{           } =\mbox{           }
+(1-n_F({\bf{p}}))\mbox{  } n_F({\bf{p}}-{\bf{q}})\mbox{  }c_{ {\bf{p}}-{\bf{q}}+{\bf{q}}^{'}, > }\mbox{   }\delta_{ {\bf{k}}^{'}, {\bf{p}}-{\bf{q}} + {\bf{q}}^{'}/2}\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+These two are equal when $ {\bf{q}} = {\bf{q}}^{'} $ ({\bf{GRPA}}). 
+
+Thus, we conclude that GRPA is a more realistic option to approximate the commutation Eq.\eqref{a with a+ commutation}. We will now use this to derive the fermi-Dirac equation.
+
+\section{Deriving the Fermi-Dirac distribution\cite{GirBook}}\label{Deriving the Fermi-Dirac distribution}
+To compute the momentum distribution at finite temperature, it is better to calculate the following finite temperature correlation function:
+
+
+
+\begin{equation}
+G(\mathbf{k}, \mathbf{q} ; \lambda)=<e^{-\lambda N_{>}} a_{\mathbf{k}}^{\dagger}(\mathbf{q}) a_{\mathbf{k}}(\mathbf{q})>\equiv \frac{\operatorname{Tr}\left(e^{-\beta(H-\mu N)} e^{-\lambda N_{>}} a_{\mathbf{k}}^{\dagger}(\mathbf{q}) a_{\mathbf{k}}(\mathbf{q})\right)}{\operatorname{Tr}\left(e^{-\beta(H-\mu N)}\right)} 
+\end{equation}
+
+
+Therefore,
+
+
+\begin{equation}
+\int_{\infty}^{\lambda} d \lambda^{\prime} G\left(\mathbf{k}, \mathbf{q} ; \lambda^{\prime}\right)=-<e^{-\lambda N_{>}} \frac{1}{N_{>}} a_{\mathbf{k}}^{\dagger}(\mathbf{q}) a_{\mathbf{k}}(\mathbf{q})> 
+\end{equation}
+
+
+and,
+
+
+\begin{gather*}
+<\hat{n}_{\mathbf{k}, \lambda}>=<e^{-\lambda N_{>}} c_{\mathbf{k}}^{\dagger} c_{\mathbf{k}}>=n_{F}(\mathbf{k})<e^{-\lambda N_{>}}> \\
+-\sum_{\mathbf{q}} \int_{\infty}^{\lambda} d \lambda^{\prime} G\left(\mathbf{k}-\mathbf{q} / 2, \mathbf{q} ; \lambda^{\prime}\right)+\sum_{\mathbf{q}} \int_{\infty}^{\lambda} d \lambda^{\prime} G\left(\mathbf{k}+\mathbf{q} / 2, \mathbf{q} ; \lambda^{\prime}\right) 
+\end{gather*}
+
+
+Using the cyclic permutation property of the trace and the RPA algebra, we obtain the following expression for $G$.
+
+
+\begin{gather*}
+G(\mathbf{k}, \mathbf{q} ; \lambda)=\frac{e^{-\lambda} e^{-\beta \frac{\mathbf{k} \cdot \mathbf{q}}{m}}}{\left(1-e^{-\lambda} e^{-\beta \frac{\mathbf{k} \cdot \mathbf{q}}{m}}\right)}\left(<\hat{n}_{\mathbf{k}-\mathbf{q} / 2, \lambda}>-<\hat{n}_{\mathbf{k}+\mathbf{q} / 2, \lambda}>\right) \\
+n_{F}(\mathbf{k}-\mathbf{q} / 2)\left(1-n_{F}(\mathbf{k}+\mathbf{q} / 2)\right) 
+\end{gather*}
+
+
+Let $D(\varepsilon)$ be the density of states of the free theory. Thus, $D(\varepsilon) d \varepsilon=$ $\frac{V}{(2 \pi)^{d}} \Omega_{d} k^{(d-1)} d k$. Note that $D(\varepsilon)$ is an extensive quantity as is the summation $\sum_{\mathbf{q}}$. Thus we have to ensure that the dependence of $n(\lambda, \varepsilon)$ on $\lambda$ is such that when integrated over $\lambda$, leads to an extensive quantity in the denominator. This matter may be made more explicit by differentiating with respect to $\lambda$.
+
+
+\begin{gather*}
+\frac{d}{d \lambda} n_{<}(\lambda, \varepsilon)=-\theta\left(\varepsilon_{F}-\varepsilon\right) u(\lambda) \\
++\int_{\varepsilon_{F}}^{\infty} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) \frac{1}{\left(e^{\lambda} e^{\beta\left(\varepsilon^{\prime}-\varepsilon\right)}-1\right)}\left(n_{<}(\lambda, \varepsilon)-n_{>}\left(\lambda, \varepsilon^{\prime}\right)\right) \theta\left(\varepsilon_{F}-\varepsilon\right)  \\
+\frac{d}{d \lambda} n_{>}(\lambda, \varepsilon)= \\
+-\int_{0}^{\varepsilon_{F}} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) \frac{1}{\left(e^{\lambda} e^{\beta\left(\varepsilon-\varepsilon^{\prime}\right)}-1\right)}\left(n_{<}\left(\lambda, \varepsilon^{\prime}\right)-n_{>}(\lambda, \varepsilon)\right) \theta\left(\varepsilon-\varepsilon_{F}\right)  \\
+u(\lambda)=\left\langle e^{-\lambda N_{>}} N_{>}\right\rangle=N^{0}\left\langle e^{-\lambda N_{>}}\right\rangle-\int_{0}^{\varepsilon_{F}} d \varepsilon D(\varepsilon) n_{<}(\lambda, \varepsilon)
+\end{gather*}
+
+
+
+\begin{equation}
+=\int_{\varepsilon_{F}}^{\infty} d \varepsilon D(\varepsilon) n_{>}(\lambda, \varepsilon)
+\end{equation}
+
+
+We may suspect, that these equations can be solved by the following ansatz. 
+
+
+\begin{equation}
+n_{>,<}(\lambda, \varepsilon)=\tilde{n}_{>,<}(\lambda, \varepsilon) e^{I(\lambda)} 
+\end{equation}
+
+
+where the function $I(\lambda)$ is extensive and is independent of the energy variable $\varepsilon$, whereas $\tilde{n}$ is intensive and depends on both the variables in general. Substituting this ansatz into the equations we find,
+
+\begin{gather*}
+I^{\prime}(\lambda) \tilde{n}_{<}(\lambda, \varepsilon)+\frac{d}{d \lambda} \tilde{n}_{<}(\lambda, \varepsilon)=-\theta\left(\varepsilon_{F}-\varepsilon\right) \tilde{u}(\lambda) \\
++\int_{\varepsilon_{F}}^{\infty} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) \frac{1}{\left(e^{\lambda} e^{\beta\left(\varepsilon^{\prime}-\varepsilon\right)}-1\right)}\left(\tilde{n}_{<}(\lambda, \varepsilon)-\tilde{n}_{>}\left(\lambda, \varepsilon^{\prime}\right)\right) \theta\left(\varepsilon_{F}-\varepsilon\right)  \\
+I^{\prime}(\lambda) \tilde{n}_{>}(\lambda, \varepsilon)+\frac{d}{d \lambda} \tilde{n}_{>}(\lambda, \varepsilon)= \\
+-\int_{0}^{\varepsilon_{F}} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) \frac{1}{\left(e^{\lambda} e^{\beta\left(\varepsilon-\varepsilon^{\prime}\right)}-1\right)}\left(\tilde{n}_{<}\left(\lambda, \varepsilon^{\prime}\right)-\tilde{n}_{>}(\lambda, \varepsilon)\right) \theta\left(\varepsilon-\varepsilon_{F}\right)\\
+\tilde{u}(\lambda)=\int_{\varepsilon_{F}}^{\infty} D(\varepsilon) d \varepsilon \tilde{n}_{>}(\lambda, \varepsilon) .
+\end{gather*}
+
+
+Since $I^{\prime}(\lambda), \tilde{u}$ and $D(\varepsilon)$ are extensive and $\tilde{n}$ is intensive, we may write after setting $\lambda=0$,
+
+
+\begin{gather*}\label{I'(0)}
+I^{\prime}(0) \tilde{n}_{<}(0, \varepsilon)=-\theta\left(\varepsilon_{F}-\varepsilon\right) \tilde{u}(0) \\
++\int_{\varepsilon_{F}}^{\infty} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) \frac{1}{\left(e^{\beta\left(\varepsilon^{\prime}-\varepsilon\right)}-1\right)}\left(\tilde{n}_{<}(0, \varepsilon)-\tilde{n}_{>}\left(0, \varepsilon^{\prime}\right)\right) \theta\left(\varepsilon_{F}-\varepsilon\right)  \\
+I^{\prime}(0) \tilde{n}_{>}(0, \varepsilon)= \\
+-\int_{0}^{\varepsilon_{F}} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) \frac{1}{\left(e^{\beta\left(\varepsilon-\varepsilon^{\prime}\right)}-1\right)}\left(\tilde{n}_{<}\left(0, \varepsilon^{\prime}\right)-\tilde{n}_{>}(0, \varepsilon)\right) \theta\left(\varepsilon-\varepsilon_{F}\right) .
+\end{gather*}
+
+
+Dividing both sides of Eq. \eqref{I'(0)} by $\tilde{n}_{>}(0, \varepsilon)$ allows us to suspect that it should be possible to write
+
+
+\begin{equation}\label{n</n>-1}
+\left(\frac{\tilde{n}_{<}\left(0, \varepsilon^{\prime}\right)}{\tilde{n}_{>}(0, \varepsilon)}-1\right)=\left(e^{\beta\left(\varepsilon-\varepsilon^{\prime}\right)}-1\right) h\left(\varepsilon^{\prime}\right) 
+\end{equation}
+
+
+\begin{comment}
+ \footnotetext{
+${ }^{1}$ As the reader may have suspected, the authors thought of this by inspecting the exact result obtained by elementary means.}
+
+
+\begin{equation}
+n(\lambda, \varepsilon)=\frac{1}{\left(e^{\beta(\varepsilon-\mu)-\lambda \theta\left(\varepsilon_{F}-\varepsilon\right)}+1\right)} e^{-\lambda N^{0}} \operatorname{Exp}\left(\int_{0}^{\varepsilon_{F}} D\left(\varepsilon^{\prime}\right) d \varepsilon^{\prime} \log \left(\frac{\left(1+e^{-\beta\left(\varepsilon^{\prime}-\mu\right)+\lambda}\right)}{\left(1+e^{-\beta\left(\varepsilon^{\prime}-\mu\right)}\right)}\right)\right) \tag{12.46}
+\end{equation}   
+\end{comment}
+
+
+so that for some $h$ we have,
+
+
+\begin{equation}
+I^{\prime}(0)=-\int_{0}^{\varepsilon_{F}} d \varepsilon^{\prime} D\left(\varepsilon^{\prime}\right) h\left(\varepsilon^{\prime}\right) .
+\end{equation}
+
+
+Interchanging $\varepsilon$ and $\varepsilon^{\prime}$ in Eq. \eqref{n</n>-1} and substituting into Eq. \eqref{I'(0)} we obtain
+
+
+\begin{equation}
+I^{\prime}(0) \tilde{n}_{<}(0, \varepsilon)=-\theta\left(\varepsilon_{F}-\varepsilon\right) \tilde{u}(0)+h(\varepsilon) \tilde{u}(0) \theta\left(\varepsilon_{F}-\varepsilon\right) .
+\end{equation}
+
+
+We now multiply by the density of states and integrate to obtain, $I^{\prime}(0) N^{0,<}=$ $-N^{0} N^{0,>}-I^{\prime}(0) N^{0,>}$, where the notation is self-explanatory. Thus $I^{\prime}(0)=$ $-N^{0,>}=-\tilde{u}(0)$. In other words, $\tilde{n}_{<}(0, \varepsilon)=1-h(\varepsilon)$. Hence we find,
+
+
+\begin{equation}
+\tilde{n}_{>}(0, \varepsilon)=\frac{1}{1+\frac{h\left(\varepsilon^{\prime}\right)}{1-h\left(\varepsilon^{\prime}\right)} e^{\beta\left(\varepsilon-\varepsilon^{\prime}\right)}} 
+\end{equation}
+
+
+Therefore, we may conclude that there exists a constant $\mu$ such that, $\frac{h\left(\varepsilon^{\prime}\right)}{1-h\left(\varepsilon^{\prime}\right)}=$ $e^{\beta\left(\varepsilon^{\prime}-\mu\right)}$, or $h\left(\varepsilon^{\prime}\right)=\frac{1}{e^{-\beta\left(\varepsilon^{\prime}-\mu\right)}+1}$. Thus $\tilde{n}_{>}(0, \varepsilon)=\tilde{n}_{<}(0, \varepsilon)=\frac{1}{e^{\beta(\varepsilon-\mu)}+1}$. It is remarkable indeed that the Fermi-Dirac distribution emerges from a theory that is bosonic in character. However, it is important to impress upon the reader that it is the generalized RPA that takes into account fluctuations in the number of particle-hole pairs in a self-consistent manner that leads to the Fermi-Dirac distribution, whereas the simple-minded RPA fails to do so. This latter fact is easily seen by replacing the commutator $\left[a_{\mathbf{k}}(\mathbf{q}), a_{\mathbf{k}}^{\dagger}(\mathbf{q})\right]=n_{F}(\mathbf{k}-\mathbf{q} / 2)\left(1-n_{F}(\mathbf{k}+\mathbf{q} / 2)\right)$, which is nothing but the simple-minded RPA. 

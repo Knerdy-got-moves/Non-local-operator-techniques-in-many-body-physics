@@ -1,0 +1,1250 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{Specialised random phase approximation (SRPA) vs. Generalised  random phase approximation (GRPA)}
+\date{}
+\author{Idea from Girish S. Setlur, revised and rewritten by Rishi Paresh Joshi}
+
+\maketitle
+
+\section{ SRPA versus GRPA -  I }
+
+\noindent {\bf{Defn:}} $ a_{ {\bf{k}} }({\bf{q}}) = c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <} c_{ {\bf{k}}+{\bf{q}}/2,  > } $,
+ $ n_{ {\bf{p}} } = c^{\dagger}_{ {\bf{p}} }c_{ {\bf{p}} } $.
+\\ \mbox{ } \\ This means (these are exact),
+\[
+[a_{ {\bf{k}} }({\bf{q}}), a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  = 0
+\]
+and
+\[
+[a_{ {\bf{k}} }({\bf{q}}), n_{ {\bf{p}} }] = a_{ {\bf{k}} }({\bf{q}}) \mbox{        }
+(\delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 })
+\]
+and
+\[
+ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+\]
+
+\[
+ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ (1-n_F({\bf{p}}))\mbox{  }c_{ {\bf{p}}-{\bf{q}}, < }\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+and
+\[
+ [c_{ {\bf{p}}, < }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ [c_{ {\bf{p}}, > }, a_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+0
+\]
+\\ \mbox{  }  \\
+Now the big question is this, should we say (these are approximate),
+\\ \mbox{  }  \\
+{\bf{SRPA}}: $ [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  = \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)) $
+\\ \mbox{  } \\
+{\bf{OR}}
+\\ \mbox{  }  \\
+{\bf{GRPA}}: $ [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  = \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))(n_{ {\bf{k}}-{\bf{q}}/2 }
+ - n_{ {\bf{k}} + {\bf{q}}/2 }) $. \\ \mbox{  } \\
+Suppose we select the simple {\bf{SRPA}}.
+\\ \mbox{  } \\
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+[c_{ {\bf{p}},< }, \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)) ]
+ \mbox{              } = \mbox{               } 0
+\]
+On the other hand,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [ [c_{ {\bf{p}},< },a_{ {\bf{k}} }({\bf{q}})], a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]
+  + [a_{ {\bf{k}} }({\bf{q}}), [c_{ {\bf{p}},< }, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\]
+this means,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [  n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  + 0
+\]
+\[
+\mbox{              } = \mbox{               }
+   n_F({\bf{p}})\mbox{  }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2} \mbox{       }
+ (1-n_F({\bf{p}}+{\bf{q}}))\mbox{  }c_{ {\bf{p}}+{\bf{q}}-{\bf{q}}^{'}, < }\mbox{        } \delta_{ {\bf{k}}^{'}, {\bf{p}}+{\bf{q}} - {\bf{q}}^{'}/2 }
+\]
+Thus we have reached a contradiction.
+
+\noindent Suppose we select the {\bf{GRPA}}.
+\\ \mbox{  } \\
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ \delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{    }
+ [c_{ {\bf{p}},< }, n_{ {\bf{k}}-{\bf{q}}/2 }-n_{ {\bf{k}} + {\bf{q}}/2 }]
+ \mbox{              } = \mbox{               }
+\]
+\[
+ \mbox{              } = \mbox{               }
+\delta_{ {\bf{k}}, {\bf{k}}^{'} }
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{            } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{    }
+n_F({\bf{p}}) \mbox{  } (\delta_{ {\bf{p}},{\bf{k}}-{\bf{q}}/2 }-\delta_{ {\bf{p}}, {\bf{k}} + {\bf{q}}/2 })\mbox{  }c_{ {\bf{p}} }
+\]
+On the other hand,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [ [c_{ {\bf{p}},< },a_{ {\bf{k}} }({\bf{q}})], a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]
+  + [a_{ {\bf{k}} }({\bf{q}}), [c_{ {\bf{p}},< }, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\]
+this means,
+\[
+[c_{ {\bf{p}},< }, [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  ]
+\mbox{              } = \mbox{               }
+ [  n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+, a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ]  + 0
+\]
+\[
+\mbox{              } = \mbox{               }
+   n_F({\bf{p}})\mbox{  }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2} \mbox{       }
+ (1-n_F({\bf{p}}+{\bf{q}}))\mbox{  }c_{ {\bf{p}}+{\bf{q}}-{\bf{q}}^{'}, < }\mbox{        } \delta_{ {\bf{k}}^{'}, {\bf{p}}+{\bf{q}} - {\bf{q}}^{'}/2 }
+\]
+This is not contradiction at least for $ {\bf{k}} = {\bf{k}}^{'} $ and $ {\bf{q}} = {\bf{q}}^{'} $.
+
+\section{ SRPA versus GRPA - II }
+
+\[
+ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ n_F({\bf{p}})\mbox{  }c_{ {\bf{p}}+{\bf{q}}, > }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+\]
+
+\[
+ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] \mbox{      } = \mbox{       }
+ (1-n_F({\bf{p}}))\mbox{  }c_{ {\bf{p}}-{\bf{q}}, < }\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+\\ \mbox{  }  \\Take a further commutator with $ a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'}) $ and  $ a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) $,
+\[
+[ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{      } = \mbox{       }
+ n_F({\bf{p}})\mbox{  }[c_{ {\bf{p}}+{\bf{q}}, > } ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+\]
+
+\[
+[ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})] ,a_{ {\bf{k}}^{'} }({\bf{q}}^{'})] \mbox{      } = \mbox{       }
+ (1-n_F({\bf{p}}))\mbox{  }[c_{ {\bf{p}}-{\bf{q}}, < },a_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+In {\bf{SRPA}},
+\[
+[ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{      } = \mbox{       }
+ [ c_{ {\bf{p}}, < },[ a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]]
+  +  [ [c_{ {\bf{p}}, < },a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})], a_{ {\bf{k}} }({\bf{q}})]
+\]
+\[
+  =  [ c_{ {\bf{p}}, < },\delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))]
+  + 0 = 0
+\]
+whereas,
+\[
+ n_F({\bf{p}})\mbox{  }[c_{ {\bf{p}}+{\bf{q}}, > } ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}  =  n_F({\bf{p}})\mbox{  }
+ (1-n_F({\bf{p}}+{\bf{q}}))\mbox{  }c_{ {\bf{p}}+{\bf{q}}-{\bf{q}}^{'}, < }\mbox{        } \delta_{ {\bf{k}}^{'}, {\bf{p}} + {\bf{q}}- {\bf{q}}^{'}/2 }\mbox{   }\delta_{ {\bf{k}}, {\bf{p}} + {\bf{q}}/2}
+\]
+which is a contradiction. Whereas in {\bf{GRPA}},
+\[
+[ [c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})] ,a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{      } = \mbox{       }
+ [ c_{ {\bf{p}}, < },[ a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})]]
+  +  [ [c_{ {\bf{p}}, < },a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})], a_{ {\bf{k}} }({\bf{q}})]
+\]
+\[
+  =  \delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{ } (\delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 })
+  \mbox{           } c_{ {\bf{p}}, < }
+\]
+These two are equal when $ {\bf{q}}^{'} = {\bf{q}} $ ({\bf{GRPA}}). Also,
+\[
+[ [c_{ {\bf{p}}, > }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})], a_{ {\bf{k}}^{'} }({\bf{q}}^{'})]  \mbox{      } = \mbox{       }
+-n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)\delta_{ {\bf{k}}, {\bf{k}}^{'}}
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{          }
+[c_{ {\bf{p}}, > }, n_{ {\bf{k}} - {\bf{q}}/2 } - n_{ {\bf{k}} + {\bf{q}}/2 }]
+\]
+\[
+   \mbox{      } = \mbox{       }
+-n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2)\delta_{ {\bf{k}}, {\bf{k}}^{'}}
+\delta_{ {\bf{q}}, {\bf{q}}^{'} }\mbox{          }
+( \delta_{ {\bf{p}}, {\bf{k}} - {\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}} + {\bf{q}}/2 })\mbox{           }
+c_{ {\bf{p}}, > }
+\]
+and
+\[ (1-n_F({\bf{p}}))\mbox{  }[c_{ {\bf{p}}-{\bf{q}}, < }, a_{ {\bf{k}}^{'} }({\bf{q}}^{'})]\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }\mbox{           } =\mbox{           }
+(1-n_F({\bf{p}}))\mbox{  } n_F({\bf{p}}-{\bf{q}})\mbox{  }c_{ {\bf{p}}-{\bf{q}}+{\bf{q}}^{'}, > }\mbox{   }\delta_{ {\bf{k}}^{'}, {\bf{p}}-{\bf{q}} + {\bf{q}}^{'}/2}\mbox{        } \delta_{ {\bf{k}}, {\bf{p}} - {\bf{q}}/2 }
+\]
+These two are equal when $ {\bf{q}} = {\bf{q}}^{'} $ ({\bf{GRPA}}).
+
+
+
+\section{ Exact bosons }
+
+The goal now is to find exact bosons $ b_{ {\bf{k}} }({\bf{q}}) $ such that,
+\[
+[b_{ {\bf{k}} }({\bf{q}}),b_{ {\bf{k}}^{'} }({\bf{q}}^{'})] = 0  ; \mbox{  } \mbox{   }
+[b_{ {\bf{k}} }({\bf{q}}),b^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})] = n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{  }
+\delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} }
+\]
+whereas the starting point is {\bf{GRPA}},
+\[
+[a_{ {\bf{k}} }({\bf{q}}),a_{ {\bf{k}}^{'} }({\bf{q}}^{'})] = 0  ; \mbox{  } \mbox{   }
+[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})] = n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{  }(n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}} + {\bf{q}}/2 })\mbox{        }
+\delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} }
+\]
+and
+\[
+[a_{ {\bf{k}} }({\bf{q}}),n_{ {\bf{p}} }] = a_{ {\bf{k}} }({\bf{q}})\mbox{  } (\delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 }
+ - \delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 })
+\]
+Note that,
+\[
+n_{ {\bf{p}} } \neq n_F({\bf{p}}) + \sum_{ {\bf{q}} }a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 }({\bf{q}})a_{ {\bf{p}}-{\bf{q}}/2 }({\bf{q}}) -  \sum_{ {\bf{q}} }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 }({\bf{q}})a_{ {\bf{p}}+{\bf{q}}/2 }({\bf{q}})
+\]
+whereas,
+\[
+n_{ {\bf{p}} } = n_F({\bf{p}}) + \frac{1}{N_{>}}\sum_{ {\bf{q}} }a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 }({\bf{q}})a_{ {\bf{p}}-{\bf{q}}/2 }({\bf{q}}) -  \frac{1}{N_{>}}\sum_{ {\bf{q}} }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 }({\bf{q}})a_{ {\bf{p}}+{\bf{q}}/2 }({\bf{q}})
+\]
+and
+\[
+(N_{>})^2 \mbox{        } = \mbox{         } \sum_{ {\bf{k}},{\bf{q}} }a^{\dagger}_{ {\bf{k}} }({\bf{q}})a_{ {\bf{k}} }({\bf{q}})
+\]
+
+
+-----------------------------------------------------------------------------------------------------
+
+Set,
+\[
+  a_{ {\bf{k}} }({\bf{q}})\mbox{          }   =\mbox{          }  \Gamma(b^{\dagger}b; {\bf{k}}, {\bf{q}})
+ b_{ {\bf{k}} }({\bf{q}}) 
+\]
+
+
+------------------------------------------------------------------------------------------------------
+
+\[
+[a_{ {\bf{k}} }({\bf{q}}),a_{ {\bf{k}}^{'} }({\bf{q}}^{'})] = 0  ; \mbox{  } \mbox{   }
+[a_{ {\bf{k}} }({\bf{q}}),a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})] = n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))\mbox{  }(n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}} + {\bf{q}}/2 })\mbox{        }
+\delta_{ {\bf{k}}, {\bf{k}}^{'} } \delta_{ {\bf{q}}, {\bf{q}}^{'} }
+\]
+and
+\[
+[a_{ {\bf{k}} }({\bf{q}}),n_{ {\bf{p}} }] = a_{ {\bf{k}} }({\bf{q}})\mbox{  } (\delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 }
+ - \delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 })
+\]
+
+
+\[
+n_{ {\bf{p}} } = n_F({\bf{p}}) + \frac{1}{N_{>}}\sum_{ {\bf{q}} }a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 }({\bf{q}})a_{ {\bf{p}}-{\bf{q}}/2 }({\bf{q}}) -  \frac{1}{N_{>}}\sum_{ {\bf{q}} }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 }({\bf{q}})a_{ {\bf{p}}+{\bf{q}}/2 }({\bf{q}})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\]
+and
+\[
+(N_{>})^2 \mbox{        } = \mbox{         } \sum_{ {\bf{k}},{\bf{q}} }a^{\dagger}_{ {\bf{k}} }({\bf{q}})a_{ {\bf{k}} }({\bf{q}})
+\]
+
+
+
+
+
+\end{document} 

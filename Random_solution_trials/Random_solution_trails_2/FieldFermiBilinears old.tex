@@ -1,0 +1,703 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{ Field operator in terms of Fermi Bilinears }
+\date{}
+\author{Girish Sampath Setlur, rewritten by RIshi Paresh Joshi}
+
+\maketitle
+\tiny
+
+
+\section{  Fermi-bilinears in terms of $ a_{ {\bf{k}} }({\bf{q}}) $ }
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           } a^{\dagger}_{ {\bf{p}} }({\bf{q}})
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+a_{ {\bf{p}} }(-{\bf{q}})
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           }
+n_F({\bf{p}})\mbox{  }\delta_{ {\bf{q}}, 0 }
+ - \sum_{ {\bf{q}}_1 } \frac{1}{N_{>}} \mbox{  } a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+\sum_{ {\bf{q}}_1 } \frac{1}{N_{>}} \mbox{  } a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}-{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+
+---------------------------------------------------------------------------------------------------------------------
+
+\[
+[a_{ {\bf{P}} }({\bf{Q}}),N_{>}]
+\mbox{             }  = \mbox{           }  a_{ {\bf{P}} }({\bf{Q}})
+\]
+
+
+\[
+[a^{\dagger}_{ {\bf{P}} }({\bf{Q}}),N_{>}]
+\mbox{             }  = \mbox{           }  - a^{\dagger}_{ {\bf{P}} }({\bf{Q}})
+\]
+
+
+
+\[
+f( N_{ > } )\mbox{          }
+a_{ {\bf{P}} }({\bf{Q}})=a_{ {\bf{P}} }({\bf{Q}}) \mbox{       }f( N_{>} -1 )
+\]
+
+
+
+\[
+a^{\dagger}_{ {\bf{P}} }({\bf{Q}})\mbox{       } f(N_{>})
+= f( N_{>} -1 ) \mbox{       }a^{\dagger}_{ {\bf{P}} }({\bf{Q}})
+\]
+
+
+----------------------------------------------------------------------------------------------------------------
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           } a^{\dagger}_{ {\bf{p}} }({\bf{q}})
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+a_{ {\bf{p}} }(-{\bf{q}})
+\]
+
+If $ {\bf{q}} \neq 0 $ then,
+\[
+c_{ {\bf{p}}-{\bf{q}}/2, < }c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }  \mbox{     }  = \mbox{           }
+  \sum_{ {\bf{q}}_1 }  a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{  }
+  \frac{1}{N_{>}+1} \mbox{  }
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+\sum_{ {\bf{q}}_1 }  a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{  }
+\frac{1}{N_{>}+1} \mbox{  }
+a_{ {\bf{p}}-{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+
+Also we define,
+
+\[
+c_{ {\bf{p}}, < }c^{\dagger}_{ {\bf{p}}, < }  \mbox{     }  = \mbox{           }
+lim_{ {\bf{q}} \rightarrow 0 } \mbox{     } c_{ {\bf{p}}-{\bf{q}}/2, < }c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}}, > }c_{ {\bf{p}}, > } \mbox{     }  = \mbox{           }
+lim_{ {\bf{q}} \rightarrow 0 } \mbox{     }c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, > }
+\]
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
+\section{ Field operator }
+
+Set,
+ \[
+e^{ i N \theta_{ {\bf{p}} } }e^{ i N \theta_{ {\bf{p}}^{'} } } \mbox{            }
+= \mbox{           } 0
+ \]
+and
+ \[
+e^{ i N \theta_{ {\bf{p}} } }e^{ -i N \theta_{ {\bf{p}}^{'} } } \mbox{            }
+= \mbox{           } \delta_{ {\bf{p}}, {\bf{p}}^{'} }
+ \]
+ This means,
+\[
+c_{ {\bf{p}}, > }  =  \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}_2 } }
+ \mbox{        }
+ c_{ {\bf{p}}-{\bf{q}}_2,< } \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}_2,<}}}  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+and
+\[
+c^{\dagger}_{ {\bf{p}}, < }    \mbox{            }  =    \mbox{            } \sqrt{N_{>}+1}\mbox{          }\frac{1}{\sqrt{n_{{\bf{p}},<}}} \mbox{        }
+c^{\dagger}_{ {\bf{p}}, < } \mbox{  } e^{ i N \theta_{ {\bf{p}} } }
+\mbox{       }
++ \sum_{  {\bf{q}}_1 } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}_1,>}}}\mbox{       }
+  c^{\dagger}_{ {\bf{p}}+{\bf{q}}_1,> } \mbox{          }\frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+
+
+---------------------------------------------------------------------------------------
+
+{\bf{Time evolution of the non-interacting system:}}
+
+Note that for free fermions,
+\[
+c_{ {\bf{p}},s }(t) \mbox{         } = \mbox{            }
+c_{ {\bf{p}},s} \mbox{            } e^{ - i \epsilon_p \mbox{  } t }
+\]
+and
+\[
+a_{ {\bf{k}} }({\bf{q}};t)  \mbox{         } = \mbox{            } e^{ - i \frac{ {\bf{k.q}} }{m} \mbox{  } t }
+\mbox{            }a_{ {\bf{k}} }({\bf{q}})
+\]
+This means,
+\[
+c_{ {\bf{p}}, > }(t)  = \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}_2 } }
+ \mbox{        }
+ c_{ {\bf{p}}-{\bf{q}}_2,< }(t) \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}_2,<}}}  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2;t)
+\]
+and
+\[
+c^{\dagger}_{ {\bf{p}}, < }(t)    \mbox{            }  =    \mbox{            } \sqrt{N_{>}+1}\mbox{          }\frac{1}{\sqrt{n_{{\bf{p}},<}}} \mbox{        }
+c^{\dagger}_{ {\bf{p}}, < }(t) \mbox{  } e^{ i N \theta_{ {\bf{p}} } }
+\mbox{       }
++ \sum_{  {\bf{q}}_1 } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}_1,>}}}\mbox{       }
+  c^{\dagger}_{ {\bf{p}}+{\bf{q}}_1,> }(t) \mbox{          }\frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1;t)
+\]
+Note that,
+\[
+ c_{ {\bf{p}}-{\bf{q}}_2,< }(t) \mbox{            }....  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2;t)\mbox{           }  = \mbox{             }
+ e^{ -i \epsilon_{ {\bf{p}}-{\bf{q}}_2 } t } e^{ - i \frac{({\bf{p}} - {\bf{q}}_2/2).{\bf{q}}_2}{m} t }  \mbox{             }
+  c_{ {\bf{p}}-{\bf{q}}_2,< } \mbox{            }....  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+  \mbox{           }  = \mbox{             }
+ e^{ -i \frac{ ({\bf{p}}-{\bf{q}}_2)^2 }{2m} t } e^{ - i \frac{({\bf{p}} - {\bf{q}}_2/2).{\bf{q}}_2}{m} t }  \mbox{             }
+  c_{ {\bf{p}}-{\bf{q}}_2,< } \mbox{            }....  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+    \mbox{           }  = \mbox{             }
+ e^{ -i \epsilon_p t }  \mbox{             }
+  c_{ {\bf{p}}-{\bf{q}}_2,< } \mbox{            }....  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+Similarly,
+\[
+  c^{\dagger}_{ {\bf{p}}+{\bf{q}}_1,> }(t) \mbox{          }.....\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1;t)\mbox{          }=\mbox{          }
+e^{ i \epsilon_p t }
+ \mbox{   }
+   c^{\dagger}_{ {\bf{p}}+{\bf{q}}_1,> } \mbox{          }.....\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+Thus this correspondence gives the correct time evolution. Next we show that this correspondence when back substituted into the equations of the previous section leads to an identity.
+
+\section{ Back substitution }
+
+Set,
+ \[
+e^{ i N \theta_{ {\bf{p}} } }e^{ i N \theta_{ {\bf{p}}^{'} } } \mbox{            }
+= \mbox{           } 0
+ \]
+and
+ \[
+e^{ i N \theta_{ {\bf{p}} } }e^{ -i N \theta_{ {\bf{p}}^{'} } } \mbox{            }
+= \mbox{           } \delta_{ {\bf{p}}, {\bf{p}}^{'} }
+ \]
+ This means,
+\[
+c_{ {\bf{p}}-{\bf{q}}/2, > }  =  \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}/2-{\bf{q}}_2 } }
+ \mbox{        }
+ c_{ {\bf{p}}-{\bf{q}}/2-{\bf{q}}_2,< } \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2-{\bf{q}}_2,<}}}  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}-{\bf{q}}/2 - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+and
+\[
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < }    \mbox{            }  =    \mbox{            }  \sqrt{N_{>}+1}\mbox{          }\frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2,<}}} \mbox{        }
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < } \mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2 } }
+\mbox{       }
+\]
+\[
++ \sum_{  {\bf{q}}_1 } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2+{\bf{q}}_1,>}}}\mbox{       }
+  c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2+{\bf{q}}_1,> } \mbox{          }\frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}/2+{\bf{q}}_1 } }\mbox{          }
+ a_{ {\bf{p}}+{\bf{q}}/2+ {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+
+---------------------------------------------------------------------------------------------
+
+\[
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, > }  = \sum_{ {\bf{q}}_2 }
+   \mbox{   }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_2/2 }({\bf{q}}_2)\mbox{     } \frac{1}{\sqrt{N_{>}+1}}
+ \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2-{\bf{q}}_2,<}}} \mbox{        }
+ c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_2,< }\mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_2 } }
+\]
+and
+\[
+c_{ {\bf{p}}-{\bf{q}}/2, < }    \mbox{            }  =  \mbox{          } e^{ -i N \theta_{ {\bf{p}}-{\bf{q}}/2 } } \mbox{        }
+c_{ {\bf{p}}-{\bf{q}}/2, < }
+\frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2,<}}}  \mbox{            }  \sqrt{N_{>}+1}
+\mbox{       }
+\]
+\[
++ \sum_{  {\bf{q}}_1 }
+   a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{   }
+    e^{ i N \theta_{ {\bf{p}}-{\bf{q}}/2+{\bf{q}}_1 } }\mbox{  }
+\frac{1}{\sqrt{N_{>}+1}}\mbox{        }  c_{ {\bf{p}}-{\bf{q}}/2+{\bf{q}}_1,> } \mbox{          }  \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2+{\bf{q}}_1,>}}}
+\]
+
+=========================================================================================
+
+{\bf{Off-diagonal}}:
+
+\[
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, > }  c_{ {\bf{p}}-{\bf{q}}/2, < }
+\mbox{              } = \mbox{                }  \sum_{ {\bf{q}}_2 }
+   \mbox{   }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_2/2 }({\bf{q}}_2)
+ \mbox{            }\frac{1}{\sqrt{N_{>}+1}}
+ \mbox{               } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2-{\bf{q}}_2,<}}} \mbox{        }
+ c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_2,< }\mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_2 } }\mbox{     }   c_{ {\bf{p}}-{\bf{q}}/2, < }
+\]
+\[
+\mbox{              } = \mbox{                }  \sum_{ {\bf{q}}_2 }
+   \mbox{   }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_2/2 }({\bf{q}}_2)
+ \mbox{            }  \frac{1}{\sqrt{N_{>}+1}}
+ \mbox{               } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2-{\bf{q}}_2,<}}} \mbox{        }
+ c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_2,< }\mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_2 } }\mbox{     }
+ \mbox{          } \mbox{  } e^{ -i N \theta_{ {\bf{p}}-{\bf{q}}/2 } } \mbox{        }
+c_{ {\bf{p}}-{\bf{q}}/2, < }
+\frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2,<}}}  \mbox{            }  \sqrt{N_{>}+1}
+\]
+\[
+\mbox{              } =
+   \mbox{   }a^{\dagger}_{ {\bf{p}} }({\bf{q}})
+\]
+
+and
+
+\[
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < } c_{ {\bf{p}}-{\bf{q}}/2, >}   \mbox{            }  =    \mbox{            }    \sqrt{N_{>}+1}\mbox{          }
+\frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2,<}}} \mbox{        }
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < } \mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2 } }
+\mbox{       } c_{ {\bf{p}}-{\bf{q}}/2, >}
+\]
+\[
++ \mbox{          }\sum_{  {\bf{q}}_1 } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2+{\bf{q}}_1,>}}}\mbox{       }
+  c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2+{\bf{q}}_1,> } \frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}/2+{\bf{q}}_1 } }\mbox{          }
+ a_{ {\bf{p}}+{\bf{q}}/2+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{   }c_{ {\bf{p}}-{\bf{q}}/2, >}
+\]
+\[
+  \mbox{            }  =    \mbox{            } \sqrt{N_{>}+1}\mbox{          }
+\frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2,<}}} \mbox{        }
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < } \mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2 } }
+\mbox{       }  \sum_{ {\bf{q}}_2 }
+   \mbox{  } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}/2-{\bf{q}}_2 } }
+ \mbox{        }
+ c_{ {\bf{p}}-{\bf{q}}/2-{\bf{q}}_2,< } \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2-{\bf{q}}_2,<}}} \mbox{     } \frac{1}{\sqrt{N_{>}+1}} \mbox{   }a_{ {\bf{p}}-{\bf{q}}/2 - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+\mbox{            }  =   \mbox{   }a_{ {\bf{p}} }(-{\bf{q}})
+\]
+
+
+
+{\bf{Diagonal}}:
+
+\[
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, > }
+c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{              }  =
+\mbox{                   }
+\]
+\[ \sum_{ {\bf{q}}_1,{\bf{q}}_2 }
+   \mbox{   }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{     } \frac{1}{\sqrt{N_{>}+1}}
+ \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2-{\bf{q}}_1,<}}} \mbox{        }
+ c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_1,< }\mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2-{\bf{q}}_1 } }
+\]
+\[
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}/2-{\bf{q}}_2 } }
+ \mbox{        }
+ c_{ {\bf{p}}-{\bf{q}}/2-{\bf{q}}_2,< } \mbox{            } \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2-{\bf{q}}_2,<}}}  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}-{\bf{q}}/2 - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+\mbox{              }  =
+\mbox{                   }
+  \sum_{ {\bf{q}}_1 }
+   \mbox{   }a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{     } \frac{1}{N_{>}+1}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+and,
+\[
+c_{ {\bf{p}}-{\bf{q}}/2, < } c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < }    \mbox{            }  =  \mbox{          }
+\]
+\[
+e^{ -i N \theta_{ {\bf{p}}-{\bf{q}}/2 } } \mbox{        }
+c_{ {\bf{p}}-{\bf{q}}/2, < }
+\frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2,<}}}  \mbox{            }  \sqrt{N_{>}+1}
+ \mbox{           } \sqrt{N_{>}+1}\mbox{          }\frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2,<}}} \mbox{        }
+c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2, < } \mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}/2 } }
+\mbox{       }
+\]
+\[
++ \sum_{  {\bf{q}}_1 }
+   a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{   }
+    e^{ i N \theta_{ {\bf{p}}-{\bf{q}}/2+{\bf{q}}_1 } }\mbox{  }
+\frac{1}{\sqrt{N_{>}+1}}\mbox{        }  c_{ {\bf{p}}-{\bf{q}}/2+{\bf{q}}_1,> } \mbox{          }  \frac{1}{\sqrt{n_{{\bf{p}}-{\bf{q}}/2+{\bf{q}}_1,>}}}
+\]
+\[
+\times \mbox{             }
+  \sum_{  {\bf{q}}_2 } \frac{1}{\sqrt{n_{{\bf{p}}+{\bf{q}}/2+{\bf{q}}_2,>}}}\mbox{       }
+  c^{\dagger}_{ {\bf{p}}+{\bf{q}}/2+{\bf{q}}_2,> } \mbox{          }\frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}/2+{\bf{q}}_2 } }\mbox{          }
+ a_{ {\bf{p}}+{\bf{q}}/2+ {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+\[
+   \mbox{            }  =  \mbox{          }   \sum_{  {\bf{q}}_1 }
+   a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{   }
+\frac{1}{N_{>}+1}\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+\\ \mbox{  } \\
+{\bf{ Thus  we have now verified that the correspondence for the Fermi fields in terms of $ a_{ {\bf{k}} }({\bf{q}}) $ is fully correct. }}
+
+
+\section{ Integral equation for $ q $ }
+Set ($ s \mbox{             } = \mbox{                }  >,< $),
+\[
+q_{ {\bf{p}}, s } \equiv c_{ {\bf{p}}, s }\mbox{          }  \frac{1}{\sqrt{n_{ {\bf{p}}, s } }}
+\]
+so that,
+\[
+q_{ {\bf{p}}, > } \mbox{   }\sqrt{n_{ {\bf{p}}, > } }
+\mbox{               }   = \mbox{                 }   \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}_2 } }
+ \mbox{        }q_{ {\bf{p}}-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+and
+\[
+\sqrt{ n_{ {\bf{p}}, < } }\mbox{             } q^{\dagger}_{ {\bf{p}}, < }    \mbox{            }  =    \mbox{            } \sqrt{N_{>}+1}\mbox{          }q^{\dagger}_{ {\bf{p}}, < }\mbox{  } e^{ i N \theta_{ {\bf{p}} } }
+\mbox{       }
++ \sum_{  {\bf{q}}_1 }   q^{\dagger}_{ {\bf{p}}+{\bf{q}}_1,> } \mbox{          }\frac{1}{\sqrt{N_{>}+1}}
+\mbox{  } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          }
+ a_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)
+\]
+We now have to solve these,
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{  {\bf{q}}_1 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{  } e^{ i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          }\frac{1}{\sqrt{N_{>}+1}}\mbox{             }q_{ {\bf{p}}+{\bf{q}}_1,> } \mbox{            }
+ \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+and
+\[
+q_{ {\bf{p}}, > } \mbox{   }\sqrt{n_{ {\bf{p}}, > } }
+\mbox{               }   = \mbox{                 }   \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}-{\bf{q}}_2 } }
+ \mbox{        }q_{ {\bf{p}}-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}} - {\bf{q}}_2/2 }({\bf{q}}_2)
+\]
+
+=======================================================================================
+
+\[
+q_{ {\bf{p}}+{\bf{q}}_1, > }
+\mbox{               }   = \mbox{                 }   \sum_{ {\bf{q}}_2 }
+ \mbox{     } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2 } }
+ \mbox{        }q_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{q}}_1 - {\bf{q}}_2/2 }({\bf{q}}_2) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{q}}_1, > } }}
+\]
+
+Thus we get the following integral equation:
+
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{  {\bf{q}}_1, {\bf{q}}_2 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ {\bf{q}}_1/2 }({\bf{q}}_1)\mbox{  }\frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{q}}_1 } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2 } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{q}}_1-{\bf{q}}_2,< }  \mbox{   }
+  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{q}}_1 - {\bf{q}}_2/2 }({\bf{q}}_2) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{q}}_1, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+Set, $ {\bf{q}}_1-{\bf{q}}_2 = {\bf{Q}} $ and $ {\bf{q}}_1+{\bf{q}}_2 = 2{\bf{K}} $
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+ ({\bf{K}}+{\bf{Q}}/2)/2 }({\bf{K}}+{\bf{Q}}/2)\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }
+\]
+\[  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 - ({\bf{K}}-{\bf{Q}}/2)/2 }({\bf{K}}-{\bf{Q}}/2)
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}+{\bf{Q}}/2 , > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+or,
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}}, {\bf{Q}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+and
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }  \sum_{ {\bf{K}} }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}},< }  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+\[
+ +  \sum_{ {\bf{K}}, {\bf{Q}} \neq 0 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+Solve for $ q_{ {\bf{p}}, < } $ in terms of $ q_{ {\bf{p}} + {\bf{Q}}, < } $ first...
+
+\[
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }q_{ {\bf{p}},< }
+  \mbox{           } = \mbox{             }
+  c^{\dagger}_{{\bf{p}}+{\bf{K}},>}c_{ {\bf{p}},<}\mbox{  }c_{ {\bf{p}},< } \frac{1}{\sqrt{n_{ {\bf{p}},< }}} = 0
+\]
+and
+\[
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }q_{ {\bf{p}}+{\bf{Q}},< }
+  \mbox{           } = \mbox{             }q_{ {\bf{p}}+{\bf{Q}},< } \mbox{  } a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})
+\]
+and
+\[
+ q_{ {\bf{p}}, < }
+   \mbox{            }  =    \mbox{            }    \sum_{ {\bf{K}}, {\bf{Q}} \neq 0 }
+\mbox{          }
+ a^{\dagger}_{ {\bf{p}}+{\bf{K}}/2 }({\bf{K}})\mbox{  }
+ \frac{ e^{ i N \theta_{ {\bf{p}}+{\bf{K}} } }\mbox{          } e^{- i N \theta_{ {\bf{p}}+{\bf{Q}} } }}{\sqrt{N_{>}+1}}
+ \mbox{        }q_{ {\bf{p}}+{\bf{Q}} ,< }  \mbox{   }  \frac{1}{\sqrt{N_{>}+1}}  \mbox{  }a_{ {\bf{p}}+{\bf{K}}/2 + {\bf{Q}}/2 }({\bf{K}}-{\bf{Q}})
+  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{p}}+{\bf{K}}, > } }}\mbox{            }
+   \left( \sqrt{ n_{ {\bf{p}}, < } }    \mbox{            }  -   \mbox{            } \sqrt{N_{>}+1}\mbox{  } e^{ -i N \theta_{ {\bf{p}} } }\right)^{-1}
+\]
+
+\newpage
+\section{ Commutators, to find c's in terms of the a's}
+\[a_{ {\bf{k}} }({\bf{q}})=c^{\dagger}_{ {\bf{k}-\bf{q}/2}, < }\mbox{   }c_{ {\bf{k}+\bf{q}/2}, > }\]
+\[
+[c_{ {\bf{p}}, < }, a_{ {\bf{k}} }({\bf{q}})]  \mbox{       } = \mbox{           } \delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 }
+n_F({\bf{p}})
+\mbox{            } c_{ {\bf{k}} + {\bf{q}}/2, > }
+\]
+and
+\[
+[c_{ {\bf{p}}, < }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})]  \mbox{       } = \mbox{           } 0
+\]
+and
+\[
+[c_{ {\bf{p}}, > }, a_{ {\bf{k}} }({\bf{q}})]  \mbox{       } = \mbox{           } 0
+\]
+and
+\[
+[c_{ {\bf{p}}, > },
+a^{\dagger}_{ {\bf{k}} }({\bf{q}})]  \mbox{       } = \mbox{           } \delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 }\mbox{  }(1-n_F({\bf{p}}))\mbox{  }c_{ {\bf{k}}-{\bf{q}}/2, < }
+\]
+and,
+\[
+[a_{ {\bf{k}} }({\bf{q}}), a_{ {\bf{k}}^{'} }({\bf{q}}^{'})] \mbox{  } = \mbox{  } 0\mbox{           };  \]\[ \mbox{  }  \mbox{  }  \mbox{  } [a_{ {\bf{k}} }({\bf{q}}), a^{\dagger}_{ {\bf{k}}^{'} }({\bf{q}}^{'})] \mbox{  } = \mbox{  } \delta_{ {\bf{k}}, {\bf{k}}^{'} }\mbox{  } \delta_{ {\bf{q}}, {\bf{q}}^{'} }
+\mbox{  }(n_{ {\bf{k}} - {\bf{q}}/2, < } - n_{ {\bf{k}}+{\bf{q}}/2, > }) \mbox{  } n_F({\bf{k}}-{\bf{q}}/2)(1-n_F({\bf{k}}+{\bf{q}}/2))
+\]
+and,
+\[
+[a_{ {\bf{k}} }({\bf{q}}), n_{ {\bf{p}} }] \mbox{             }  = \mbox{                } a_{ {\bf{k}} }({\bf{q}})\mbox{   }
+( \delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 } - \delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 }  )
+\]
+For ease of substitution in $[a_{ {\bf{k}} }({\bf{q}}), n_{ {\bf{p}} }]$, we can re-write $n_{ {\bf{p}} }$ as:
+\[n_{ {\bf{p}} }=(c^{\dagger}_{ {\bf{p}}, >}+ c^{\dagger}_{ {\bf{p}}, <})(c_{ {\bf{p}}, >}+c_{ {\bf{p}}, <})\]
+\[=c^{\dagger}_{ {\bf{p}}, >}c_{ {\bf{p}}, >}+c^{\dagger}_{ {\bf{p}}, >}c_{ {\bf{p}}, <}+c^{\dagger}_{ {\bf{p}}, <}c_{ {\bf{p}}, >}+c^{\dagger}_{ {\bf{p}}, <}c_{ {\bf{p}}, <}\]
+From the definition, the middle two terms are 0. For the sake of finding more relations, we don't substitute them as 0 for now.
+Using the identity,
+\[[A\mbox{}B\mbox{}, C\mbox{}D\mbox{}]=  A\mbox{}\{B\mbox{},C\mbox{}\}D\mbox{}-A\mbox{}C\mbox{}\{B\mbox{},D\mbox{}\}+\{A\mbox{},C\mbox{}\}D\mbox{}B\mbox{}-C\mbox{}\{A\mbox{},D\mbox{}\}B\mbox{}\]
+In our case, the second and third terms are always 0 as $[c_{\bf{k}},c_{\bf{k'}}]=0$ and $[c^{\dagger}_{\bf{k}}, c^{\dagger}_{\bf{k'}}]=0$, for any $\bf{k}$ and $\bf{k'}$. Hence we get,
+\[[a_{ {\bf{k}} }({\bf{q}}),c^{\dagger}_{ {\bf{p}}, >}c_{ {\bf{p}}, >}]=[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <}c_{ {\bf{k}}+{\bf{q}}/2, >},c^{\dagger}_{ {\bf{p}}, >}c_{ {\bf{p}}, >}]=\mbox{                } a_{ {\bf{k}} }({\bf{q}})\mbox{   }
+ \delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 }\]
+
+ also,
+\[[a_{ {\bf{k}} }({\bf{q}}),c^{\dagger}_{ {\bf{p}}, >}c_{ {\bf{p}}, <}]=[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <}c_{ {\bf{k}}+{\bf{q}}/2, >},c^{\dagger}_{ {\bf{p}}, >}c_{ {\bf{p}}, <}]=c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <}c_{ {\bf{k}}+{\bf{q}}/2, <}\delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 }-c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, >}c_{ {\bf{k}}+{\bf{q}}/2, >}\delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 } =0\]
+ In other words,
+ \begin{equation}\label{new relation}
+     c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <}c_{ {\bf{k}}+{\bf{q}}/2, <}\delta_{ {\bf{p}}, {\bf{k}}+{\bf{q}}/2 }=c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, >}c_{ {\bf{k}}+{\bf{q}}/2, >}\delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 }
+ \end{equation}
+ also,
+ \[[a_{ {\bf{k}} }({\bf{q}}),c^{\dagger}_{ {\bf{p}}, <}c_{ {\bf{p}}, >}]=[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <}c_{ {\bf{k}}+{\bf{q}}/2, >},c^{\dagger}_{ {\bf{p}}, <}c_{ {\bf{p}}, >}]=0\]
+ also,
+ \[[a_{ {\bf{k}} }({\bf{q}}),c^{\dagger}_{ {\bf{p}}, <}c_{ {\bf{p}}, <}]=
+ [c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2, <}c_{ {\bf{k}}+{\bf{q}}/2, >},c^{\dagger}_{ {\bf{p}}, <}c_{ {\bf{p}}, <}]=-a_{ {\bf{k}} }({\bf{q}})\delta_{ {\bf{p}}, {\bf{k}}-{\bf{q}}/2 }\]
+It must also satisfy the "number conserving" equations:
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           } a^{\dagger}_{ {\bf{p}} }({\bf{q}})
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+a_{ {\bf{p}} }(-{\bf{q}})
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           }
+n_F({\bf{p}})\mbox{  }\delta_{ {\bf{q}}, 0 }
+ - \sum_{ {\bf{q}}_1 } \frac{1}{N_{>}} \mbox{  } a^{\dagger}_{ {\bf{p}}-{\bf{q}}/2 + {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}+{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+\sum_{ {\bf{q}}_1 } \frac{1}{N_{>}} \mbox{  } a^{\dagger}_{ {\bf{p}}+{\bf{q}}/2 - {\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}-{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)
+\]
+Suppose we take a guess solution for $c_{\bf{p}}$,
+\begin{enumerate}
+    \item We notice that if we take a guess solution for $c_{\bf{p}}$ we see that from the definition, commutation relations \[
+[c_{ {\bf{p}}, < }, a^{\dagger}_{ {\bf{k}} }({\bf{q}})]  \mbox{       } = \mbox{           } 0
+\]
+and
+\[
+[c_{ {\bf{p}}, > }, a_{ {\bf{k}} }({\bf{q}})]  \mbox{       } = \mbox{           } 0
+\]
+are automatically satisfied.
+\item The very basic equation, 
+    \[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     }  = \mbox{           } a^{\dagger}_{ {\bf{p}} }({\bf{q}})
+\]
+
+
+\[
+c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < }c_{ {\bf{p}}-{\bf{q}}/2, > } \mbox{     }  = \mbox{           }
+a_{ {\bf{p}} }(-{\bf{q}})
+\]
+\[\{c_{\bf{p}},c^{\dagger}_{\bf{p}^{'}}\}=\delta_{{\bf{p}},{\bf{p}^{'}}}\]
+\item     To solve the last equation, we would need $\{a^{\dagger}_{ {\bf{p}} }({\bf{q}}),a_{ {\bf{p}^{'}} }({\bf{q}^{'}})\}$ and $\{a_{ {\bf{p}} }({\bf{q}}),a_{ {\bf{p}^{'}} }({\bf{q}^{'}})\}$. 
+\item $c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, < ~or~>}c_{ {\bf{p}}-{\bf{q}}/2, < ~or~> } \mbox{     }  $ must give us back a summation with shifted indices and product of $ a^{\dagger}_{ {\bf{p}}\mp{\bf{q}}/2 \pm{\bf{q}}_1/2 }({\bf{q}}_1)
+a_{ {\bf{p}}\pm{\bf{q}}_1/2 }(-{\bf{q}}+{\bf{q}}_1)$ . This shows how we can get $n_{F}$ and $(1-n_{F})$ by shifting the summing indices of the subscript and argument of $a_{\bf{k}}(\bf{q})$.
+\end{enumerate}
+\section{ Try this } 
+
+\[
+b_{ {\bf{k}} }({\bf{q}}) = a_{ {\bf{k}} }({\bf{q}}) \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} }
+\]
+
+\[
+[b_{ {\bf{k}} }({\bf{q}}), b_{ {\bf{k}}^{'} }({\bf{q}}^{'})]  =   
+\]
+\[
+a_{ {\bf{k}} }({\bf{q}}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} }, a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ] \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} } 
+\]
+\[
+    - a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} },a_{ {\bf{k}} }({\bf{q}})]  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} } 
+
+We start with the commutation, $[n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]$ 
+\[[n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+
+\[=[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }c_{ {\bf{k}}-{\bf{q}}/2 }, c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]-[c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 } c_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+Using the formula, 
+\[[A\mbox{}B\mbox{}, C\mbox{}D\mbox{}]=  A\mbox{}\{B\mbox{},C\mbox{}\}D\mbox{}-A\mbox{}C\mbox{}\{B\mbox{},D\mbox{}\}+\{A\mbox{},C\mbox{}\}D\mbox{}B\mbox{}-C\mbox{}\{A\mbox{},D\mbox{}\}B\mbox{}\]
+The first term becomes, in this formula, only $A\mbox{}\{B\mbox{},C\mbox{}\}D-C\mbox{}\{A\mbox{},D\mbox{}\}B\mbox{}$ remain.
+\[[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }c_{ {\bf{k}}-{\bf{q}}/2 }, c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+\[=c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }\mbox{}\{c_{ {\bf{k}}-{\bf{q}}/2 }\mbox{},c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\}c_{ {\bf{k}^{'}} - {\bf{q}^{'}}/2, < }\]\[-c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\{c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }\mbox{},c_{ {\bf{k}^{'}} - {\bf{q}^{'}}/2, < }\mbox{}\}c_{ {\bf{k}}-{\bf{q}}/2 }\mbox{}
+\]
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{\bf{k}}-{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}\]
+\[-a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{ {\bf{k}}-{\bf{q}}/2 },{\bf{k}^{'}} - {\bf{q}^{'}}/2}\]
+
+The second term becomes,
+\[[c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 } c_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+\[=c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }\mbox{}\{ c_{ {\bf{k}}+{\bf{q}}/2 }\mbox{},c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\}c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } \]\[-c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }\mbox{}\{c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }\mbox{},c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } \mbox{}\} c_{ {\bf{k}}+{\bf{q}}/2 }\mbox{}\]
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}\]
+\[-a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} - {\bf{q}^{'}}/2}\]
+Finally, the first commutator terms gives,
+\[[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }c_{ {\bf{k}}-{\bf{q}}/2 }, c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\left(\delta_{{\bf{k}}-{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}-\delta_{{ {\bf{k}}-{\bf{q}}/2 },{\bf{k}^{'}} - {\bf{q}^{'}}/2}+\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}-\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} - {\bf{q}^{'}}/2}\right)\]
+The second commutator term can be calculated by just replacing $\bf{q}$ with $\bf{-q}$:
+\[[c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 } c_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]\]
+\[=a^{\dagger}_{\bf{k}^{'}}({\bf{q^{'}}})\left(\delta_{{\bf{k}}+{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}-\delta_{{ {\bf{k}}+{\bf{q}}/2 },{\bf{k}^{'}} - {\bf{q}^{'}}/2}+\delta_{{\bf{k}}-{\bf{q}}/2,{\bf{k}^{'}} + {\bf{q}^{'}}/2}-\delta_{{\bf{k}}-{\bf{q}}/2,{\bf{k}^{'}} - {\bf{q}^{'}}/2}\right)\]
+Hence, 
+\[[c^{\dagger}_{ {\bf{k}}-{\bf{q}}/2 }c_{ {\bf{k}}-{\bf{q}}/2 }, c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]-[c^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 } c_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]=0\]
+\[\implies[n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 } , c^{\dagger}_{ {\bf{k}^{'}} + {\bf{q}^{'}}/2, > }c_{ {\bf{k}^{'}}-{\bf{q}^{'}}/2, < } ]=0\]
+\[\implies[n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 } , a_{\bf{k}^{'}}(\bf{q}^{'})]=0\]
+
+
+Thus,
+\[
+[b_{ {\bf{k}} }({\bf{q}}), b_{ {\bf{k}}^{'} }({\bf{q}}^{'})] 
+\]
+\[
+ =   a_{ {\bf{k}} }({\bf{q}}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} }, a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) ] \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} } 
+\]
+\[
+    - a_{ {\bf{k}}^{'} }({\bf{q}}^{'}) \mbox{   }[\frac{1}{\sqrt{n_{ {\bf{k}}^{'}-{\bf{q}}^{'}/2 } - n_{ {\bf{k}}^{'}+{\bf{q}}^{'}/2 }} },a_{ {\bf{k}} }({\bf{q}})]  \mbox{   }\frac{1}{\sqrt{n_{ {\bf{k}}-{\bf{q}}/2 } - n_{ {\bf{k}}+{\bf{q}}/2 }} } 
+\]
+\[=0\]
+
+
+
+\begin{comment}
+
+\section{ Momentum distribution of interacting systems }
+
+\[
+H = \sum_{ {\bf{p}} }\epsilon_p \mbox{   } c^{\dagger}_{ {\bf{p}} }c_{ {\bf{p}} }
+  + \sum_{ {\bf{Q}} } \frac{v_Q}{2V} (a_{.}(-{\bf{Q}}) + a^{\dagger}_{.}({\bf{Q}}))(a_{.}({\bf{Q}}) + a^{\dagger}_{.}(-{\bf{Q}}))
+\]
+
+
+\end{comment}
+
+\end{document}

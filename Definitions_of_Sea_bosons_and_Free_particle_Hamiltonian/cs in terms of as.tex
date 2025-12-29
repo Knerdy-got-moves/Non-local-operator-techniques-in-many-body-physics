@@ -1,0 +1,153 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markeq}
+\setcounter{markeq}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{Definitions of Sea bosons and free particle Hamiltonian}
+\date{}
+\author{Rishi Paresh Joshi}
+
+\maketitle
+\section{Definitions:}
+The following are definitions in the paper "Single-particle Green functions in exactly solvable models of Bose and Fermi liquids" by Girish S. Setlur and Yia-Chung Chang (1998).
+
+The Sea-displacement operator,
+\begin{equation}  \label{A_k(q) in 1998}
+A_k(q) = \frac{1}{\sqrt{n_{k - q/2}}} c_{k - q/2}^\dagger \left( \frac{n^\beta (k - q/2)}{\langle N \rangle} \right)^{1/2} e^{i \theta(k, q)} c_{k + q/2}.  
+\end{equation} 
+With this definition, we get the kinetic energy to be,
+
+\begin{equation}  \label{KE in 1998}
+KE = \sum_{k,q} \frac{k \cdot q}{m}\Lambda_k(-q) A_k^\dagger(q) A_k(q) + N \epsilon_0.  
+\end{equation} 
+where,
+\[  
+\Lambda_k(q) = \sqrt{n_{k + q/2} \left( 1 - n_{k - q/2} \right)}.  
+\]
+
+\begin{comment}
+   The density fluctuation operator is given by,
+\[  
+\tilde{\rho}_q = \sum_k \left[ \Lambda_k(q) a_k(-q) + \Lambda_k(-q) a_k^\dagger(q) \right],  
+\]  
+\end{comment}
+
+The final Hamiltonian for the Fermi system becomes,
+ \[
+H = \sum_{k,q} \omega_k(q) A_k^\dagger(q) A_k(q) 
+\]
+\[
++ \sum_{q \neq 0} \frac{v_q}{2V} \sum_{k,k'} \left[ \Lambda_k(q) A_k(-q) + \Lambda_k(-q) A_k^\dagger(-q) \right]   
+\times \left[ \Lambda_{k'}(-q) A_{k'}(q) + \Lambda_{k'}(q) A_{k'}^\dagger(-q) \right],  
+\]
+
+where,
+\[v_q = \int V(r) \, \exp\left(-i q \cdot \frac{r}{\hbar}\right) \, dr~??\]
+and,
+\[
+\omega_k(q) = \left( \frac{k \cdot q}{m} \right) \Lambda_k(-q).
+\]
+
+
+\section{The definition of Sea-Boson:}
+Given 0 K momentum distribution,
+\begin{equation}\label{n_F(k)}
+       n_F({\bf{k}}) = \Theta\left(k_F-|{\bf{k}}|\right) \quad .
+    \end{equation}
+Fermi Fock space operator were defined by us in momentum basis as,
+\begin{equation}
+        \label{Eq.c dagger <}
+        c^{\dagger}_{{\bf{p}},<} = n_{F}({\bf{p}}) c^{\dagger}_{{\bf{p}}},
+    \end{equation}
+    \begin{equation}\label{Eq.c<}
+        c_{{\bf{p}},<} = n_{F}({\bf{p}}) c_{{\bf{p}}}
+    \end{equation}
+    and,
+    \begin{equation}\label{Eq.c dagger>}
+        c^{\dagger}_{{\bf{p}},>} = (1-n_{F})({\bf{p}})c^{\dagger}_{{\bf{p}}},
+    \end{equation}
+    \begin{equation}\label{Eq.c>} 
+        c_{{\bf{p}},>} = (1-n_{F})({\bf{p}}) c_{{\bf{p}}}.
+    \end{equation}
+    with the particle-hole operator,
+\begin{equation}
+    \label{N> (<)}
+        \hat{N}_{>} = \sum_{{\bf{k}}} c_{{\bf{k}},<} c_{{\bf{k}},<}^{\dagger}
+    \end{equation}
+     and the Sea-displacement operators as,
+\begin{equation}\label{A_k(q) now}
+    A_{{\bf{k}}}({\bf{q}}) = c^{\dagger}_{{\bf{k}}-\frac{{\bf{q}}}{2},<}~\frac{1}{\sqrt{\hat{N}_{>}}}~c_{{\bf{k}}+\frac{{\bf{q}}}{2},>}
+\end{equation}
+and the Sea-bosons,
+\begin{equation}\label{a_k(q) now}
+  \mbox{           } a^{\dagger}_{ {\bf{p}} }({\bf{q}})=  c^{\dagger}_{ {\bf{p}} + {\bf{q}}/2, > }c_{ {\bf{p}}-{\bf{q}}/2, < } \mbox{     } .
+\end{equation}
+We have derived the kinetic energy to be,
+
+\begin{equation}\label{KE-A}
+    KE= \sum_{\bf{p}} \frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}}) + \sum_{{\bf{k}},{\bf{q}}} \frac{{\bf{k}} \cdot {\bf{q}}}{m} A_{\bf{k}}^{\dagger}({\bf{q}}) A_{\bf{k}}({\bf{q}})
+\end{equation}
+\begin{equation}\label{KE-a}
+    KE=
+    \sum_{\bf{p}} 
+    \frac{|{\bf{p}}|^2}{2m} n_F({\bf{p}}) 
+    + \sum_{{\bf{k}},{\bf{q}}} 
+    \frac{{\bf{k}} \cdot {\bf{q}}}{m} 
+    \frac{1}{N_>}
+    a_{\bf{k}}^{\dagger}({\bf{q}})
+    a_{\bf{k}}({\bf{q}})
+\end{equation}
+\begin{comment}
+\section{Speculation of the derivation:}
+
+The Hamiltonian of the system is expressed in terms of the field operators $\psi$:  
+
+\begin{equation}  \label{Field Hamiltonian}
+\hat{H} = \int \left( \frac{\hbar^2}{2m} \nabla \psi^{\dagger}(r) \cdot \nabla \psi(r) \right) dr + \frac{1}{2} \int \psi^{\dagger}(r) \psi^{\dagger}(r') V(r - r') \psi(r) \psi(r') dr dr' 
+\end{equation}  
+
+where $V(r-r')$ is the two-body scattering potential. For a Fermi system occupying a volume $L^3$, the field operator $\psi$ can be expanded by the plane waves (following similar steps as was done by Bogoliubov):  
+
+\begin{equation}  \label{Field operator in terms of a_k(q)}
+\psi(r) = \frac{1}{\sqrt{L^3}} \sum_{p,q} \hat{a}_p(q) e^{i((p-q/2) \cdot r  +(p+q/2) \cdot r )\hbar}, 
+\end{equation}  
+
+where $\hat{a}_p(q)$ is the annihilation operator for a single particle-hole state with plane wave solutions
+
+\begin{equation}  
+\hat{H} = \sum_{p} \frac{p^2}{2m} \hat{a}^{\dagger}_p \hat{a}_p + \frac{1}{2L^3} \sum_{p_1,p_2,q} V_q \hat{a}^{\dagger}_{p_1+q }(q) \hat{a}^{\dagger}_{p_2-q }(-q) \hat{a}_{p_1}(q) \hat{a}_{p_2}(q)??
+\end{equation}  
+
+Here $V_q = \int V(r) \exp\left(-iq \cdot r / \hbar\right) dr$ is the Fourier transform of the two-body scattering potential.
+\end{comment}
+
+
+\end{document}
