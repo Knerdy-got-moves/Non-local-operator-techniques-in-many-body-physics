@@ -1,6 +1,6 @@
 # Momentum-Space Fermion-to-Sea Boson Mapping Using Ansatz
 
-This repository derives momentum-space fermionic creation/annihilation operators in terms of "sea bosons" for a momentum-agnostic approach to Green's functions, extending bosonization ideas to non-equilibrium quantum many-body systems.
+This repository derives momentum-space fermionic creation/annihilation operators in terms of "sea bosons" for a momentum-agnostic approach to Green's functions, extending bosonization ideas to equilibrium quantum many-body systems.
 
 ## Project Overview
 
