@@ -1,0 +1,2315 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{cancel}
+\usepackage{amsmath}
+\usepackage[colorlinks]{hyperref}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage[top=1cm,left=1cm,right=1cm]{geometry}
+\usepackage{chngpage}
+\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{hyperref}
+\usepackage{comment}
+%\usepackage{bibtopic}
+%\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+%\newcommand{\tab}[1]{\hspace{.2\textwidth}\rlap{#1}}
+\usepackage{tikz}
+\newcounter{markep}
+\setcounter{markep}{0}
+\newcommand*\bmarkeq{%
+   \stepcounter{markeq}%
+   \tikz[remember picture]\node(startframe-\themarkeq){\strut};}
+\newcommand*\emarkeq{%
+   \begin{tikzpicture}[remember picture,overlay]
+     \node (endframe-\themarkeq){\strut};
+     \draw[,red,opacity=2] (startframe-\themarkeq.north) rectangle (endframe-\themarkeq.south);
+   \end{tikzpicture}%
+}
+
+\begin{document}
+
+\title{ Resolving identity }
+\date{}
+\author{Idea by Girish Sampath Setlur, verified by Rishi Paresh Joshi}
+
+\maketitle
+\tiny
+
+
+\section{  Resolve identity }
+
+\[
+\frac{1}{N_{>}(t_1)} \sum_{ {\bf{p}} }c_{ {\bf{p}}, < }(t_1) c^{\dagger}_{ {\bf{p}}, < }(t_1)  = 1
+\]
+and
+\[
+G_{>}({\bf{k}},t,t^{'}) = <T \mbox{   } c_{ {\bf{k}},> }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+\]
+or,
+\[
+G_{>}({\bf{k}},t,t^{'}) =  \sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)}c_{ {\bf{k-q}}, < }(t)
+c^{\dagger}_{ {\bf{k-q}}, < }(t)  \mbox{        } c_{ {\bf{k}},> }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+\]
+$ a_{ {\bf{k}}_1 }({\bf{q}}_1) = c^{\dagger}_{ {\bf{k}}_1-{\bf{q}}_1/2, < } c_{ {\bf{k}}_1 + {\bf{q}}_1/2, > } $.
+and
+\[
+G_{>}({\bf{k}},t,t^{'}) =  \sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)}c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+\]
+
+---------------------------------------------------------------------------------------
+
+\[
+\frac{1}{N_{>}(t_1)} \sum_{ {\bf{p}} }c^{\dagger}_{ {\bf{p}}, > }(t_1) c_{ {\bf{p}}, > }(t_1)  = 1
+\]
+and
+\[
+G_{<}({\bf{k}},t,t^{'}) = <T \mbox{   } c_{ {\bf{k}},< }(t) c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+or,
+\[
+G_{<}({\bf{k}},t,t^{'}) =  -\sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)}c^{\dagger}_{ {\bf{k+q}}, > }(t) \mbox{        } c_{ {\bf{k}},< }(t)
+c_{ {\bf{k+q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+$ a_{ {\bf{k}}_1 }({\bf{q}}_1) = c^{\dagger}_{ {\bf{k}}_1-{\bf{q}}_1/2, < } c_{ {\bf{k}}_1 + {\bf{q}}_1/2, > } $.
+and
+\[
+G_{<}({\bf{k}},t,t^{'}) =  -\sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)}c^{\dagger}_{ {\bf{k+q}}, > }(t) \mbox{        } c_{ {\bf{k}},< }(t)
+c_{ {\bf{k+q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+and
+$ a^{\dagger}_{ {\bf{k}}_1 }({\bf{q}}_1) = c^{\dagger}_{ {\bf{k}}_1+{\bf{q}}_1/2, > } c_{ {\bf{k}}_1 - {\bf{q}}_1/2, < } $.
+and
+\[
+G_{<}({\bf{k}},t,t^{'}) =  -\sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)} \mbox{        }
+ a^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}},t) \mbox{    }
+c_{ {\bf{k+q}}, > }(t)  c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+---------------------------------------------------------------------------------------
+
+
+and
+\[
+G_{>}({\bf{k}},t,t^{'}) =  \sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)}c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+\]
+and
+\[
+G_{<}({\bf{k}},t,t^{'}) =  -\sum_{ {\bf{q}} }\mbox{   }
+<T \mbox{   }\frac{1}{N_{>}(t)} \mbox{        }
+ a^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}},t) \mbox{    }
+c_{ {\bf{k+q}}, > }(t)  c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+
+\newpage
+
+\section{ The 4-Point functions }
+
+\[
+F_{>}({\bf{k}},{\bf{q}};t_1,t,t^{'}) =  <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+\]
+and
+\[
+F_{<}({\bf{k}},{\bf{q}}; t_1,t,t^{'}) =  -\mbox{   }
+<T  \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             }
+ a^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}},t_1) \mbox{    }
+c_{ {\bf{k+q}}, > }(t)  c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+and
+\[
+i\partial_{t_1}F_{>}({\bf{k}},{\bf{q}};t_1,t,t^{'}) =  i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+\]
+and
+\[
+i\partial_{t_1}F_{<}({\bf{k}},{\bf{q}}; t_1,t,t^{'}) =  -\mbox{   }i\partial_{t_1}
+<T  \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             }
+ a^{\dagger}_{ {\bf{k}}+{\bf{q}}/2 }({\bf{q}},t_1) \mbox{    }
+c_{ {\bf{k+q}}, > }(t)  c^{\dagger}_{ {\bf{k}},< }(t^{'}) >
+\]
+
+==================================================================================================================
+
+
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\]
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t_1-t) \theta(t_1-t^{'})
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1) \theta(t_1-t^{'})
+\]
+\[
++<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t_1-t) \theta(t^{'}-t_1)
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1) \theta(t^{'}-t_1)
+\]
+
+
+==================================================================================================================
+ 
+
+
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\]
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t_1-t) \theta(t_1-t^{'})
+\]
+\[
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1) \theta(t_1-t^{'})
+\]
+\[
++<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t_1-t) \theta(t^{'}-t_1)
+\]
+\[
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1) \theta(t^{'}-t_1)
+\]
+
+
+==================================================================================================================
+ 
+
+
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\]
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t_1-t) \mbox{        }\theta(t-t^{'})
++ <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > \theta(t_1-t^{'})\mbox{        }\theta(t^{'}-t)
+\]
+\[
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1) \theta(t_1-t^{'})
+\]
+\[
++<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t^{'}-t_1)\theta(t_1-t) 
+\]
+\[
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   } \theta(t^{'}-t_1)\theta(t-t^{'})
+ + <T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1)\theta(t^{'}-t)
+\]
+
+
+==================================================================================================================
+ 
+\newpage
+
+
+
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\]
+\[
+< a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t_1-t) \mbox{        }\theta(t-t^{'})
+- <a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'})\mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+ > \theta(t_1-t^{'})\mbox{        }\theta(t^{'}-t)
+\]
+\[
+ + <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t_1) \theta(t_1-t^{'})
+\]
+\[
+-<c^{\dagger}_{ {\bf{k}},> }(t^{'}) a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+>\mbox{   }\theta(t^{'}-t_1)\theta(t_1-t) 
+\]
+\[
+ + <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)c^{\dagger}_{ {\bf{k}},> }(t^{'})
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+ >\mbox{   } \theta(t^{'}-t_1)\theta(t-t^{'})
+  -<c^{\dagger}_{ {\bf{k}},> }(t^{'}) \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+ >\mbox{   }\theta(t-t_1)\theta(t^{'}-t)
+\]
+
+
+==================================================================================================================
+ 
+ 
+
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+------------------------------------------------------------------------
+\[
++ < a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t) \mbox{        }\theta(t-t^{'}) - <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t^{'})i\delta(t-t_1) -<c^{\dagger}_{ {\bf{k}},> }(t^{'}) a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+>\mbox{   }\theta(t^{'}-t)i\delta(t_1-t)    + <c^{\dagger}_{ {\bf{k}},> }(t^{'}) \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+ >\mbox{   }i\delta(t-t_1)\theta(t^{'}-t)
+\]
+-----------------------------------------------------------
+\[
+ - <a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'})  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'})\mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+ >i\delta(t_1-t^{'})\mbox{        }\theta(t^{'}-t)
++ <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'})  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }\theta(t-t^{'}) i\delta(t_1-t^{'})+<c^{\dagger}_{ {\bf{k}},> }(t^{'}) a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'})  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+>\mbox{   }\theta(t^{'}-t) i\delta(t^{'}-t_1)  - <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)c^{\dagger}_{ {\bf{k}},> }(t^{'})
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'})  \mbox{        }
+ >\mbox{   }i\delta(t^{'}-t_1)\theta(t-t^{'})
+\]
+
+
+==================================================================================================================
+ 
+
+==================================================================================================================
+ 
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+------------------------------------------------------------------------
+\[
++ < [a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)]
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t) \mbox{        }\theta(t-t^{'})   
++ <c^{\dagger}_{ {\bf{k}},> }(t^{'}) \mbox{   }[e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t),
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)]  \mbox{        }
+ >\mbox{   }i\delta(t-t_1)\theta(t^{'}-t)
+\]
+-----------------------------------------------------------
+\[
+ +<[c^{\dagger}_{ {\bf{k}},> }(t^{'}), a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'})]  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+>\mbox{   }\theta(t^{'}-t) i\delta(t^{'}-t_1)
++ <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'}),c^{\dagger}_{ {\bf{k}},> }(t^{'})] >\mbox{   }\theta(t-t^{'}) i\delta(t_1-t^{'})  
+\]
+
+
+==================================================================================================================
+ 
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+------------------------------------------------------------------------
+\[
++ < T\mbox{                } 
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)]
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+-----------------------------------------------------------
+\[
++ <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'}),c^{\dagger}_{ {\bf{k}},> }(t^{'})] >\mbox{   } i\delta(t_1-t^{'})  
+\]
+
+
+==================================================================================================================
+ 
+\[
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)] \mbox{       } = \mbox{          } 
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        }e^{ - \lambda N_{>}(t)} ]\mbox{             } c_{ {\bf{k-q}}, < }(t) + e^{ - \lambda N_{>}(t)} \mbox{             } [a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        } c_{ {\bf{k-q}}, < }(t)] 
+\]
+ 
+and
+
+\[
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t^{'}),c^{\dagger}_{ {\bf{k}},> }(t^{'})] = 
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})\mbox{   }(1-n_F({\bf{k}}))
+\] 
+
+\[
+ [a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        } c_{ {\bf{k-q}}, < }(t)] 
+  = - n_F({\bf{k}}-{\bf{q}})\mbox{          } c_{ {\bf{k}}, > }(t)
+\]
+
+This means,
+
+\[
+[a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t),  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)] \mbox{       } = \mbox{          } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }(e^{ - \lambda }  -1)
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t) - e^{ - \lambda N_{>}(t)} \mbox{             } 
+ n_F({\bf{k}}-{\bf{q}})\mbox{          } c_{ {\bf{k}}, > }(t)
+\]
+ 
+--------------------------------------------------------------------------------------------------------
+
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }\]
+\[
+= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+\[
++(e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+\[
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+\[
++ <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i\delta(t_1-t^{'})  
+\]
+
+======================================================================================================
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
++ <a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\partial_{t_1}\theta(t_1-t)  \theta(t-t^{'})
+\]
+\[
+- <a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  c^{\dagger}_{ {\bf{k}},< }(t^{'})\mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ >   \mbox{             } i\partial_{t_1} \theta(t_1-t^{'}) \theta(t^{'}-t)
+\]
+\[
+  -<c^{\dagger}_{ {\bf{k}},< }(t^{'})\mbox{   }
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ >   \mbox{             }  i\partial_{t_1}\theta(t_1-t) \theta(t^{'}-t_1)  
+\]
+\[
+ + <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             }  i\partial_{t_1}\theta(t-t_1)  \theta(t_1-t^{'})
+\]
+\[
+ + < e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1) >   \mbox{             }   i\partial_{t_1}\theta(t^{'}-t_1)\theta(t-t^{'})
+\]
+\[
+  -<c^{\dagger}_{ {\bf{k}},< }(t^{'}) \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ \mbox{        }
+ a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1) >   \mbox{             }  i\partial_{t_1}\theta(t-t_1)  \theta(t^{'}-t)
+\]
+
+
+
+======================================================================================================
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
++ <[a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t),  \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)]
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\delta(t_1-t)  \theta(t-t^{'})
+\]
+\[
+  + <c^{\dagger}_{ {\bf{k}},< }(t^{'}) \mbox{   }[e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ \mbox{        },
+ a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)] >   \mbox{             }  i \delta(t-t_1)  \theta(t^{'}-t)
+\]
+\[
+ + <e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+[a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t^{'}) ,
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) ] >   \mbox{             }  i\theta(t-t^{'})  \delta(t_1-t^{'})
+\]
+\[
+  + <[ c^{\dagger}_{ {\bf{k}},< }(t^{'}), 
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t^{'}) ]  \mbox{        }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ >   \mbox{             }  i\theta(t^{'}-t) \delta(t^{'}-t_1)  
+\]
+ 
+------------------------------------------------------------------------------------------------------
+ 
+
+======================================================================================================
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
++ <T \mbox{            } [a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t),  \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)]
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\mbox{   }\delta(t_1-t)  
+\]
+\[
+ + <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+[a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t^{'}) ,
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) ] >   \mbox{             }  i\mbox{       }   \delta(t_1-t^{'})
+\]
+ 
+
+======================================================================================================
+
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
++ (e^{\lambda} -  1)\mbox{   } <T \mbox{            }  c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t)   \mbox{            }
+e^{ - \lambda N_{>}(t)}\mbox{   }c_{ {\bf{k}}, < }(t)
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\mbox{   }\delta(t_1-t)  
+\]
+\[
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, < }(t) 
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\mbox{   }\delta(t_1-t)  
+\]
+\[
+ + n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }   \delta(t_1-t^{'})
+\]
+   
+ 
+
+--------------------------------------------------------------------------------------------------------------
+
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+\[
++(e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+\[
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+\[
++ <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i\delta(t_1-t^{'})  
+\]
+ 
+ 
+\newpage
+
+\section{ Nonlocal Green functions  }
+ 
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
++ (e^{\lambda} -  1)\mbox{   } <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\mbox{   }\delta(t_1-t)  
+\]
+\[
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, < }(t) 
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i\mbox{   }\delta(t_1-t)  
+\]
+\[
+ + n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }   \delta(t_1-t^{'})
+\]
+   
+
+--------------------------------------------------------------------------------------------------------------
+
+
+\[
+i\partial_{t_1}<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             }
+\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) > 
+\]
+\[
++(e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+\[
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\delta(t_1-t)
+\]
+\[
++ <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i\delta(t_1-t^{'})  
+\]
+
+
+--------------------------------------------------------------------------------------------------------
+
+These Green functions are periodic in $ t_1 $ with BOSONIC Matsubara frequencies even though they describe fermions. 
+  
+ 
+   
+  
+-----------------------------------------------------------------------------------------------------
+ 
+\newpage
+
+\subsection{ Non-local Green function: Simplified }
+
+
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\]
+\[
+\mbox{        } = \mbox{            } 
+ \frac{i e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t_1  }}{1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }}
+\]
+\[
+( -(1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }) ( ( (e^{\lambda} -  1)\mbox{   } 
+<T \mbox{            }e^{ - \lambda N_{>}(t)}\mbox{   }
+  a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t) 
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+ \mbox{             } i  
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, < }(t) 
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i) \mbox{        } e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t  } \theta (t_1-t)
+\]
+\[
++  n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       } \mbox{          } e^{i  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t^{'} } 
+ \theta(t_1-t^{'}))
+\]
+\[ 
+ + ( (e^{\lambda} -  1)\mbox{   } <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i  
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, < }(t) 
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i) \mbox{         } e^{i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t }
+\]
+\[
++ n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }  e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t^{'}  } )
+\]  
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t_1)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             } \frac{i e^{-i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t_1  } 
+}{1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }}\mbox{  } \mbox{     } 
+\]
+\[
+(-(1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }) (((e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i) 
+\mbox{              } 
+e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  } \theta (t_1-t)
+\]
+\[
++<T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i \mbox{       } e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t^{'}  } \theta (t_1-t^{'}))
+\]
+\[ 
+ + ((e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i) 
+e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  }
+\]
+\[
++<T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i\mbox{       }  e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t^{'}  })
+\]
+
+\newpage
+
+
+\[
+<e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \mbox{             }= \mbox{             }
+\]
+\[
+\mbox{        } = \mbox{            } 
+ \frac{i e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t  }}{1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }}
+\]
+\[
+( -(1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }) (
+  n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       } \mbox{          } e^{i  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t^{'} } 
+ \theta(t-t^{'}))
+\]
+\[ 
+ + ( (e^{\lambda} -  1)\mbox{   } <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t)
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i  
+- (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, < }(t) 
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i) 
+\mbox{         } e^{i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t }
+\]
+\[
++ n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }  e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t^{'}  } )
+\]  
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             } \frac{i e^{-i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  } 
+}{1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }}\mbox{  } \mbox{     } 
+\]
+\[
+(-(1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }) ( <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i \mbox{       } e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t^{'}  } \theta (t-t^{'}))
+\]
+\[ 
+ + ((e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+ a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i
+-  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i) 
+e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  }
+\]
+\[
++<T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i\mbox{       }  e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t^{'}  })
+\]
+  
+$  a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+ =  c_{ {\bf{k-q}}, < }(t) \mbox{             }  a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t) - c_{ {\bf{k}}, > }(t) $
+  
+$ a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t) =   c_{ {\bf{k-q}}, > }(t)
+\mbox{        }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t) -
+ c_{ {\bf{k}}, < }
+ $  
+ 
+\newpage
+
+
+\[
+<e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
+\mbox{        } = \mbox{            } 
+ \frac{i e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t  }}{1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }}
+\]
+\[
+( -(1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }) 
+  n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       } \mbox{          } e^{i  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t^{'} } 
+ \theta(t-t^{'})
+\]
+\[ 
+ +  (e^{\lambda} -  1)\mbox{   } <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k-q}}, > }(t)
+\mbox{        }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i  
+\mbox{         } e^{i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t }
+ -  (e^{\lambda} -  1)\mbox{   } <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i  
+\mbox{         } e^{i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t }
+\]
+\[ 
+ - (1-n_F({\bf{k}}-{\bf{q}}))\mbox{       } <T \mbox{            } e^{ - \lambda N_{>}(t)} \mbox{             } 
+c_{ {\bf{k}}, < }(t) 
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >   \mbox{             } i
+\mbox{         } e^{i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t }
+\]
+\[
++ n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{             }  i\mbox{       }  e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } t^{'}  } )
+\]  
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+\[
+<T \mbox{   }e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)
+a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  \mbox{        }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  \mbox{             }= \mbox{             } \frac{i e^{-i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  } 
+}{1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }}\mbox{  } \mbox{     } 
+\]
+\[
+(-(1-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }) \mbox{          } <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i \mbox{       } e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t^{'}  } \theta (t-t^{'})
+\]
+\[ 
+ + (e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+   c_{ {\bf{k-q}}, < }(t) \mbox{             }  a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i
+ \mbox{      } 
+e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  }
+ - (e^{ - \lambda }  -1) \mbox{       } < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+  c_{ {\bf{k}}, > }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i
+ \mbox{         }
+e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  }
+\]
+\[ 
+ -  n_F({\bf{k}}-{\bf{q}})\mbox{          } < T\mbox{                } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }i\mbox{  }
+e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t  }
+\]
+\[
++<T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}}))\mbox{   } i\mbox{       }  e^{i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }t^{'}  })
+\]
+  
+$  a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)\mbox{             } c_{ {\bf{k-q}}, < }(t)  
+ =  c_{ {\bf{k-q}}, < }(t) \mbox{             }  a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t) - c_{ {\bf{k}}, > }(t) $
+  
+$ a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)
+\mbox{        }
+ c_{ {\bf{k-q}}, > }(t) =   c_{ {\bf{k-q}}, > }(t)
+\mbox{        }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t) -
+ c_{ {\bf{k}}, < }
+ $  
+  
+ \newpage
+
+
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k-q}}, > }(t)
+\mbox{        }a^{\dagger}_{ {\bf{k}} - {\bf{q}}/2 }(-{\bf{q}},t)  
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) > 
+\]
+\[
+\mbox{        } = \mbox{            } 
+   -  n_F({\bf{k}}) \mbox{  }  <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{       } 
+ e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } (t-t^{'})  }\mbox{               }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+\]
+\[
+ +  <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >\mbox{  } (1-n_F({\bf{k}}-{\bf{q}}))    
+\mbox{         } \frac{ e^{ \lambda }  }{   e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+\]
+  
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+\[
+< T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+   c_{ {\bf{k-q}}, < }(t) \mbox{             }  a_{ {\bf{k}} - {\bf{q}}/2 }({\bf{q}},t)  
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }
+ \mbox{             }= \mbox{             } 
+\]
+\[
+-\mbox{  } <T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}})) \mbox{       }  e^{-i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }(t-t^{'})  } \mbox{  } \mbox{     }\frac{  \theta(t-t^{'}) e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} } + \theta(t^{'}-t) }{  e^{-\lambda}-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }   \mbox{       } }
+\]
+\[ 
+ +  < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+  c_{ {\bf{k}}, > }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+ \mbox{         }n_F({\bf{k}}-{\bf{q}})\mbox{          } \frac{
+ e^{ - \lambda }  }{ e^{ - \lambda }-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+\]
+   
+  
+This means,
+
+---------------------------------------------------------------------------------------------------------------
+
+  
+---------------------------------------------------------------------------------------------------------------
+
+
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
+\mbox{        } = \mbox{            } 
+   -  n_F({\bf{k}}) \mbox{  } \sum_{ {\bf{q}} }\mbox{   }
+    <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{       } 
+ e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } (t-t^{'})  }\mbox{               }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+\]
+\[
+ +  <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >\mbox{  }\sum_{ {\bf{q}} } (1-n_F({\bf{k}}-{\bf{q}}))    
+\mbox{         }  \frac{ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} } }{   e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  } 
+\]
+  
+ 
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+ 
+\[
+< T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+N_{>}(t)  \mbox{        } c_{ {\bf{k}}, > }(t)
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >\mbox{   }
+ \mbox{             }= \mbox{             } 
+\]
+\[
+-\mbox{  } \sum_{ {\bf{q}} }\mbox{   }
+<T\mbox{          } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, < }(t)\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'})
+ >\mbox{   }(1-n_F({\bf{k}})) \mbox{       }  e^{-i \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  }(t-t^{'})  } \mbox{  } \mbox{     }\frac{  \theta(t-t^{'}) e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} } + \theta(t^{'}-t) }{  e^{-\lambda}-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }   \mbox{       } }
+\]
+\[ 
+ +  < T\mbox{                } 
+ e^{ - \lambda N_{>}(t)}  \mbox{        }
+  c_{ {\bf{k}}, > }(t) c^{\dagger}_{ {\bf{k}},> }(t^{'}) >
+ \mbox{         }\sum_{ {\bf{q}} }n_F({\bf{k}}-{\bf{q}})\mbox{          } \frac{
+ e^{ - \lambda }  }{ e^{ - \lambda }-e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+\]
+   
+The exact solution is, 
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \]
+\[
+\mbox{        } =
+\mbox{            } \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+\[
+\prod_{ {\bf{p}} }  \frac{
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) - \lambda \theta(p-k_F) })  
+ }{ 
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) }) }
+\]
+
+=============================================================================================================
+
+\[
+ <T \mbox{            } 
+ e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) \mbox{  }
+c^{\dagger}_{ {\bf{k}}, > }(t^{'}) >  \mbox{        } 
+\]
+\[
+=  \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}})) \mbox{ }
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  })  }\mbox{  }
+\]
+\[
+\prod_{ {\bf{p}}  }
+\frac{
+(1+ e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })
+\mbox{  }
+ }{(1+ e^{ - \beta (\epsilon_p-\mu) }) }
+\]
+=============================================================================================================
+
+Changing ${\bf{k}} \to {\bf{k}}-{\bf{q}}$, 
+\[<T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}-{\bf{q}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}},< }(t^{'}) >  
+\mbox{        }
+   \]
+\[
+ =\mbox{            } 
+e^{ -i \epsilon_{{\bf{k}}-{\bf{q}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}}-{\bf{q}})\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) })  }  \mbox{            }  
+\]
+\[
+\prod_{ {\bf{p}}  }
+\frac{
+(1+ e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })
+\mbox{  }
+ }{(1+ e^{ - \beta (\epsilon_p-\mu) }) }
+\]
+=============================================================================================================
+and,
+
+\[
+ <T \mbox{            } 
+ e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}-{\bf{q}}, > }(t) \mbox{  }
+c^{\dagger}_{ {\bf{k}}-{\bf{q}}, > }(t^{'}) >  \mbox{        } 
+\]
+\[
+=  \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}-{\bf{q}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\]
+\[
+\prod_{ {\bf{p}}  }
+\frac{
+(1+ e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })
+\mbox{  }
+ }{(1+ e^{ - \beta (\epsilon_p-\mu) }) }
+\]
+=============================================================================================================
+
+To get the LHS of the first equation $- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{ {\bf{k}}}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{ {\bf{k}}}},< }(t^{'}) >  $, we need to differentiate $<T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{ {\bf{k}}}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{ {\bf{k}}}},< }(t^{'}) >  
+\mbox{        } $ w.r.t $\lambda$, ie.,
+
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{ {\bf{k}}}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{ {\bf{k}}}},< }(t^{'})
+\]
+
+\[
+\mbox{        } =
+-
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+
+\[
+\frac{d}{d \lambda}
+\left(\prod_{ {\bf{p}}  }
+\frac{
+(1+ \mbox{    } e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })}
+{(1+ e^{ - \beta (\epsilon_p-\mu) }) }\right)
+\]
+
+where we can denote the expression as \( Z(\lambda) \):
+
+\[
+Z(\lambda) =
+\prod_{{\bf{p}}}
+\frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+{1 + e^{- \beta (\epsilon_p - \mu)}}
+\]
+
+Now, we want to compute \( \frac{dZ(\lambda)}{d\lambda} \).
+
+Taking the logarithm of \( Z(\lambda) \) simplifies the differentiation:
+
+\[
+\ln Z(\lambda) = \sum_{{\bf{p}}} \ln \left( \frac{1 + e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu)}} \right)
+\]
+
+The derivative of \( \ln Z(\lambda) \) with respect to \( \lambda \) is:
+
+\[
+\frac{d\ln Z(\lambda)}{d\lambda} = \sum_{{\bf{p}}} \frac{d}{d\lambda} \ln \left( \frac{1 + e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu)}} \right)
+\]
+
+The derivative of the logarithm is given by:
+
+\[
+\frac{d}{d\lambda} \ln 
+\left(
+\frac{1 + e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu)}} 
+\right)\]
+\[
+= \frac{1}{\frac{1 + e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu)}}}
+\cdot \frac{d}{d\lambda} \left( \frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu)}} \right)
+\]
+
+This simplifies to:
+
+\[
+= \frac{1 + e^{- \beta (\epsilon_p - \mu)}}{1 + e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}} \cdot \frac{- \theta(p - k_F) e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu)}}
+\]
+
+This further simplifies to:
+
+\[
+= - \frac{\theta(p - k_F) e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 + e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+\]
+
+Thus:
+
+\[
+\frac{d\ln Z(\lambda)}{d\lambda} = - \sum_{{\bf{p}}} \frac{\theta(p - k_F) e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 +e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+\]
+Finally, we have:
+
+\[
+\frac{dZ(\lambda)}{d\lambda} =
+Z(\lambda) \cdot \frac{d\ln Z(\lambda)}{d\lambda}\]
+\[
+= -Z(\lambda) 
+\sum_{{\bf{p}}} 
+\frac{\theta(p - k_F) e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+\]
+\[=-\prod_{{\bf{p}}}
+\frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+{1 + e^{- \beta (\epsilon_p - \mu)}}
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\]
+=============================================================================================================
+
+Therefore,
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{ {\bf{k}}}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{ {\bf{k}}}},< }(t^{'})
+\]
+
+\[
+\mbox{        } =
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+
+\[
+\times
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\prod_{{\bf{p}}}
+\frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+{1 + e^{- \beta (\epsilon_p - \mu)}}
+\]
+=============================================================================================================
+Similarly for, $<T \mbox{            } 
+ e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) \mbox{  }
+c^{\dagger}_{ {\bf{k}}, > }(t^{'}) >$ since we have two terms depending on $\lambda$, we can use chain rule to get,
+\[
+ <T \mbox{            } 
+ e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) \mbox{  }
+c^{\dagger}_{ {\bf{k}}, > }(t^{'}) >  \mbox{        } 
+\]
+\[
+=  \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}})) \mbox{ }
+\frac{d}{d \lambda}
+\left(
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  })  }\mbox{    }
+\right)\mbox{  }
+\]
+\[
+\times \prod_{ {\bf{p}}  }
+\frac{
+(1+ e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })
+\mbox{  }
+ }{(1+ e^{ - \beta (\epsilon_p-\mu) }) }
+\]
+\[
++  \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}})) \mbox{ }
+\left(
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  })  }\mbox{    }
+\right)\mbox{  }
+\]
+\[
+\times 
+\frac{d}{d \lambda}
+\prod_{ {\bf{p}}  }
+\frac{
+(1+ e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })
+\mbox{  }
+ }{(1+ e^{ - \beta (\epsilon_p-\mu) }) }
+\]
+=============================================================================================================
+This gives,
+\[
+ <T \mbox{            } 
+ e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) \mbox{  }
+c^{\dagger}_{ {\bf{k}}, > }(t^{'}) >  \mbox{        } 
+\]
+\[
+=  \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}})) \mbox{ }\]
+\[
+\bigg(
+\frac{e^{-\lambda - \beta(-\mu + \epsilon_{{\bf{k}}})} \cdot \theta(-t + t')}{1 + e^{-\lambda - \beta(-\mu + \epsilon_{\mathbf{k}})}} + \frac{e^{-\lambda - \beta(-\mu + \epsilon_{{\bf{k}}})} \cdot \left(\theta(t - t') - e^{-\lambda - \beta(-\mu + \epsilon_{{\bf{k}}})} \cdot \theta(-t + t')\right)}{\left(1 + e^{-\lambda - \beta(-\mu + \epsilon_{{\bf{k}}})}\right)^2}
+\]
+
+
+\[
+-  \mbox{                } 
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  })  }\mbox{    }
+\mbox{  }
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\bigg)
+\]
+\[
+\times
+\prod_{{\bf{p}}}
+\frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+{1 + e^{- \beta (\epsilon_p - \mu)}}
+\]
+
+=============================================================================================================
+
+\subsection{Verification of equation 1}
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
+\mbox{        } = \mbox{            } 
+   -  n_F({\bf{k}}) \mbox{  } \sum_{ {\bf{q}} }\mbox{   }
+    <T \mbox{           } e^{ - \lambda N_{>}(t)} \mbox{             } c_{ {\bf{k-q}}, > }(t)
+ c^{\dagger}_{ {\bf{k}} - {\bf{q}}, > }(t^{'}) >   \mbox{       } 
+ e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } (t-t^{'})  }\mbox{               }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+\]
+\[
+ +  <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >\mbox{  }\sum_{ {\bf{q}} } (1-n_F({\bf{k}}-{\bf{q}}))    
+\mbox{         }  \frac{ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} } }{   e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  } 
+\]
+\subsubsection{LHS of eqn 1}
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{ {\bf{k}}}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{ {\bf{k}}}},< }(t^{'})
+\]
+
+\[
+\mbox{        } =
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\bigg(
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+
+\[
+\times
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\bigg)
+\prod_{{\bf{p}}}
+\frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+{1 + e^{- \beta (\epsilon_p - \mu)}}
+\]
+\subsubsection{RHS of eqn 1}
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
+\mbox{        } = \mbox{            } 
+n_F({\bf{k}}) \mbox{  }
+ \bigg(
+ - \mbox{   }
+\sum_{ {\bf{q}} }\mbox{   }
+e^{ -i \epsilon_{{\bf{k}}-{\bf{q}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\]
+\[
+\times
+ e^{-i\frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m}\mbox{  } (t-t^{'})  }\mbox{               }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+ +
+\mbox{            } \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+\[
+\times
+\sum_{ {\bf{q}} } (1-n_F({\bf{k}}-{\bf{q}}))    
+\mbox{         }  \frac{ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} } }{   e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  } 
+ \bigg)
+\times
+\prod_{ {\bf{p}} }  \frac{
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) - \lambda \theta(p-k_F) })  
+ }{ 
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) }) }
+\]
+
+Using, 
+\[
+\epsilon_{{\bf{k}} - {\bf{q}}}  + \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} = \frac{k^2}{2m}=\epsilon_{{\bf{k}}}
+\]
+RHS simplifies to,
+\[
+- <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+ N_{ > }(t)  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+\]
+\[
+\mbox{        } = \mbox{            } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}}) \mbox{  }
+ \bigg(
+ - \mbox{   }
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\]
+\[
+\times
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  }
+ +
+\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+\[
+\times
+\sum_{ {\bf{q}} } (1-n_F({\bf{k}}-{\bf{q}}))    
+\mbox{         }  \frac{ e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} } }{   e^{\lambda} 
+ -e^{\beta  \frac{( {\bf{k}} - {\bf{q}}/2 ).{\bf{q}} }{m} }  } 
+ \bigg)
+\prod_{ {\bf{p}} }  \frac{
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) - \lambda \theta(p-k_F) })  
+ }{ 
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) }) }
+\]
+
+\[
+\mbox{        } = \mbox{            } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}}) \mbox{  }
+ \bigg(
+ - \mbox{   }
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\]
+\[
+\times
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }
+ +
+\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+\[
+\times
+\sum_{ {\bf{q}} } (1-n_F({\bf{k}}-{\bf{q}}))    
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } 
+ \bigg)
+\prod_{ {\bf{p}} }  \frac{
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) - \lambda \theta(p-k_F) })  
+ }{ 
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) }) }
+\]
+
+\[
+\mbox{        } = \mbox{            } 
+ - \mbox{   }
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}}) \mbox{  }
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\]
+\[
+ \bigg(
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }
+ \]
+ \[-
+\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } 
+\bigg)
+\prod_{ {\bf{p}} }
+\frac{
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) - \lambda \theta(p-k_F) })  
+ }{ 
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) }) }
+\]
+Comparing with the LHS,
+\[
+\mbox{        } =
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\bigg(
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+
+\[
+\times
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\bigg)
+\prod_{{\bf{p}}}
+\frac{1 +  e^{- \beta (\epsilon_p - \mu) - \lambda \theta(p - k_F)}}
+{1 + e^{- \beta (\epsilon_p - \mu)}},
+\]
+we need to show,
+\[
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            } 
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\]
+\[
+ =
+- \mbox{   }
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\bigg(\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } 
+ \]
+\[
+  -
+  \frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }
+ \bigg)
+  .
+ \]
+ =============================================================================================================
+ \textbf{Taking $t>t^{'}$, LHS is,}
+ \[
+\frac{1 }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            } 
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\]
+\textbf{The RHS taking $t>t^{'}$ becomes,}
+\[
+ =
+ -\mbox{}
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\bigg(-
+  \frac{1}{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\frac{ \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) } }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }
+ \]
+  \[+
+ \frac{ 1  }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } 
+ \bigg)
+ \]
+\[
+ =
+ -\mbox{}
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{ \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) } }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }\mbox{   }
+\bigg(
+\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ 1  }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+-\mbox{         }  
+  \frac{1}{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+ \bigg)
+ \]
+\[
+ =
+ -\mbox{}
+ \frac{1}{(1 + e^{-\beta (\epsilon_{\mathbf{k}} - \mu)})}
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{ \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) } }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }\mbox{   }
+\bigg(
+\frac{e^{-\beta (\epsilon_{\mathbf{k-q}} - \mu) - \lambda} - e^{-\beta (\epsilon_{\mathbf{k}} - \mu)}}{(1 + e^{-\beta (\epsilon_{\mathbf{k-q}} - \mu) - \lambda})}
+ \bigg)
+ \]
+\[
+ =
+ -\mbox{}
+ \frac{1}{(1 + e^{-\beta (\epsilon_{\mathbf{k}} - \mu)})}
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{ \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) } }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }\mbox{   }
+ e^{-\beta(\epsilon_{\mathbf{k}}-\mu)-\lambda}
+\bigg(
+\frac{e^{\beta (\epsilon_{\mathbf{k}}-\epsilon_{\mathbf{k-q}} )} - e^{\lambda}}{(1 + e^{-\beta (\epsilon_{\mathbf{k-q}} - \mu) - \lambda})}
+ \bigg)
+ \]
+ \[
+ =
+ -\mbox{}
+ \frac{1}{(1 + e^{-\beta (\epsilon_{\mathbf{k}} - \mu)})}
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\frac{ \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) } }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }\mbox{   }
+ e^{-\beta(\epsilon_{\mathbf{k}}-\mu)-\lambda}
+\bigg(
+\frac{e^{\beta (\epsilon_{\mathbf{k}}-\epsilon_{\mathbf{k-q}} )} - e^{\lambda}}{(1 + e^{-\beta (\epsilon_{\mathbf{k-q}} - \mu) - \lambda})}
+ \bigg)
+ \]
+ \[
+ =
+ \frac{1}{(1 + e^{-\beta (\epsilon_{\mathbf{k}} - \mu)})}
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\bigg(
+\frac{e^{-\beta (\epsilon_{\mathbf{k}-\mathbf{q}}-\mu )-\lambda}}{(1 + e^{-\beta (\epsilon_{\mathbf{k-q}} - \mu) - \lambda})}
+ \bigg)
+  .
+ \]
+\textbf{This matches with the LHS, as we can just shift the sum from ${\bf{q}} \to {\bf{k}}-{\bf{q}} $}
+
+=============================================================================================================
+
+We need to show,
+\[
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            } 
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\]
+\[=
+- \mbox{   }
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\bigg(\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } 
+ \]
+  \[
+  -
+  \frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\frac{  \theta(t-t^{'}) \mbox{   } 
+ e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  + \theta(t^{'}-t) }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }
+ \bigg)
+  .
+ \]
+
+Taking $t^{'}>t$, LHS is,
+\[
+-\frac{ ( e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            } 
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F) e^{- \beta (\epsilon_{\bf{q}}- \mu) - \lambda \theta({q} - k_F)}}{1 +e^{- \beta (\epsilon_{\bf{q}} - \mu) - \lambda \theta(q - k_F)}}
+\]
+\[
+=
+-\frac{ 1 }{ (1+e^{  \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            } 
+\sum_{{\bf{q}}} 
+\frac{\theta({q} - k_F)}{1 +e^{\beta (\epsilon_{\bf{q}} - \mu) - \lambda}}
+\]
+The RHS is,
+\[=
+- \mbox{   }
+\sum_{ {\bf{q}} }\mbox{   }  
+(1-n_F({\bf{k}}-{\bf{q}})) \mbox{ }
+\bigg(\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (    - e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } 
+ \]
+  \[
+  -
+  \frac{  (- \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\frac{ 1 }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }
+ \bigg)
+  .
+ \]
+For this we need to simplify the expression, 
+
+\[\mbox{            } \mbox{                } 
+\mbox{   } 
+\frac{ (    - e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\mbox{         }  \frac{ e^{\beta (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}})} }{   e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  }  -
+  \frac{  (- \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu) -\lambda  })  }\mbox{  }
+\frac{ 1 }{  e^{\lambda} 
+ -e^{\beta  (\epsilon_{{\bf{k}}}-\epsilon_{{\bf{k}}-{\bf{q}}}) }  } \]
+
+
+Simplifying the first term,
+
+\[
+\frac{- e^{ - \beta (\epsilon_{\bf{k}}-\mu) }}{1+e^{ - \beta (\epsilon_{\bf{k}}-\mu) }} \cdot \frac{ e^{\beta (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})} }{e^{\lambda} -e^{\beta  (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})} } 
+= \frac{- e^{ - \beta (\epsilon_{\bf{k}}-\mu)} \cdot e^{\beta (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})}}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)}) \cdot (e^{\lambda} - e^{\beta (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})}) }
+\]
+\[=
+\frac{- e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu)}}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)}) \cdot (e^{\lambda} - e^{\beta (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})}) }\]
+
+The simplified expression becomes:
+\[
+\frac{- e^{ - \beta (\epsilon_{{\bf{k}}-{\bf{q}}}-\mu)}}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)}) \cdot (e^{\lambda} - e^{\beta (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})}) } 
+- \frac{- e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) -\lambda }}{(1+ e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) -\lambda}) \cdot (e^{\lambda} -e^{\beta  (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})}) }
+\]
+\[
+=
+-\mbox{}
+\frac{e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) }}{(e^{\lambda} - e^{\beta (\epsilon_{\bf{k}}-\epsilon_{\bf{k}-\bf{q}})}) }
+\bigg(
+\frac{(1+ e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) -\lambda})-
+(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)})e^{-\lambda }}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)})(1+ e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) -\lambda})}
+\bigg)
+\]
+
+\[
+=
+-\mbox{}
+\frac{1}{(e^{ \beta (\epsilon_{\bf{k}-\bf{q}}-\mu)+\lambda } - e^{\beta (\epsilon_{\bf{k}}-\mu) }) }
+\bigg(
+\frac{(1+ e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) -\lambda})-
+(e^{-\lambda }+e^{ - \beta (\epsilon_{\bf{k}}-\mu)-\lambda})}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)})(1+ e^{ - \beta (\epsilon_{\bf{k}-\bf{q}}-\mu) -\lambda})}
+\bigg)
+\]
+ Taking ${\bf{k}-\bf{q}}={\bf{Q}}$,
+\[
+=
+-\mbox{}
+\frac{1}{(e^{ \beta (\epsilon_{\bf{Q}}-\mu)+\lambda } - e^{\beta (\epsilon_{\bf{k}}-\mu) }) }
+\bigg(
+\frac{(1+ e^{ - \beta (\epsilon_{\bf{Q}}-\mu) -\lambda})-
+(e^{-\lambda }+e^{ - \beta (\epsilon_{\bf{k}}-\mu)-\lambda})}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)})(1+ e^{ - \beta (\epsilon_{\bf{Q}}-\mu) -\lambda})}
+\bigg)
+\]
+ \[
+=
+-\mbox{}
+\frac{e^{ - \beta (\epsilon_{\bf{k}}-\mu)}}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)})}
+\bigg(
+\frac{e^{\beta (\epsilon_{\bf{k}} - \mu)}(1 - e^{-\lambda}) + e^{\beta (\epsilon_{\bf{k}} - \epsilon_{\bf{Q}})} \cdot e^{-\lambda} - e^{-\lambda}
+}{(e^{ \beta (\epsilon_{\bf{Q}}-\mu)+\lambda } - e^{\beta (\epsilon_{\bf{k}}-\mu) }) (1+ e^{ - \beta (\epsilon_{\bf{Q}}-\mu) -\lambda})}
+\bigg)
+\]
+\[
+=
+-\mbox{}
+\frac{e^{ - \beta (\epsilon_{\bf{k}}-\mu)}}{(1+e^{ - \beta (\epsilon_{\bf{k}}-\mu)})}
+\bigg(
+\frac{(1 - e^{-\lambda})e^{\beta (\epsilon_{\bf{k}} - \mu)} + (e^{\beta (\epsilon_{\bf{k}} - \epsilon_{\bf{Q}})}-1) \cdot e^{-\lambda}}{(e^{ \beta (\epsilon_{\bf{Q}}-\mu)+\lambda } - e^{\beta (\epsilon_{\bf{k}}-\mu) })+(1 - e^{\beta (\epsilon_{\bf{k}-\bf{Q}}) -\lambda })}
+\bigg)
+\]
+
+This must be equal to,
+\[
+=
+-\frac{ 1 }{ (1+e^{  \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            } 
+\frac{1}{1 +e^{\beta (\epsilon_{\bf{q}} - \mu) - \lambda}}.
+\]
+For this,
+\[\bigg(
+\frac{(1 - e^{-\lambda})e^{\beta (\epsilon_{\bf{k}} - \mu)} + (e^{\beta (\epsilon_{\bf{k}} - \epsilon_{\bf{Q}})}-1) \cdot e^{-\lambda}}{(e^{ \beta (\epsilon_{\bf{Q}}-\mu)+\lambda } - e^{\beta (\epsilon_{\bf{k}}-\mu) })+(1 - e^{\beta (\epsilon_{\bf{k}-\bf{Q}}) -\lambda })}
+\bigg)= \frac{1}{1 +e^{\beta (\epsilon_{\bf{q}} - \mu) - \lambda}}
+\]
+
+ \newpage
+ \section{Deriving the exact expectation value}
+\[
+ \hat{N}_{>} = \sum_{{\bf{k}}} c_{{\bf{k}},>} c^{\dagger}_{{\bf{k}},>}
+ \]
+ \[
+c_{ {\bf{p}},s }(t) \mbox{         } = \mbox{            }
+c_{ {\bf{p}},s} \mbox{            } e^{ - i \epsilon_p \mbox{  } t }
+\]
+\subsection{First equation}
+
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \]
+\[
+=
+\theta(t-t^{'})\mbox{            } 
+< 
+e^{ - \lambda N_{>}(t)}\mbox{   }
+\underbrace{
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'})}_{1-c^{\dagger}_{ {\bf{k}},< }(t^{'})\mbox{}c_{ {\bf{k}}, < }(t) }
+>
++
+\theta(t^{'}-t)
+< 
+\underbrace{
+c^{\dagger}_{ {\bf{k}},< }(t^{'})
+e^{ - \lambda N_{>}(t)}\mbox{   }}_{[c^{\dagger}_{ {\bf{k}},< }(t^{'}),
+e^{ - \lambda N_{>}(t)}]=0}
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+>
+\]
+\[
+=
+\theta(t-t^{'})\mbox{            } 
+< 
+e^{ - \lambda N_{>}(t)}\mbox{   }
+ (
+ 1
+ -
+ c^{\dagger}_{ {\bf{k}},< }(t^{'})\mbox{}
+ c_{ {\bf{k}}, < }(t) 
+ )
+>
++
+\theta(t^{'}-t)
+< 
+e^{ - \lambda N_{>}(t)}\mbox{   }
+c^{\dagger}_{ {\bf{k}},< }(t^{'})
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+>
+\]
+Since, $
+c_{ {\bf{k}},s }(t) \mbox{         } = \mbox{            }
+c_{ {\bf{k}},s} \mbox{            } e^{ - i \epsilon_k \mbox{  } t }
+$ and $N_{>}=\sum_{\bf{p}}\theta(k_F-|p|)n_{ p  } $,
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \]
+\[
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+\left(
+\theta(t-t^{'})\mbox{            }
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(k_F-|p|)n_{ p  } }\mbox{   }
+ (
+ 1
+ -
+ n_{ {\bf{k}},<} \mbox{            }
+ )
+>
++
+\theta(t^{'}-t)
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(k_F-|p|)n_{ p  } }\mbox{   }
+  n_{ {\bf{k}}, < }
+\mbox{  }
+>
+\right)
+\]
+The term $< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+ (
+ 1
+ -
+ n_{ {\bf{k}},<} \mbox{            }
+ )
+>$ can be written as $< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+ >
+ -
+ <
+ e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }
+ n_{ {\bf{k}},<} \mbox{            }
+>$, hence,
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \]
+
+\[
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+ >
+ -
+ <
+ e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }
+ n_{ {\bf{k}},<} \mbox{            }
+>
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+  n_{ {\bf{k}}, < }(t) 
+\mbox{  }
+>
+\bigg)
+\]
+=============================================================================================================
+Taking,
+
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{Tr(e^{ - \sum_p n_p  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  }\mbox{     }n_{ k  } )}{Tr(e^{ - \beta \sum_p n_p  (\epsilon_p-\mu) } )}
+\]
+
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{Tr(e^{ -  n_k  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }\theta(|k|-k_F)]  }\mbox{     }n_{ k  } )}
+{Tr(e^{ - \beta  n_k  (\epsilon_k-\mu) } )}\mbox{     }
+\frac{Tr(e^{ - \sum_{p \neq k} n_p  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_p  (\epsilon_p-\mu) } )}
+\]
+
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }\theta(|k|-p_F)]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+\frac{Tr(e^{ - \sum_{p \neq k} n_p  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{Tr(e^{ - \beta \sum_{p \neq k} n_p  (\epsilon_p-\mu) } )}
+\]
+
+
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }\theta(|k|-k_F)]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+\frac{\prod_{p \neq k} (1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{\prod_{p \neq k}  (1 + e^{ - \beta      (\epsilon_p-\mu) } )}
+\]
+
+
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }\theta(|k|-k_F)]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+e^{ \sum_{p \neq k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right) }
+\]
+\[= \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+e^{ \sum_{p}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)-\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_k-\mu) } )} \right)}\]
+Inverting the argument of the log and making the $-$ sign  a $+$ sign,
+\[<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \]
+\[=
+\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+e^{ \sum_{p}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)+\log \left( \frac{(1 + e^{ - \beta      (\epsilon_k-\mu) } )}
+{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )  } \right)}\]
+Taking the last $e^{\log}$ down and canceling with the denominator of the first term,
+\[<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \]
+\[=\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+e^{ \sum_{p}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)}\frac{(1 + e^{ - \beta      (\epsilon_k-\mu) } )}
+{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )  }\]
+we get,
+\[<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \]
+\[=\mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  }   }
+{(1 + e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )  }\mbox{     }
+e^{ \sum_{p}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)}\]
+or,
+\[<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \]
+\[= \mbox{           }\theta(k_F-|k|)\mbox{  }
+\frac{1}
+{(1 + e^{  [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|k|))]  } )  }\mbox{     }
+e^{ \sum_{p}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }(1-\theta(k_F-|p|))]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)}.\]
+Since $\theta(k_F-|k|)=1$, hence $(1-\theta(k_F-|k|))=0$,
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\mbox{  }
+\frac{ \theta(k_F-|k|) }
+{ (1 + e^{     \beta  (\epsilon_k-\mu)  } )}\mbox{     }
+e^{ \sum_{|p| > k_F }\mbox{     }\log \left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) }.
+\]
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }  = \mbox{           }\mbox{  }
+\frac{ n_F({\bf{k}}) }
+{ (1 + e^{     \beta  (\epsilon_k-\mu)  } )}\mbox{     }
+e^{ \sum_{|p| > k_F }\mbox{     }\log \left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) }
+\]
+\[<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }=\mbox{           }\mbox{  }
+\frac{ n_F({\bf{k}}) }
+{ (1 + e^{     \beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) \]
+=============================================================================================================
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, < }> \mbox{     }
+=
+n_F({\bf{k}})
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) 
+\]
+=============================================================================================================
+Also, $<e^{ - \lambda N_{>} }> \mbox{     }  $ can be written as,
+
+\[ 
+\mbox{           }<e^{ - \lambda N_{>} }> \mbox{     }  = 
+\frac{Tr(e^{ - \sum_{p} n_p  [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{Tr(e^{ - \beta \sum_{p} n_p  (\epsilon_p-\mu) } )}
+\]
+\[
+=
+\frac{\prod_{p } (1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{\prod_{p}  (1 + e^{ - \beta      (\epsilon_p-\mu) } )}
+\]
+=============================================================================================================
+\[
+\mbox{           }<e^{ - \lambda N_{>} }> \mbox{     }  =
+\prod_{|{\bf{p}}|>k_F} 
+\frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )}
+{(1 + e^{ - \beta      (\epsilon_p-\mu) } )}
+\]
+=============================================================================================================
+Finally,
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \]
+
+\[
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+ >
+ -
+ <
+ e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }
+ n_{ {\bf{k}},<} \mbox{            }
+>
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+n_F({\bf{k}})
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) 
+\bigg)
+\]
+
+\[
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+\prod_{|{\bf{p}}|>k_F} 
+\frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }]  } )}
+{(1 + e^{ - \beta      (\epsilon_p-\mu) } )}
+ -
+n_F({\bf{k}})
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) 
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+n_F({\bf{k}})
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) 
+\bigg)
+\]
+\[=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+n_F({\bf{k}})
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+1
+ -
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\bigg)
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) 
+\]
+=============================================================================================================
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+n_F({\bf{k}})
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+\frac{ 1} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+\frac{ e^{     -\beta  (\epsilon_k-\mu)  } )} 
+{ (1 + e^{     -\beta  (\epsilon_k-\mu)  } )}\mbox{     }
+\bigg)
+\prod_{|{\bf{p}}|>k_F}
+\left( \frac{ 1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{ -\lambda  }  }
+{  1 + e^{ - \beta      (\epsilon_p-\mu) }  } \right) 
+\]
+=============================================================================================================
+Thus, we have verified the answer,
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, < }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},< }(t^{'}) >  \]
+\[
+\mbox{        } =
+\mbox{            } \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  } 
+n_F({\bf{k}})\mbox{   } 
+\frac{ (  \theta(t-t^{'})   - \theta(t^{'}-t)  
+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) }
+) }{ (1+e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) })  }  \mbox{            }  
+\]
+\[
+\prod_{ {\bf{p}} }  \frac{
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) - \lambda \theta(p-k_F) })  
+ }{ 
+(1+e^{ - \beta (\epsilon_{ {\bf{p}} }-\mu) }) }
+\]
+\subsection{Second equation}
+Using similar steps as above, we get,
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  
+\]
+
+\[
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+ >
+ -
+ <
+ e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }
+ n_{ {\bf{k}},>} \mbox{            }
+>
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+< 
+e^{ - \lambda \sum_{\bf{p}}\theta(|p|-k_F)n_{ p  } }\mbox{   }
+  n_{ {\bf{k}}, >}(t) 
+\mbox{  }
+>
+\bigg)
+\]
+=============================================================================================================
+Similar steps as above gives,
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, > }> \mbox{     }  = \mbox{           }\theta(|k|-k_F)\mbox{  }
+\frac{ e^{ -   [ \beta  (\epsilon_k-\mu) + \lambda  \mbox{  }\theta(|k|-k_F)]  }   }
+{ (1 + e^{ - \beta  (\epsilon_k-\mu) } )}\mbox{     }
+e^{ \sum_{p \neq k}\mbox{     }\log \left( \frac{(1 + e^{ -   [ \beta  (\epsilon_p-\mu) + \lambda  \mbox{  }\theta(|p|-k_F)]  } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right) }
+\]
+
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, > }> \mbox{     }  = \mbox{           } 
+\frac{ \theta(|k|-k_F) }
+{ (1 + e^{   \beta  (\epsilon_k-\mu) }e^{  \lambda     } ) }\mbox{     }
+e^{ \sum_{ |p| > k_F }\mbox{     }\log \left( \frac{(1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{- \lambda     } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right) }
+\]
+=============================================================================================================
+\[
+<e^{ - \lambda N_{>} }\mbox{     }n_{ k, > }> \mbox{     } 
+=
+\frac{(1-n_F({\bf{k}}))}
+{ (1 + e^{   \beta  (\epsilon_k-\mu) }e^{  \lambda     } ) }\mbox{     }
+\prod_{ |p| > k_F }
+\left( \frac{(1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{- \lambda     } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right) \]
+=============================================================================================================
+Hence, 
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  
+\]
+
+\[
+=
+e^{ i \epsilon_k \mbox{  }( t^{'}-t) }\mbox{}
+(1-n_F({\bf{k}}))
+\bigg(
+\theta(t-t^{'})\mbox{            }
+\left(
+\frac{1}
+{ (1 + e^{  -\beta  (\epsilon_k-\mu) - \lambda     } ) }\mbox{     }
+\right)
+\]
+\[+
+\theta(t^{'}-t)
+\frac{ e^{   -\beta  (\epsilon_k-\mu)-\lambda     }}
+{ (1 + e^{   -\beta  (\epsilon_k-\mu)-\lambda     } ) }\mbox{     }
+\bigg)
+\prod_{ |p| > k_F }
+\left( \frac{(1 + e^{ -   \beta  (\epsilon_p-\mu) }e^{- \lambda     } )}
+{  (1 + e^{ - \beta      (\epsilon_p-\mu) } )} \right)
+\]
+This gives us,
+\[
+ <T \mbox{            } e^{ - \lambda N_{>}(t)}\mbox{   }
+  c_{ {\bf{k}}, > }(t) 
+\mbox{  }
+c^{\dagger}_{ {\bf{k}},> }(t^{'}) >  
+=  \mbox{                } 
+e^{ -i \epsilon_{{\bf{k}}} (t-t^{'}) } \mbox{  }    
+(1-n_F({\bf{k}})) \mbox{ }
+\frac{  ( \theta(t-t^{'}) -  \theta(t^{'}-t)  \mbox{       }  e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  } ) }{ (1+ e^{ - \beta (\epsilon_{{\bf{k}}}-\mu) -\lambda  })  }\mbox{  }
+\]
+\[
+\prod_{ {\bf{p}}  }
+\frac{
+(1+ e^{ - \beta (\epsilon_p-\mu) -\lambda \theta(p-k_F) })
+\mbox{  }
+ }{(1+ e^{ - \beta (\epsilon_p-\mu) }) }
+\]
+=============================================================================================================
+\textbf{Therefore, the solutions are correct.}
+
+\end{document} 
