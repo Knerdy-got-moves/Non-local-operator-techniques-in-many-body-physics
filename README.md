@@ -31,13 +31,13 @@ The central challenge in condensed matter physics is understanding the behaviour
 
 **Our goal**: Develop a *dimension-agnostic* formalism that captures the essential physics of interacting Fermi systems without being restricted to one spatial dimension.
 
-The key insight driving this work is that fermions can be viewed as **non-local particle–hole excitations** above a filled Fermi sea. By systematically exploiting this perspective through "sea-boson" operators, we construct a framework where:
+The key insight driving this work is that fermions can be viewed as **non-local particle–hole excitations** above a filled Fermi sea. By systematically exploiting this perspective through "Sea-Boson" operators, we construct a framework where:
 
 - The kinetic energy becomes quadratic in bosonic variables
 - Density–density interactions have a natural representation
 - Green's functions can be computed through controlled approximations (RPA-like expansions)
 
-This repository presents the complete journey—from foundational concepts through unsuccessful attempts to the final successful formulation.
+This repository presents the complete journey—from foundational concepts through unsuccessful attempts to a successful formulation.
 
 ---
 
@@ -325,7 +325,7 @@ This remarkable result demonstrates that the **Fermi–Dirac distribution emerge
 
 These results are presented in our preprint:
 
-> **R. P. Joshi and G. S. Setlur**, *Fermions as a Non-Local Particle–Hole Excitation*, [arXiv:2501.06489](https://arxiv.org/abs/2501.06489) (2025).
+> **A. Kushwaha, R. P. Joshi and G. S. Setlur**, *Fermions as a Non-Local Particle–Hole Excitation*, [arXiv:2501.06489](https://arxiv.org/abs/2501.06489) (2025).
 
 ---
 
@@ -351,7 +351,7 @@ These results are presented in our preprint:
 
 2. **G. S. Setlur**, *Dynamics of Classical and Quantum Fields: An Introduction*, CRC Press (2014).
 
-3. **R. P. Joshi and G. S. Setlur**, *Fermions as a Non-Local Particle–Hole Excitation*, [arXiv:2501.06489](https://arxiv.org/abs/2501.06489) (2025).
+3. **A. Kushwaha, R. P. Joshi and G. S. Setlur**, *Fermions as a Non-Local Particle–Hole Excitation*, [arXiv:2501.06489](https://arxiv.org/abs/2501.06489) (2025).
 
 ### Historical Background
 
