@@ -1,4 +1,4 @@
-# SRPA vs GRPA
+# Simple random pahse approximation (SRPA) vs Generalised random phase approximation (GRPA)
 
 ## Motivation
 The SRPA vs GRPA comparison is motivated by how low-energy excitations in a Fermi system are dominated by particle–hole pairs near the Fermi level. Creating pairs well above the Fermi level is energetically costly and therefore unlikely, while creating pairs far below it is suppressed by the nearly full Fermi sea at near-zero temperatures. These physical constraints guide practical approximations and allow tractable calculations that still capture the relevant low-energy physics.
