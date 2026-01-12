@@ -381,8 +381,8 @@ This research was conducted under the guidance of **Prof. Girish Sampath Setlur*
 
 **R. P. Joshi**  
 National Institute of Science Education and Research, Bhubaneswar  
-Email: [rishi.joshi@niser.ac.in]
+Email: [rishiparesh.joshi@niser.ac.in]
 
 ---
 
-*Last updated: December 2024*
+*Last updated: December 2025*
